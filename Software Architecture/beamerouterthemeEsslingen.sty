@@ -1,0 +1,102 @@
+%%
+%% Copyright (C) Hochschule Esslingen, 2015
+%%
+%% $Id: beamerouterthemeEsslingen.sty 135 2015-09-10 00:58:51Z friedric $
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+
+\ProvidesPackage{beamerouterthemeEsslingen}[2015/09/10 v. 1.00 (jf)]
+
+\mode<presentation>
+
+% 
+\pgfdeclareimage[height=6mm]{university-logo}{figures/HELogo}
+\pgfdeclareimage[width=.33\textwidth]{raster}{figures/HEGrid}
+
+
+\newcommand{\HEi@footline}{%
+\insertshorttitle%
+%~~\beamer@ifempty{\insertshortauthor}{}{\insertshortauthor} %
+}
+\newcommand{\HEii@footline}{%
+\insertshortdate%
+~~\beamer@ifempty{\insertshortinstitute}{}{\insertshortinstitute} ~~ -- ~~\beamer@ifempty{\insertshortauthor}{}{\insertshortauthor}  %
+\hfill \insertframenumber{} / \inserttotalframenumber}
+
+
+\defbeamertemplate{footline}{Esslingen theme}%
+{%
+  \begin{beamercolorbox}[leftskip=5pt,rightskip=5pt,ht=2.5ex,dp=1ex]{footline}
+ \vspace*{-2pt} 
+ \usebeamerfont{footline}\HEi@footline\par
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[leftskip=5pt,rightskip=5pt,ht=2.5ex,dp=1ex]{footline}
+  \vspace*{-0.5pt}
+  \usebeamerfont{footline}\HEii@footline\par
+  \end{beamercolorbox}%
+}
+
+
+% Frame title with logo
+
+\defbeamertemplate{frametitle}{Esslingen theme}{%
+\vspace*{7pt}%
+\mbox{}\hfill%
+\parbox[t]{26mm}{\pgfuseimage{university-logo}}%
+\par\vspace*{-22pt}%
+\parbox[t]{90mm}{\usebeamerfont*{frametitle}\usebeamercolor{frametitle}%
+\raggedright% keine Trennung
+\insertframetitle\vphantom{Yy}\par%
+\usebeamerfont*{framesubtitle}\insertframesubtitle\vphantom{Yy}%
+}%
+\par%
+{\usebeamercolor{separation line}%
+\hspace*{-15pt}%
+\rule{\paperwidth}{2pt}}\par%
+\vspace{-1ex}%
+}
+
+%%% title page
+
+
+\defbeamertemplate*{title page}{Esslingen theme}{%
+%\vspace{-\fill}%
+\vspace*{1pt}%
+\parbox[t]{\textwidth}{\pgfuseimage{university-logo}\par%
+\vspace{-18pt}\hfill\pgfuseimage{raster}}%
+\par
+\vspace*{-78pt}%
+{\usebeamercolor[fg]{frametitle}%
+\hspace*{-15pt}%
+\rule{\paperwidth}{2pt}}\par%
+\vspace{1ex}
+\begin{minipage}{11.6cm}
+\inserttitlegraphic
+\end{minipage}
+\vfill%
+{\usebeamerfont{title}\usebeamercolor[fg]{frametitle}%
+\parbox[t]{.7\textwidth}{\raggedright\inserttitle}}\\[2mm]
+  \ifx\insertsubtitle\@empty\else\vskip0.25em%
+    {\usebeamerfont{subtitle}\raggedright\insertsubtitle\par}%
+  \fi%
+  \par\vfill
+  \begin{beamercolorbox}[sep=0pt,center]{author}
+ %   {\usebeamerfont{author}\insertauthor}\\[2mm]
+ %   {\usebeamerfont{institute}\insertinstitute}
+  \end{beamercolorbox}
+  \par\vfill
+ % {\usebeamerfont{date}\usebeamercolor*[fg]{date}\insertdate}\par
+\vfill\vspace*{-\fill}%
+}
+
+% Frame title continuation
+\defbeamertemplate*{frametitle continuation}{Esslingen theme}{\insertcontinuationcountroman}
+
+\mode
+<all>

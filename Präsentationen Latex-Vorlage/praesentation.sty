@@ -1,0 +1,63 @@
+\usepackage[german]{babel} %deutsche Sprache
+\usepackage[latin1]{inputenc} %Kodierung
+\usepackage[T1]{fontenc} %Silbentrennung
+\usepackage{helvet} %Schriftart helvetica
+\setbeamertemplate{navigation symbols}{} %Menüleiste aus
+\renewcommand{\familydefault}{\sfdefault}
+\linespread{1} %Zeilenabstand
+\usepackage{geometry}
+\geometry{paperwidth=25.4cm,paperheight=19.05cm,left=2cm,right=2cm}
+\usepackage{blindtext} %Blindtext
+\usepackage{enumitem} %Listen
+\definecolor{rot}{RGB}{165,30,55} %rote Farbe
+\definecolor{grau}{RGB}{195,195,195} %graue Farbe
+\definecolor{gold}{RGB}{180,160,105} %goldene Farbe
+
+\defbeamertemplate*{headline}{} %headline-Format
+{
+\vspace*{5mm}
+\hspace*{20mm}
+\includegraphics[width=50mm, keepaspectratio=true]{logo.pdf}
+\par \vspace*{5mm}
+\hspace*{2cm}{\color{gold}\hrulefill}\hspace*{2cm}
+}
+\defbeamertemplate*{footline}{} %footline-Format
+{
+\par \vspace*{5mm}
+%\hrule
+\hspace*{2cm}{\color{rot}\hrulefill}\hspace*{2cm}
+\par \vspace*{5mm}
+\hspace*{20mm} 
+\insertframenumber{} | \fussnote \hfill \crtext \hspace*{20mm}
+\vspace*{5mm}
+}
+\setbeamertemplate{frametitle} %frametitle-Format
+{
+\vspace*{5mm}
+\color{black}
+\fontsize{24}{24}\selectfont
+\textbf{\insertframetitle}
+\par
+}
+\renewcommand{\maketitle}{ %Format der Titelseite
+\thispagestyle{empty}
+\voffset = 20mm
+%\hoffset = 40mm
+\vspace*{-20mm}
+%\hspace*{0mm}
+\begin{minipage}[t]{78mm}
+\raisebox{-15mm}{\includegraphics[width=79.1mm, keepaspectratio=true]{logo.pdf}}
+\end{minipage} \hspace*{8mm}
+\begin{minipage}[t]{0.22\textwidth}
+\upshape\sffamily\flushleft
+{\color{rot}\fontsize{13pt}{16pt}\selectfont
+	\textbf{\fakult}\\[-3.5mm]}
+  	{\color{rot}\fontsize{11pt}{11pt}\selectfont \fbname}
+\end{minipage}
+\vspace*{5mm}
+{\color{gold}\hrule}
+\vspace*{5mm}
+\titelbild \bigskip \\
+{\bf \fontsize{28}{28}\selectfont\color{rot}\inserttitle} \medskip \\
+{\fontsize{24}{24}\selectfont \insertsubtitle}
+}

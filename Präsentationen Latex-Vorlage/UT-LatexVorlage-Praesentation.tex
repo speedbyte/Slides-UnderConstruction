@@ -1,0 +1,59 @@
+% Präsentation-Vorlage Universität Tübingen
+% erstellt von Ekaterina Kohler (ekaterina.kohler@googlemail.com)
+\documentclass[20pt,t]{beamer}
+\usepackage{praesentation}
+%-------------!!!!BITTE AUSFÜLLEN!!!!------------------
+% hier fängt die Eingabe der Grundinformationen zur Präsentation an
+\newcommand{\fakult}{<Name der Fakultät, Dezernat oder SFB>}	%Fakultät
+\newcommand{\fbname}{<Fachbereich/Institut/Lehrstuhl>}	%Fachbereich oder Name des Instituts
+\newcommand{\fussnote}{Autor/Verfasser/Thema/Rubrik/Titel etc.} %Text der Fusszeile auf den Innenfolien
+\newcommand{\crtext}{\copyright\ 2012 Universität Tübingen } %Copyright-Text
+\newcommand{\kooplogoUnten}{\colorbox{cyan}{\parbox{0.2\textwidth}{\centering \fontsize{12pt}{12pt}\selectfont MAX. ZWEI externe Koop.-Logos}}} %Kooperations-Logo in der Fusszeile auf der Titelseite. Statt \colorbox MAX. ZWEI externe Koop.-Logos. Falls kein Koop.-Logo verwendet werden soll, lassen Sie die zweite geschweifte Klammer leer
+
+\begin{document}
+\begin{frame} %Titelseite
+\author{Verfasser [optional]} %Autor/Verfasser
+\title{Headline (max. zweizeilig/linksbündig)} %Titel
+\subtitle{Untertitel maximal zwei Zeilen} %Untertitel
+\date{23.07.2012} %Datum
+\newcommand{\titelbild}{{\color{grau}\rule{\textwidth}{70mm}}\\[-0.4cm]{\color{rot}\rule{\textwidth}{5mm}}} %statt grauer Box ein Deckblattbild einfügen und die rote Linie nach oben versetzen, hier um 0.35cm
+\maketitle \\
+\vspace*{35mm} %Abstand zwischen dem Untertitel und Datum/Verfasser. Hier 35mm
+{\fontsize{16}{16}\selectfont\bf\insertdate , \insertauthor} \hfill \kooplogoUnten
+\end{frame}
+
+\begin{frame}{Testing} %zweite Folie
+False Positives
+  \begin{itemize}
+  \item[$\bullet$] The false positives are results of test cases which are returned positive although it should have been negative
+    \begin{itemize}
+    \item[-] Anstrich Ebene 2
+     \begin{itemize}
+     	\item[\tiny$\blacksquare$] {Anstrich Ebene 3}
+     \end{itemize}
+    \end{itemize}
+  \item[$\bullet$] Text
+  \end{itemize}
+Text linksbündig
+\end{frame}
+
+\begin{frame}{Headline (max. zweizeilig/linksbündig)} %dritte Folie
+\blindtext
+\end{frame}
+\begin{frame}[c] %Rückfolie
+\colorbox{rot}{\parbox{\textwidth}{\centering\vspace*{1.5cm} \parbox{12cm}{\color{white} {\huge Danke.} \bigskip \\ Kontakt: \bigskip \\ {\bf \fakult}\\ \fbname\\ Musterstraße 00, 72074 Tübingen \\ Telefon: +49 7071 29-0000\\ Telefax: +49 7071 29-00\\
+beispiel@uni-tuebingen.de}\vspace*{1.5cm}}}
+\end{frame}
+
+\begin{frame}{Testing} %zweite Folie
+False Positives and False Negatives
+  \begin{itemize}
+  \item[$\bullet$] The false positives are results of test cases that are returned positive although they should have been reported negative.
+  \item[$\bullet$] The false negatives are results of test cases that are returned negative although they should have been reported positive. 
+  \end{itemize}
+Text linksbündig
+\end{frame}
+
+
+%------------------------------------------------------
+\end{document}

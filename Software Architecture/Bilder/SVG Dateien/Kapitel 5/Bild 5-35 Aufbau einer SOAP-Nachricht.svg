@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="179"
+   height="89.625"
+   id="svg2"
+   xml:space="preserve"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Bild 5-35 Aufbau einer SOAP-Nachricht.svg"><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview139"
+     showgrid="false"
+     inkscape:zoom="0.18730159"
+     inkscape:cx="141.40625"
+     inkscape:cy="-16.78125"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" /><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs6"><clipPath
+       id="clipPath16"><path
+         d="m 389.33,577.27 154.59,0 0,8.88 -154.59,0 0,-8.88 z"
+         inkscape:connector-curvature="0"
+         id="path18" /></clipPath><clipPath
+       id="clipPath24"><path
+         d="m 389.33,577.27 154.58,0 0,8.88 -154.58,0 0,-8.88 z"
+         inkscape:connector-curvature="0"
+         id="path26" /></clipPath><clipPath
+       id="clipPath36"><path
+         d="m 389.33,577.27 154.58,0 0,8.88 -154.58,0 0,-8.88 z"
+         inkscape:connector-curvature="0"
+         id="path38" /></clipPath><clipPath
+       id="clipPath48"><path
+         d="m 389.33,577.27 154.58,0 0,8.88 -154.58,0 0,-8.88 z"
+         inkscape:connector-curvature="0"
+         id="path50" /></clipPath><clipPath
+       id="clipPath60"><path
+         d="m 389.33,577.27 154.58,0 0,8.88 -154.58,0 0,-8.88 z"
+         inkscape:connector-curvature="0"
+         id="path62" /></clipPath><clipPath
+       id="clipPath72"><path
+         d="m 389.33,577.27 154.58,0 0,8.88 -154.58,0 0,-8.88 z"
+         inkscape:connector-curvature="0"
+         id="path74" /></clipPath><clipPath
+       id="clipPath82"><path
+         d="m 396.65,557.35 144.87,0 0,11.88 -144.87,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path84" /></clipPath><clipPath
+       id="clipPath90"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path92" /></clipPath><clipPath
+       id="clipPath102"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path104" /></clipPath><clipPath
+       id="clipPath114"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path116" /></clipPath><clipPath
+       id="clipPath126"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path128" /></clipPath><clipPath
+       id="clipPath138"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path140" /></clipPath><clipPath
+       id="clipPath150"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path152" /></clipPath><clipPath
+       id="clipPath162"><path
+         d="m 396.65,557.35 144.86,0 0,11.88 -144.86,0 0,-11.88 z"
+         inkscape:connector-curvature="0"
+         id="path164" /></clipPath><clipPath
+       id="clipPath172"><path
+         d="m 395.09,525.43 152.07,0 0,24.72 -152.07,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path174" /></clipPath><clipPath
+       id="clipPath180"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path182" /></clipPath><clipPath
+       id="clipPath192"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path194" /></clipPath><clipPath
+       id="clipPath204"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path206" /></clipPath><clipPath
+       id="clipPath216"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path218" /></clipPath><clipPath
+       id="clipPath228"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path230" /></clipPath><clipPath
+       id="clipPath236"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path238" /></clipPath><clipPath
+       id="clipPath248"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path250" /></clipPath><clipPath
+       id="clipPath260"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path262" /></clipPath><clipPath
+       id="clipPath272"><path
+         d="m 395.09,525.43 152.06,0 0,24.72 -152.06,0 0,-24.72 z"
+         inkscape:connector-curvature="0"
+         id="path274" /></clipPath></defs><g
+     transform="matrix(1.25,0,0,-1.25,-488.96875,736.40625)"
+     id="g10"><g
+       id="g12"><g
+         clip-path="url(#clipPath16)"
+         id="g14"><g
+           id="g20"><g
+             clip-path="url(#clipPath24)"
+             id="g22"><text
+   transform="matrix(1,0,0,-1,396.53,578.83)"
+   id="text28"><tspan
+     x="0"
+     y="0"
+     id="tspan30"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">S</tspan></text>
+
+</g></g><g
+           id="g32"><g
+             clip-path="url(#clipPath36)"
+             id="g34"><text
+   transform="matrix(1,0,0,-1,401.93,578.83)"
+   id="text40"><tspan
+     x="0 6.2551198 11.52132"
+     y="0"
+     id="tspan42"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">OAP</tspan></text>
+
+</g></g><g
+           id="g44"><g
+             clip-path="url(#clipPath48)"
+             id="g46"><text
+   transform="matrix(1,0,0,-1,418.85,578.83)"
+   id="text52"><tspan
+     x="0"
+     y="0"
+     id="tspan54"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">-</tspan></text>
+
+</g></g><g
+           id="g56"><g
+             clip-path="url(#clipPath60)"
+             id="g58"><text
+   transform="matrix(1,0,0,-1,421.49,578.83)"
+   id="text64"><tspan
+     x="0 5.6360402 12.33336 16.42572 20.493959 24.932039 26.716921 31.18716 35.48856 37.763882 40.401001 44.839081 49.277161 53.71524 55.500118 57.783482 60.0588 64.49688 68.934959 72.898682 77.336761 79.121643 83.591881 88.013878 92.451958"
+     y="0"
+     id="tspan66"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">Umschlag (engl. envelope)</tspan></text>
+
+</g></g><g
+           id="g68"><g
+             clip-path="url(#clipPath72)"
+             id="g70" /></g></g></g><path
+       d="m 399,558.2 128.75,0 0,15.45 -128.75,0 0,-15.45 z"
+       inkscape:connector-curvature="0"
+       id="path76"
+       style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" /><g
+       id="g78"><g
+         clip-path="url(#clipPath82)"
+         id="g80"><g
+           id="g86"><g
+             clip-path="url(#clipPath90)"
+             id="g88"><text
+   transform="matrix(1,0,0,-1,403.85,561.91)"
+   id="text94"><tspan
+     x="0"
+     y="0"
+     id="tspan96"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">S</tspan></text>
+
+</g></g><g
+           id="g98"><g
+             clip-path="url(#clipPath102)"
+             id="g100"><text
+   transform="matrix(1,0,0,-1,409.25,561.91)"
+   id="text106"><tspan
+     x="0 6.2551198 11.52132"
+     y="0"
+     id="tspan108"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">OAP</tspan></text>
+
+</g></g><g
+           id="g110"><g
+             clip-path="url(#clipPath114)"
+             id="g112"><text
+   transform="matrix(1,0,0,-1,426.17,561.91)"
+   id="text118"><tspan
+     x="0"
+     y="0"
+     id="tspan120"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">-</tspan></text>
+
+</g></g><g
+           id="g122"><g
+             clip-path="url(#clipPath126)"
+             id="g124"><text
+   transform="matrix(1,0,0,-1,428.81,561.91)"
+   id="text130"><tspan
+     x="0 5.3948398 9.8329201 14.271 16.54632 20.51004 24.94812 26.733 28.542 32.859482 35.1348 37.771919 42.209999 46.648079 51.086159 52.87104 55.1544 57.429722"
+     y="0"
+     id="tspan132"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">Kopfzeile (engl. h</tspan></text>
+
+</g></g><g
+           id="g134"><g
+             clip-path="url(#clipPath138)"
+             id="g136"><text
+   transform="matrix(1,0,0,-1,490.75,561.91)"
+   id="text142"><tspan
+     x="0 4.4400401 8.8800802 13.32012 17.76016"
+     y="0"
+     id="tspan144"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">eader</tspan></text>
+
+</g></g><g
+           id="g146"><g
+             clip-path="url(#clipPath150)"
+             id="g148"><text
+   transform="matrix(1,0,0,-1,511.15,561.91)"
+   id="text154"><tspan
+     x="0"
+     y="0"
+     id="tspan156"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">)</tspan></text>
+
+</g></g><g
+           id="g158"><g
+             clip-path="url(#clipPath162)"
+             id="g160" /></g></g></g><path
+       d="m 391.55,517.8 142.45,0 0,70.95 -142.45,0 0,-70.95 z"
+       inkscape:connector-curvature="0"
+       id="path166"
+       style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" /><g
+       id="g168"><g
+         clip-path="url(#clipPath172)"
+         id="g170"><g
+           id="g176"><g
+             clip-path="url(#clipPath180)"
+             id="g178"><text
+   transform="matrix(1,0,0,-1,402.29,542.71)"
+   id="text184"><tspan
+     x="0"
+     y="0"
+     id="tspan186"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">S</tspan></text>
+
+</g></g><g
+           id="g188"><g
+             clip-path="url(#clipPath192)"
+             id="g190"><text
+   transform="matrix(1,0,0,-1,407.69,542.71)"
+   id="text196"><tspan
+     x="0 6.2551198 11.52132"
+     y="0"
+     id="tspan198"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">OAP</tspan></text>
+
+</g></g><g
+           id="g200"><g
+             clip-path="url(#clipPath204)"
+             id="g202"><text
+   transform="matrix(1,0,0,-1,424.61,542.71)"
+   id="text208"><tspan
+     x="0"
+     y="0"
+     id="tspan210"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">-</tspan></text>
+
+</g></g><g
+           id="g212"><g
+             clip-path="url(#clipPath216)"
+             id="g214"><text
+   transform="matrix(1,0,0,-1,427.25,542.71)"
+   id="text220"><tspan
+     x="0 5.75664 10.19472 12.47004 16.908119 21.346201 25.784281 30.222361 32.859482 37.297562 39.082439 43.166759"
+     y="0"
+     id="tspan222"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">Datenbereich</tspan></text>
+
+</g></g><g
+           id="g224"><g
+             clip-path="url(#clipPath228)"
+             id="g226" /></g><g
+           id="g232"><g
+             clip-path="url(#clipPath236)"
+             id="g234"><text
+   transform="matrix(1,0,0,-1,477.19,542.71)"
+   id="text240"><tspan
+     x="0 2.63712 7.0752001 11.51328 15.95136 17.63172 19.90704 22.18236"
+     y="0"
+     id="tspan242"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">(engl. b</tspan></text>
+
+</g></g><g
+           id="g244"><g
+             clip-path="url(#clipPath248)"
+             id="g246"><text
+   transform="matrix(1,0,0,-1,503.83,542.71)"
+   id="text252"><tspan
+     x="0 4.4400401 8.8800802"
+     y="0"
+     id="tspan254"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">ody</tspan></text>
+
+</g></g><g
+           id="g256"><g
+             clip-path="url(#clipPath260)"
+             id="g258"><text
+   transform="matrix(1,0,0,-1,516.67,542.71)"
+   id="text264"><tspan
+     x="0"
+     y="0"
+     id="tspan266"
+     style="font-size:8.03999996px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">)</tspan></text>
+
+</g></g><g
+           id="g268"><g
+             clip-path="url(#clipPath272)"
+             id="g270" /></g></g></g><path
+       d="m 399,521.8 128.75,0 0,32 -128.75,0 0,-32 z"
+       inkscape:connector-curvature="0"
+       id="path276"
+       style="fill:none;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" /></g></svg>
