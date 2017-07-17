@@ -26,7 +26,7 @@
 \usepackage{multimedia}
 \usepackage{listings}
 
-\usepackage{glossaries}
+\usepackage[acronym,nomain]{glossaries}
 \newcommand*{\glossfirstformat}[1]{\color{red}\textbf{#1}}
 \renewcommand{\glsdisplayfirst}[4]{\glossfirstformat{#1#4}}
 \renewcommand*{\glsnamefont}{\sffamily}
@@ -55,7 +55,7 @@
 
 \usepackage{enumerate}
 
-\graphicspath{{00introduction/}{01principles/}{02swarchitectures/}}
+\graphicspath{{RT01-Introduction/}{01principles/}{02swarchitectures/}}
 %% ---------------------------
 % Beamer Theme
 %% ---------------------------
@@ -74,13 +74,13 @@
 %% Die optionalen Argumente werden für die Fußzeile benutzt
 
 \ifoverview
-\title[Software Architectures - \partTitle \ (Version \partVersion)]{Software Architectures}
+\title[Distributed Real Time Systems - \partTitle \ (Version \partVersion)]{Distributed Real Time Systems}
 
 \subtitle[\partTitle]{\partTitle}
 
 \else
 
-\title[Software Architectures - Part \partNo :\ \partTitle \ (Version \partVersion)]{Software Architectures}
+\title[Distributed Real Time Systems - Part \partNo :\ \partTitle \ (Version \partVersion)]{Distributed Real Time Systems}
 
 \subtitle[Part  \partNo :\  \partTitle]{Part \partNo : \  \partTitle}
 
@@ -91,7 +91,7 @@
  %Dritter Autor\inst{2}}
 
 %% Default image
-\titlegraphic{\includegraphics[height=125pt]{00introduction/escher1.png}}
+\titlegraphic{\includegraphics[height=125pt]{RT00-Introduction/dtrt.png}}
 
 \ifpartII
 \titlegraphic{\includegraphics[height=125pt]{02swarchitectures/escher2.png}}
@@ -108,6 +108,3 @@
 %\makenoidxglossaries
 
 \include{glossary}
-
-
-
