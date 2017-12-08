@@ -1,0 +1,533 @@
+\begin{enumerate}
+\item ~
+  \section{Chapter 12}\label{chapter-12}
+
+  \begin{enumerate}
+  \item ~
+    \subsection{Validation}\label{validation}
+  \end{enumerate}
+\end{enumerate}
+
+Overview 1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Building a Convincing Safety Case 3
+\item
+  Formal Methods 7
+\item
+  Testing 11
+\item
+  Fault Injection 15
+\item
+  Dependability Analysis 20
+\end{enumerate}
+
+Points to Remember 23
+
+\begin{enumerate}
+\item ~
+  \subsection{}\label{section}
+
+  \subsection{Overview}\label{overview}
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Is this system fit for its purpose?
+\item
+  System must be proven to be trustworthy
+\item
+  Convincing safety case
+\item
+  Formal methods for ultra-dependable real-time system
+\item
+  Testing real-time systems, test data selection
+\item
+  Dependability analysis, hazards and risks, FTA and FMEA
+\end{itemize}
+
+\textbf{12.1} \protect\hypertarget{teil2}{}{}\textbf{Building a
+Convincing Safety Case}
+
+A safety case is a combination of a sound set of arguments concerning
+the safety of a given design.
+
+The safety case must convince an independent certification authority
+that the system is safe to deploy.
+
+\textbf{Outline of the Safety Case}
+
+Computer systems can fail for external or internal reasons.
+
+External reasons are related to the operational environment (stress,
+EMI, temperature) and to the system specification.
+
+Internal reasons are
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Computer hardware failure due to random physical fault. Remedy as part
+  of the safety case: redundancy.
+\item
+  Hardware or software contains residual design faults. This is the real
+  challenge. No single validation technology can provide the required
+  evidence that a computer system will meet the ultra-high dependability
+  requirement (see chapter 1).
+\end{enumerate}
+
+The safety case must thus combine evidence from independent sources to
+convince the certification authorities that the system is safe to
+deploy. These sources are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \begin{quote}
+  A disciplined software development process with inspections and design
+  reviews
+  \end{quote}
+\end{enumerate}
+
+\textbf{\\
+}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \begin{quote}
+  Experimental evidence from testing combined with structural arguments
+  about the partitioning of the system in autonomous error-containment
+  regions.
+  \end{quote}
+\item
+  \begin{quote}
+  Formal analysis of critical properties
+  \end{quote}
+\item
+  \begin{quote}
+  Experienced dependability of previous generations of similar systems.
+  \end{quote}
+\item
+  \begin{quote}
+  Experimental data about field-failure rates of critical components as
+  input for reliability models that demonstrate that the system will
+  mask random component failures with the required high probability.
+  \end{quote}
+\item
+  \begin{quote}
+  Hardware and design diversity to reduce probability of common-mode
+  design failures
+  \end{quote}
+\end{enumerate}
+
+\textbf{Properties of the Architecture}
+
+No single fault must cause a catastrophic failure. For fail-safe
+applications, safe state must be entered before the consequences of
+error affect system behavior. For fail-operational applications, safe
+system service must be provided even after a single fault.
+
+\textbf{Error Containment Regions:} At architectural level, it must be
+demonstrated that every single fault can only affect a defined error
+containment region, and will be detected at the boundaries of this error
+containment region.
+
+Typical weak points that can lead to common-mode failure of all nodes
+within a distributed system:
+
+\begin{itemize}
+\item
+  A single source of time, such as a central clock.
+\item
+  A babbling node.
+\item
+  A single fault in the power supply or the grounding system.
+\item
+  A single design error that is replicated when the same hardware or
+  system software is used in all nodes.
+\end{itemize}
+
+ask with no synchronisation point within, e.g. no semaphore ``wait''
+operation, mutexes or other constructs that could make the task wait or
+block. Execution time can be determined in isolation, i.e. without
+knowledge of behaviour of other tasks.
+
+\textbf{Example:} Four nodes connected by a replicated bus. If
+communication controller implements an event-triggered protocol, a
+single faulty host can disrupt communication between all nodes by
+sending high-priority messages at arbitrary points in time.
+
+If the ARINC 629 protocol is implemented, errors can still occur if the
+communication controller accesses the bus randomly. In the TTP a bus
+guardian would prevent such an error.
+
+\includegraphics[width=7.18750in,height=3.20833in]{media/image1.png}
+
+\textbf{Composability:} Helps in designing a convincing safety case.
+Assume the nodes can be grouped into nodes implementing safety-critical
+functions, and into nodes that do not contain safety-critical functions.
+
+If it can be shown, at the architectural level, that no error in any one
+of nodes not containing safety-critical functions can affect the proper
+operation of any node containing safety-critical functions, than it is
+possible to exclude the nodes that do not contain such functions from
+further considerations during the safety case analysis.
+
+\textbf{12.2} \protect\hypertarget{teil3}{}{}\textbf{Formal Methods }
+
+Formal methods: the use of mathematical and logical techniques to
+express, investigate, and analyze the specification, design,
+documentation, and behaviour of computer hardware and software.
+
+\textbf{Formal Methods in the Real World}
+
+Formal investigation of real-world phenomena requires the following
+steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Conceptual model building: Informal first step, see chapter 4, leads
+  to reduced natural language representation of the real-world phenomena
+  under investigation. Note: all assumptions, omissions, or
+  misconceptions that are introduced here will remain in the model, and
+  limit the validity of the conclusions derived from the model
+  (assumption coverage).
+\item
+  Model formalization: Natural language representation is transformed
+  into a formal specification language with precise syntax and
+  semantics.
+\item
+  Analysis of the formal model: Problem is formally analyzed. In
+  computer systems, the analysis methods are based on discrete
+  mathematics and logic. In other disciplines, analysis methods are
+  based on different branches of mathematics, e.g., differential
+  equations to analyse control problems.
+\item
+  Interpretation of the results.
+\end{enumerate}
+
+Only step 3 can be mechanized. All other steps involve human involvement
+and human intuition, and are thus fallible.
+
+Ideal and complete verification environment would look like this:
+
+\begin{itemize}
+\item
+  Express specification in formally defined specification language.
+\item
+  Write implementation in formally defined implementation language.
+\item
+  Establish mechanically consistency between specification and
+  implementation (e.g., MDA).
+\item
+  Ensure that all assumptions of the target machine are consistent with
+  the model of computation as defined by the implementation language.
+\item
+  Ensure that the verification environment itself is correct.
+\end{itemize}
+
+\textbf{Classification of Formal Methods}
+
+Formal methods can be classified into three levels:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \begin{quote}
+  Use of concepts and notation from discrete mathematics. Ambiguous
+  natural language statements about requirements and specification of a
+  system are replaced by the symbols and conventions from discrete
+  mathematics and logic, e.g. set theory, relations, and functions.
+  \end{quote}
+\item
+  \begin{quote}
+  Use of formalized specification languages with some mechanical support
+  tools. A formal specification language with a fixed syntax is used,
+  that allows the mechanical analysis of some properties of the problems
+  expressed in the specification language. However, it is not possible
+  to mechanically generate complete proofs.
+  \end{quote}
+\item
+  \begin{quote}
+  Use of fully formalized specification languages with comprehensive
+  support environments, including mechanized theorem proving or proof
+  checking. A precisely defined specification language with a direct
+  interpretation in logic is supplied, and a set of support tools is
+  provided to allow the mechanical analysis of specifications expressed
+  in the formal language.
+  \end{quote}
+\end{enumerate}
+
+\textbf{Benefits from the Application of Formal Methods}
+
+\textbf{Level (i) Methods:}
+
+\begin{itemize}
+\item
+  Use of level(i) methods improves communication within the project team
+  and within an engineering organization, an enriches quality of
+  documentation.
+\item
+  Particularly in the early stage of a project the need for precise and
+  effective communication is great, when the mechanical control system
+  and the computer system are specified.
+\item
+  The concepts of discrete mathematics (set, relation, etc.) are precise
+  and yet abstract. This avoids misunderstandings and ambiguities.
+\item
+  Some simple mechanical analysis is possible (undefined symbols,
+  uninitialized variables), and can lead to the detection of
+  inconsistencies and omissions.
+\item
+  Reviews are more effective if requirements are expressed in a precise
+  notation rather than ambiguous natural language.
+\item
+  It is more difficult to express vague ideas and immature concepts in a
+  semiformal notation.
+\end{itemize}
+
+\textbf{Level (ii) Methods:} a task with no synchronisation point
+within, e.g. no semaphore ``wait'' operation, mutexes or other
+constructs that could make the task wait or block. Execution time can be
+determined in isolation, i.e. without knowledge of behaviour of other
+tasks.
+
+\textbf{Level (iii) Methods:} a task with no synchronisation point
+within, e.g. no semaphore ``wait'' operation, mutexes or other
+constructs that could make the task wait or block. Execution time can be
+determined in isolation, i.e. without knowledge of behaviour of other
+tasks.
+
+\textbf{12.3} \protect\hypertarget{teil4}{}{}\textbf{Testing }
+
+System architecture design is primarily interface design.
+
+An interface between two subsystems of a real-time system is
+characterized by
+
+\begin{itemize}
+\item
+  The control properties (control signals crossing interface, what do
+  they do)
+\item
+  The temporal properties (temporal constraints to be satisfied by
+  control signals and data crossing the interface)
+\item
+  The functional intent (intended functions of the interface partner)
+\item
+  The data properties (structure and semantics of data elements crossing
+  the interface)
+\end{itemize}
+
+In case events can occur any time, we speak of a dense time base.
+
+In case events are permitted to occur only in certain time intervals π,
+we speak of a sparse time base.
+
+In a dense time base it can be difficult to establish temporal order.
+
+Example: The functional intent of a node in an engine controller is to
+guarantee the car conforms to environmental standards. As the standards
+change, e.g. new laws are passed, the function of the node may have to
+change, but not its functional intent.
+
+The functional intent is thus at a higher level of abstraction than the
+function.
+
+The functional intent can be related to a ``goal'' in requirements
+engineering.
+
+\textbf{The Probe Effect}
+
+In many cases, the interfacing partners use different syntactic
+structures and incompatible coding schemes to represent information that
+must cross the interface.
+
+An intelligent interface component must be placed between the interface
+partners to transform the different representations. This we call a
+resource controller.
+
+\includegraphics[width=6.87222in,height=3.21389in]{media/image2.png}
+
+Resource controllers act as gateways between two different subsystems
+with different representations.
+
+\textbf{Design for Testability}
+
+We distinguish between real world interfaces, and message interfaces.
+
+Example: specific man-machine interface (SMMI) would be a concrete world
+interface, with touchpad, screen, buttons. A generalized man-machine
+interface (GMMI or abstract message interface) would just consider the
+messages that cross the interface, and their temporal properties.
+
+\textbf{Test Data Selection}
+
+To improve compatibility between systems designed by different
+manufacturers, some international standard organizations have attempted
+to standardize message interfaces. In automotive systems, the interfaces
+are typically bus interfaces.
+
+\textbf{Peak Load:} a task with no synchronisation point within, e.g. no
+semaphore ``wait'' operation, mutexes or other constructs that could
+make the task wait or block. Execution time can be determined in
+isolation, i.e. without knowledge of behaviour of other tasks.
+
+\textbf{Worst Case Execution Time (WCET):} a task with no
+synchronisation point within, e.g. no semaphore ``wait'' operation,
+mutexes or other constructs that could make the task wait or block.
+Execution time can be determined in isolation, i.e. without knowledge of
+behaviour of other tasks.
+
+\textbf{Fault-Tolerant Mechanisms:} a task with no synchronisation point
+within, e.g. no semaphore ``wait'' operation, mutexes or other
+constructs that could make the task wait or block. Execution time can be
+determined in isolation, i.e. without knowledge of behaviour of other
+tasks.
+
+\textbf{What can be Inferred from ``Perfect Working''}
+
+To improve compatibility between systems designed by different
+manufacturers, some international standard organizations have attempted
+to standardize message interfaces. In automotive systems, the interfaces
+are typically bus interfaces.
+
+\textbf{12.4} \protect\hypertarget{teil5}{}{}\textbf{Fault Injection}
+
+Example rolling mill with three drive controllers and associated
+controller nodes and pressure sensors:
+
+\textbf{Why Fault Injection?}
+
+To improve compatibility between systems designed by different
+manufacturers, some international standard organizations have attempted
+to standardize message interfaces. In automotive systems, the interfaces
+are typically bus interfaces.
+
+\textbf{Automotive transport protocols (OSI level 4)}
+
+\begin{longtable}[c]{@{}llll@{}}
+\toprule
+\textbf{Transport Protocol} & \textbf{Application} & \textbf{European
+Standards} & \textbf{US Standards}\tabularnewline
+ISO TP & CAN busses & ISO 15765-2 &\tabularnewline
+SAE J1939 & CAN busses & & SAE J1939/21\tabularnewline
+TP 1.6
+
+TP 2.0 & CAN busses & Manufacturer standard
+
+VW/Audi/Seat/Skoda
+
+Base is OSEK COM 1.0 &\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textbf{Physical Fault Injection}
+
+A system where all control signals are derived from event triggers is
+called an event-triggered (ET) system. Event examples: button pushed,
+activation of limit switch, arrival of new message at a node, completion
+of task within node.
+
+\textbf{Injected Faults:} a task with no synchronisation point within,
+e.g. no semaphore ``wait'' operation, mutexes or other constructs that
+could make the task wait or block. Execution time can be determined in
+isolation, i.e. without knowledge of behaviour of other tasks.
+
+\textbf{Example:} a task with no synchronisation point within, e.g. no
+semaphore ``wait'' operation, mutexes or other constructs that could
+make the task wait or block. Execution time can be determined in
+isolation, i.e. without knowledge of behaviour of other tasks.
+
+A system where all control signals are derived from time triggers is
+called a time-triggered (TT) system. A time trigger is a control signal
+derived from the progression of time, e.g. the clock within a node
+reaches a preset point in time.
+
+Example: computer system controlling an elevator.
+
+\includegraphics[width=7.26944in,height=3.11736in]{media/image3.png}
+
+\textbf{The Hardware under Test:} a task with no synchronisation point
+within, e.g. no semaphore ``wait'' operation, mutexes or other
+constructs that could make the task wait or block. Execution time can be
+determined in isolation, i.e. without knowledge of behaviour of other
+tasks.
+
+\textbf{Experimental Setup:} a task with no synchronisation point
+within, e.g. no semaphore ``wait'' operation, mutexes or
+
+\includegraphics[width=7.98819in,height=3.39583in]{media/image4.png}
+
+\textbf{Results:} a task with no synchronisation point within, e.g. no
+semaphore ``wait'' operation, mutexes or
+
+\textbf{Software Implemented Fault Injection}
+
+In an ET system, the external event triggers are often relayed to the
+computer system via interrupts. An interrupt is an asynchronous
+hardware-supported request for a specific task activation caused by an
+event external (i.e. outside the node) to the currently active
+computation.
+
+Interrupts cause an overhead (worst case administrative overhead, WCAO),
+mostly due to the required context switches.
+
+If interrupt frequency is too high, no CPU capacity remains for actual
+computations. Interrupts are outside the sphere of control of the node,
+which makes it difficult to handle such overload conditions.
+
+\textbf{12.5} \protect\hypertarget{teil6}{}{}\textbf{Dependability
+Analysis}
+
+Deadlines can only be guaranteed if worst case execution (WCET) times of
+all application tasks are known a priori.
+
+In addition, the worst case delays caused by administrative functions
+(e.g. operating system services, context switches, scheduling) need to
+be known. These delays we call the worst case administrative overhead
+(WCAO).
+
+\textbf{Fault Tree Analysis}
+
+WCET depends on
+
+\begin{itemize}
+\item
+  source code of task
+\item
+  properties of object code generated by compiler
+\item
+  characteristics of compiler
+\end{itemize}
+
+\includegraphics[width=7.27639in,height=3.46319in]{media/image5.png}
+
+\textbf{Failure Mode and Effect Analysis (FMEA)}
+
+WCET depends on
+
+\begin{itemize}
+\item
+  source code of task
+\item
+  properties of object code generated by compiler
+\item
+  characteristics of compiler
+\end{itemize}
+
+\begin{longtable}[c]{@{}lllll@{}}
+\toprule
+\textbf{Component} & \textbf{Failure Mode} & \textbf{Failure Effect} &
+\textbf{Probability} & \textbf{Criticality}\tabularnewline
+& & & &\tabularnewline
+& & & &\tabularnewline
+& & & &\tabularnewline
+\bottomrule
+\end{longtable}
+
+\protect\hypertarget{teil9}{}{}\textbf{Points to Remember}

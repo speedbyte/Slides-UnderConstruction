@@ -1,0 +1,752 @@
+\begin{enumerate}
+\item ~
+  \section{Chapter 11}\label{chapter-11}
+
+  \begin{enumerate}
+  \item ~
+    \subsection{Real-Time Scheduling}\label{real-time-scheduling}
+  \end{enumerate}
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    The Scheduling Problem 2
+  \item
+    The Adversary Argument 6
+  \item
+    Dynamic Scheduling 10
+  \item
+    Static Scheduling 30
+  \end{enumerate}
+\end{enumerate}
+
+Points to Remember 36
+
+\subsection{}\label{section}
+
+\textbf{11.1} \protect\hypertarget{teil2}{}{}\textbf{The Scheduling
+Problem}
+
+The scheduling problem is concerned with allocating computing and data
+resources to concurrent real-time tasks, such that they meet their
+specified deadlines.
+
+\textbf{Classification of Scheduling Algorithms}
+
+\includegraphics[width=6.27986in,height=2.36528in]{media/image2.png}
+
+\textbf{Dynamic versus static scheduling:}
+
+\begin{itemize}
+\item
+  Dynamic (on-line) scheduler: scheduling decision are made at run time,
+  selecting one out of a set of ready tasks.\\
+  Dynamic schedulers are flexible and adapt to evolving tasks scenario.
+  They consider just the current task requests. Effort to find a
+  schedule can be large.
+\item
+  Static (off-line, pre-run-time) scheduler: scheduling decisions are
+  made at compile time. A dispatching table is generated. This requires
+  complete prior knowledge about the task-set characteristics (maximum
+  execution times, precedence constraints, etc.).\\
+  The run-time overhead of the dispatcher is small.
+\end{itemize}
+
+\textbf{Preemptive versus non-preemptive scheduling:}
+
+In preemptive scheduling, the currently executing task may be preempted,
+i.e., interrupted, if a more urgent task requires service.
+
+In non-preemptive scheduling the currently executing task has to release
+allocated resources itself, it will not be interrupted by other tasks or
+the operating system. Typically, tasks run to completion.
+
+Non-preemptive scheduling is reasonable if there are many short tasks
+(compared to the required response time) to be executed.
+
+Most commercial real-time operating systems employ preemptive
+schedulers.
+
+\textbf{Centralized versus distributed Scheduling:}
+
+In a dynamic distributed real-time system, it is possible to have a
+central scheduling instance, or to employ a distributed scheduling
+algorithm.
+
+A central scheduler constitutes a single point of failure in a
+distributed system. Furthermore, it requires up-to-date information of
+the load situation of all nodes, which can consume a substantial amount
+of the communication channel bandwidth.
+
+\textbf{Schedulability Test}
+
+A schedulability test is a test that determines whether a set of ready
+tasks can be scheduled such that each task meets its deadline.
+
+A scheduler is optimal if it will always find a schedule provided an
+schedulability test indicates the existence of such a schedule.
+
+In case of task dependency, such as a shared resource, the complexity of
+an schedulability test is problem, and is thus computationally
+intractable.
+
+\textbf{11.2} \protect\hypertarget{teil3}{}{}\textbf{The Adversary
+Argument }
+
+\textbf{Task Types and Temporal Parameters}
+
+We distinguish between
+
+\begin{itemize}
+\item
+  periodic tasks, request times are known a priori if the first request
+  time is known
+\item
+  sporadic tasks, request times are not known a priori, and there is a
+  minimum time interval between request times
+\item
+  aperiodic tasks, like sporadic tasks, but without constraints on the
+  request times
+\end{itemize}
+
+\includegraphics[width=7.88333in,height=3.09167in]{media/image5.png}
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\emph{a\textsubscript{i}} & Arrival time, task becomes known to the
+system. Sometimes set equivalent to the request time
+\emph{r\textsubscript{i}}\tabularnewline
+\emph{r\textsubscript{i}} & Request time, release time. At this time the
+job is ready to execute. For periodic tasks this is also called the
+phase of the task. In-phase tasks have the same request times. For
+periodic tasks, when the first request time is known, all future request
+times are known as well.\tabularnewline
+\emph{s\textsubscript{i}} & Start time, the job is dispatched to execute
+on the computing resource.\tabularnewline
+\emph{c\textsubscript{i}} & Completion time, the task has completed (for
+this period in case of a periodic task), or a job has completed (for
+sporadic tasks).\tabularnewline
+\emph{d\textsubscript{i}} & Deadline, the job has to be completed before
+this point in time. For periodic tasks, knowledge of the first deadline
+implies knowledge of all future deadlines. For periodic tasks, deadlines
+are implicitly set equivalent to the request time of the next cycle
+(\emph{d\textsubscript{i} = r\textsubscript{i+1})}, if not explicitly
+stated otherwise.\tabularnewline
+\emph{T\textsubscript{i}} & Task period (for periodic
+tasks).\tabularnewline
+\emph{j\textsubscript{i}} & Reaction time, release jitter,
+\emph{s\textsubscript{i} - r\textsubscript{i}} . This time can vary
+considerably depending on the current load situation of the system and
+the scheduling algorithm employed.\tabularnewline
+\emph{C\textsubscript{i}} & Execution time, computation time,
+\emph{c\textsubscript{i} - s\textsubscript{i}} . The upper bound for
+this time we call the worst case execution time (WCET).\tabularnewline
+\emph{er\textsubscript{i}} & Remaining execution time,
+\emph{c\textsubscript{i} - t} , depends on the time of observation
+\emph{t}. This is the computing time required to complete this
+job.\tabularnewline
+\emph{D\textsubscript{i}} & Relative deadline, \emph{d\textsubscript{i}
+- r\textsubscript{i}} . This constitutes the upper bound of time between
+the point in time a job is released and when it has to be
+finished.\tabularnewline
+\emph{L\textsubscript{i}} & Laxity, \emph{d\textsubscript{i} -
+c\textsubscript{i}} , the time left for job execution before the
+deadline is violated. At an arbitrary point in time of a cycle this is
+\emph{l\textsubscript{i}(t) = d\textsubscript{i} -- (t +
+er\textsubscript{i}).}\tabularnewline
+\emph{rs\textsubscript{i}} & Response time, \emph{rs\textsubscript{i} =
+e\textsubscript{i} + j\textsubscript{i}} , the time between the request
+and end of execution. This time can never be smaller than the minimum
+execution time.\tabularnewline
+\bottomrule
+\end{longtable}
+
+There are a number of additional parameters that are helpful:
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+\emph{H} & Hyperperiod, the smallest common multiple of all task periods
+\emph{p\textsubscript{i,} i = 1,2,3,\ldots{}}.\tabularnewline
+\emph{u\textsubscript{i}} & Processor utilization factor of a task,
+\emph{u\textsubscript{i} = C\textsubscript{i} / T\textsubscript{i}} for
+periodic tasks. This value can never be larger than n for a computer
+with n processors, i.e., 100\% for a single processor computer. It has
+to be always smaller than 1 in case a task cannot run on several
+processors at the same time.\tabularnewline
+\emph{U} & Processor utilization factor of a task set, for periodic
+tasks. This value can never be larger than n for a computer with n
+processors. Usually computing time for the operating system is not
+considered.\tabularnewline
+\emph{ch\textsubscript{i}} & Processor load factor of a task,
+\emph{ch\textsubscript{i} = C\textsubscript{i} / D\textsubscript{i}} .
+To meet real-time constraints, this value has to be smaller than n for a
+computer with n processors, or smaller than 1 in case a task cannot run
+on several processors at the same time.\tabularnewline
+\emph{CH} & Processor load factor of a task set, . To meet real-time
+constraints, this value has to be smaller than n for a computer with n
+processors.\tabularnewline
+\bottomrule
+\end{longtable}
+
+For a schedulability test of a periodic task set it suffices to examine
+schedules with a length of one scheduling period (hyperperiod).
+
+\textbf{11.3} \protect\hypertarget{teil4}{}{}\textbf{Dynamic Scheduling
+}
+
+A dynamic scheduling algorithm determines on-line after the occurrence
+of a significant event which task out of the ready task set must be
+serviced next.
+
+\textbf{Scheduling Independent Tasks: Periodic Task Scheduling}
+
+There are a number of algorithms for dynamically scheduling a set of
+periodic independent hard real-time tasks. We can classify them
+according to the following scheme:
+
+\begin{itemize}
+\item
+  Queue based algorithm
+\item
+  Priority based algorithms
+\item
+  \begin{quote}
+  Algorithms with static priorities
+  \end{quote}
+\item
+  \begin{quote}
+  Algorithms with priorities changing at run-time
+  \end{quote}
+\end{itemize}
+
+The most widely employed algorithm for scheduling on a single CPU is the
+rate monotonic algorithm, which is based on static priority assignment.
+
+\textbf{Rate Monotonic (RM) Algorithm}
+
+The rate monotonic algorithm is a dynamic preemptive algorithm based on
+static task priorities.
+
+It assigns static priorities based on the task periods. The task with
+the shortest period gets the highest static priority; the task with the
+longest period gets the lowest static priority.
+
+At run time, the dispatcher selects the task request with the highest
+static priority.
+
+The following assumptions are made about the task set:
+
+\begin{itemize}
+\item
+  The requests for all tasks of the task set
+  \emph{\{τ\textsubscript{i}\}} for which hard deadlines exist are
+  periodic.
+\item
+  All tasks are independent of each other. There exist no precedence
+  constraints or mutual exclusion constraints between any pair of tasks.
+\item
+  The deadline interval of every task \emph{τ\textsubscript{i}} is equal
+  to its period \emph{T\textsubscript{i}}.
+\item
+  The required maximum computation time \emph{C\textsubscript{i}} of
+  each task is known a priori and is constant.
+\item
+  The time required for context switching can be ignored.
+\item
+  The sum of the utilization factors \emph{u\textsubscript{i}} of the n
+  tasks is given by\\
+  The term approaches \emph{ln 2}, i.e., about \emph{0.7}, as \emph{n}
+  goes to infinity.
+\end{itemize}
+
+If all assumptions are satisfied the algorithm guarantees that all tasks
+will meet their deadline. The algorithm is optimal for single processor
+systems.
+
+Example for RM plan and three tasks:
+
+\includegraphics[width=6.64514in,height=4.79931in]{media/image6.png}
+
+\textbf{Earliest Deadline First (EDF) Algorithm}
+
+The earliest deadline first algorithm is an optimal dynamic preemptive
+algorithm in single processor systems, which is based on dynamic
+priorities.
+
+After any significant event, the task with the earliest deadline is
+assigned the highest dynamic priority. After each significant event, the
+dispatcher selects the task request with the highest priority.
+
+It makes the following assumptions about the task set (same as for the
+RM algorithm):
+
+\begin{itemize}
+\item
+  The requests for all tasks of the task set
+  \emph{\{τ\textsubscript{i}\}} for which hard deadlines exist are
+  periodic.
+\item
+  All tasks are independent of each other. There exist no precedence
+  constraints or mutual exclusion constraints between any pair of tasks.
+\item
+  The deadline interval of every task \emph{τ\textsubscript{i}} is equal
+  to its period \emph{T\textsubscript{i}}.
+\item
+  The required maximum computation time \emph{C\textsubscript{i}} of
+  each task is known a priori and is constant.
+\item
+  The time required for context switching can be ignored.
+\end{itemize}
+
+Example for an EDF plan for a task set with three tasks:
+
+\includegraphics[width=6.52986in,height=4.71944in]{media/image7.png}
+
+Example for comparison of performance of RM and EDF algorithm:
+
+\includegraphics[width=5.29514in,height=5.64028in]{media/image8.png}
+
+\textbf{Least-Laxity (LL) Algorithm}
+
+The least laxity algorithm is another optimal scheduling algorithm for
+single processor systems. It makes the same assumptions as the EDF
+algorithm.
+
+At any scheduling decision point the task with the shortest laxity
+\emph{l}, i.e., the difference between the deadline interval \emph{D}
+and the execution time \emph{C},
+
+\emph{l = D -- C}
+
+is assigned the highest priority.
+
+\textbf{Multilevel Priority (Queue) Scheduling (MLQS)}
+
+In a strictly priority based scheduling the question arises what to do
+with tasks having the same priority. A common approach is to employ a
+queue to contain all ready tasks for the same priority. Each
+higher-priority queue has to be empty before a lower priority queue is
+being served.
+
+The queues can be managed in the following ways:
+
+\begin{itemize}
+\item
+  FIFO, tasks are served in their order of arrival in that queue
+\item
+  shortest job first, this minimized overall response time
+\item
+  Round robin, each task in the queue gets a time slice called quantum,
+  which it can consume; thereafter the next task in that queue is being
+  served. The quantum can be different for each queue.
+\end{itemize}
+
+\textbf{Scheduling Dependent Tasks}
+
+Scheduling a set of dependent tasks is of more practical relevance than
+scheduling independent tasks. Typically, concurrently executing tasks
+must exchange information and access common data resources.
+
+In general finding a schedule for a set of tasks that use semaphores to
+enforce mutual exclusion is computationally intractable (NP complete
+problem). Doing this on-line would consume too much computational
+resources. The more resources are spent on scheduling, the fewer
+resources remain to perform the actual work.
+
+Three possible solutions:
+
+\begin{itemize}
+\item
+  Providing extra resources such that simpler sufficient schedulability
+  tests and algorithms can be applied.
+\item
+  Dividing the scheduling problem into two parts, such that one part can
+  be solved off-line at compile time and only the second (simpler) part
+  must be solved at run time.
+\item
+  Introducing restricting assumptions concerning the regularity of the
+  task set.
+\end{itemize}
+
+The second and third alternatives point towards a more static solution
+of the scheduling problem.
+
+\textbf{The Priority Inheritance Protocol}
+
+The priority inheritance protocol can be defined as follows:
+
+\begin{itemize}
+\item
+  Jobs are scheduled based on their active priorities. Jobs with the
+  same priority are executed on a first come first serve basis.
+\item
+  When job \emph{J\textsubscript{i}} tries to enter a critical section
+  \emph{z\textsubscript{i,j}} and resource \emph{R\textsubscript{i,j}}
+  is already held by a lower priority job, \emph{J\textsubscript{i}}
+  will be blocked. \emph{J\textsubscript{i}} is said to be blocked by
+  the task that holds the resource. Otherwise, \emph{J\textsubscript{i}}
+  enters the critical section \emph{z\textsubscript{i,j}}.
+\item
+  When a job \emph{J\textsubscript{i}} is blocked on a semaphore, it
+  transmits its active priority to the job, say
+  \emph{J\textsubscript{k}}, that holds that semaphore. Hence,
+  \emph{J\textsubscript{k}} resumes and executes the rest of its
+  critical section with priority \emph{p\textsubscript{k}} =
+  \emph{p\textsubscript{i}}. \emph{J\textsubscript{k}} is said to
+  inherit the priority of \emph{J\textsubscript{i}}. In general, a task
+  inherits the highest priority of the jobs blocked by it.
+\item
+  When \emph{J\textsubscript{k}} exits a critical section, it unlocks
+  the semaphore, and the highest-priority job, if any, blocked on that
+  semaphore is awakened. Moreover, the active priority of
+  \emph{J\textsubscript{k}} is updated as follows: if no other jobs are
+  blocked by \emph{J\textsubscript{k}}, \emph{p\textsubscript{k}} is set
+  to its nominal priority \emph{P\textsubscript{k}}, otherwise it is set
+  to the highest priority of the jobs blocked by
+  \emph{J\textsubscript{k}}.
+\item
+  Priority inheritance is transitive; that is if a job
+  \emph{J\textsubscript{3}} blocks a job \emph{J\textsubscript{2}}, and
+  \emph{J\textsubscript{2}} blocks a job \emph{J\textsubscript{1}}, then
+  \emph{J\textsubscript{3}} inherits the priority of
+  \emph{J\textsubscript{1}} via \emph{J\textsubscript{2}}.
+\end{itemize}
+
+See the following example with three jobs with priorities
+\emph{P\textsubscript{0}} \textgreater{} \emph{P\textsubscript{1}}
+\textgreater{} \emph{P\textsubscript{2}}.
+
+This can be simplified to a less tight condition
+
+\textbf{The Priority Ceiling Protocol}
+
+The priority ceiling protocol can be defined as follows:
+
+\begin{itemize}
+\item
+  Each semaphore \emph{S\textsubscript{k}} is assigned a priority
+  ceiling \emph{C(S\textsubscript{k})} equal to the priority of the
+  highest-priority job that can lock it. \emph{C(S\textsubscript{k})} is
+  a static value that can be computed off-line.
+\item
+  Let \emph{J\textsubscript{i}} be the job with the highest priority
+  among all jobs ready to run; thus \emph{J\textsubscript{i}} is
+  assigned the processor.
+\item
+  Let \emph{S\textsuperscript{*}} be the semaphore with the highest
+  priority ceiling among all the semaphores currently locked by jobs
+  other than \emph{J\textsubscript{i}}, and let
+  \emph{C(S\textsuperscript{*})} be its ceiling.
+\item
+  To enter a critical section guarded by a semaphore
+  \emph{S\textsubscript{k}}, \emph{J\textsubscript{i}} must have a
+  priority higher than \emph{C(S\textsuperscript{*})}. If
+  \emph{P\textsubscript{i}} ≤ \emph{C(S\textsuperscript{*})}, the lock
+  on \emph{S\textsubscript{k}} is denied and \emph{J\textsubscript{i}}
+  is said to be blocked on semaphore S* by the job that holds the lock
+  on \emph{S\textsuperscript{*}}.
+\item
+  When a job \emph{J\textsubscript{i}} is blocked on a semaphore, it
+  transmits its priority to the job, say \emph{J\textsubscript{k}}, that
+  holds that semaphore. Hence, \emph{J\textsubscript{k}} resumes and
+  executes the rest of its critical section with the priority of
+  \emph{J\textsubscript{i}}. \emph{J\textsubscript{k}} is said to
+  inherit the priority of \emph{J\textsubscript{i}}.
+\item
+  When \emph{J\textsubscript{k}} exits a critical section, it unlocks
+  the semaphore and the highest-priority job, if any, blocked on that
+  semaphore is awakened. Moreover, the active priority of
+  \emph{J\textsubscript{k}} is updated as follows: if no other jobs are
+  blocked by \emph{J\textsubscript{k}}, \emph{p\textsubscript{k}} ist
+  set to the nominal priority \emph{P\textsubscript{k}}; otherwise, it
+  is set to the highest priority of the jobs blocked by
+  \emph{J\textsubscript{k}}.
+\item
+  Priority inheritance is transitive; that is if a job
+  \emph{J\textsubscript{3}} blocks a job \emph{J\textsubscript{2}}, and
+  \emph{J\textsubscript{2}} blocks a job \emph{J\textsubscript{1}}, then
+  \emph{J\textsubscript{3}} inherits the priority of
+  \emph{J\textsubscript{1}} via \emph{J\textsubscript{2}}.
+\end{itemize}
+
+See the following example with three jobs with priorities
+\emph{P\textsubscript{0}} \textgreater{} \emph{P\textsubscript{1}}
+\textgreater{} \emph{P\textsubscript{2}}.
+
+\begin{itemize}
+\item
+  Job \emph{J\textsubscript{0}} sequentially accesses two critical
+  sections guarded by semaphores \emph{S\textsubscript{0}} and
+  \emph{S\textsubscript{1}}
+\item
+  Job \emph{J\textsubscript{1}} accesses only a critical section guarded
+  by semaphore \emph{S\textsubscript{2}}
+\item
+  Job \emph{J\textsubscript{2}} uses semaphore \emph{S\textsubscript{2}}
+  and then makes a nested access to \emph{S\textsubscript{1}}.
+\end{itemize}
+
+The semaphores are thus assigned the following priority ceilings:
+
+\begin{itemize}
+\item
+  \emph{C(S\textsubscript{0})} = \emph{P\textsubscript{0 }}, since
+  \emph{J\textsubscript{0}} is the highest-priority task that tries to
+  lock \emph{S\textsubscript{0}}
+\item
+  \emph{C(S\textsubscript{1})} = \emph{P\textsubscript{0 }}, since
+  \emph{J\textsubscript{0}} is the highest-priority task that tries to
+  lock \emph{S\textsubscript{1}}
+\item
+  \emph{C(S\textsubscript{2})} = \emph{P\textsubscript{1}}, since
+  \emph{J\textsubscript{1}} is the highest-priority task that tries to
+  lock \emph{S\textsubscript{2}}
+\end{itemize}
+
+The activation times of the three jobs are as follows:
+
+\begin{itemize}
+\item
+  \emph{J\textsubscript{0}} is activated at \emph{t = 8}
+\item
+  \emph{J\textsubscript{1}} is activated at \emph{t = 3}
+\item
+  \emph{J\textsubscript{2}} is activated at \emph{t = 0}
+\end{itemize}
+
+See the following diagram for the scenario.
+
+Scenario description:
+
+\begin{itemize}
+\item
+  At time \emph{0}, \emph{J\textsubscript{2}} is activated, and since it
+  is the only job ready to run, it starts executing and later locks
+  semaphore \emph{S\textsubscript{2}}.
+\item
+  At time 3, \emph{J\textsubscript{1}} becomes ready and preempts
+  \emph{J\textsubscript{2}}.
+\item
+  At time 4, \emph{J\textsubscript{1}} attempts to lock
+  \emph{S\textsubscript{2}}, but it is blocked by the protocol because
+  \emph{P\textsubscript{1}} is not greater than
+  \emph{C(S\textsubscript{2})}. Then, \emph{J\textsubscript{2}} inherits
+  the priority of \emph{J\textsubscript{1}} and resumes its execution.
+\item
+  At time 6, \emph{J\textsubscript{2}} successfully enters its nested
+  critical section by locking \emph{S\textsubscript{1}}. Note that
+  \emph{J\textsubscript{2}} is allowed to lock \emph{S\textsubscript{1}}
+  because no semaphores are locked by other jobs.
+\item
+  At time 8, while \emph{J\textsubscript{2}} is executing at a priority
+  \emph{p\textsubscript{2}} = \emph{P\textsubscript{1}},
+  \emph{J\textsubscript{0}} becomes ready and preempts
+  \emph{J\textsubscript{2}} because \emph{P\textsubscript{0}}
+  \textgreater{} \emph{p\textsubscript{2}}.
+\item
+  At time 10, \emph{J\textsubscript{0}} attempts to lock
+  \emph{S\textsubscript{0}}, which is not locked by any job. However,
+  \emph{J\textsubscript{0}} is blocked by the protocol because its
+  priority is not higher than \emph{C(S\textsubscript{1})}, which is the
+  highest ceiling among all semaphores currently locked by the other
+  jobs. Since \emph{S\textsubscript{1}} is locked by
+  \emph{J\textsubscript{2}}, \emph{J\textsubscript{2}} inherits the
+  priority of \emph{J\textsubscript{0}} and resumes its execution.
+\item
+  At time 12, \emph{J\textsubscript{2}} exits its nested critical
+  section, unlocks \emph{S\textsubscript{1}}, and, since
+  \emph{J\textsubscript{0}} is awakened, \emph{J\textsubscript{2}}
+  returns to priority \emph{p\textsubscript{2}} =
+  \emph{P\textsubscript{1}}. At this point, \emph{P\textsubscript{0}}
+  \textgreater{} \emph{C(S\textsubscript{2})}; hence,
+  \emph{J\textsubscript{0}} preempts \emph{J\textsubscript{2}} and
+  executes until completion.
+\item
+  At time 15, \emph{J\textsubscript{0}} is completed, and
+  \emph{J\textsubscript{2}} resumes its execution at a priority
+  \emph{p\textsubscript{2}} = \emph{P\textsubscript{1}}.
+\item
+  At time 16, \emph{J\textsubscript{2}} exits its outer critical
+  section, unlocks \emph{S\textsubscript{2}}, and, since
+  \emph{J\textsubscript{1}} is awakened, \emph{J\textsubscript{2}}
+  returns to its nominal priority \emph{P\textsubscript{2}}. At this
+  point, \emph{J\textsubscript{1}} preempts \emph{J\textsubscript{2}}
+  and executes until completion.
+\item
+  At time 19, \emph{J\textsubscript{1}} is completed; thus
+  \emph{J\textsubscript{2 }}resumes its execution.
+\end{itemize}
+
+\textbf{Scheduling Anomalies in Dependent Task Sets}
+
+When dealing with task sets with precedence relations executed in a
+multiprocessor environment we encounter some scheduling anomalies:
+
+\begin{itemize}
+\item
+  adding resources (such as a processor) can make things worse
+\item
+  relaxing constraints such as less precedence between tasks or lower
+  execution time requirements can make things worse
+\end{itemize}
+
+This is illustrated in the following example with nine tasks and the
+following precedence relationships (values in parentheses are execution
+times):
+
+First case: optimal schedule on three processors P\textsubscript{1},
+P\textsubscript{2}, P\textsubscript{3}. Global completion time is 12.
+
+Second case: we add a processor P\textsubscript{4}. Tasks are allocated
+to the first available processor. Global completion time has increased
+to 15.
+
+Third case: we reduce all computation times by one time unit. Tasks are
+allocated to the first available processor. Global completion time has
+increased to 13.
+
+Fifth case: we share a resource in exclusive mode, and reduce
+computation time. Global completion time increases from 16 to 22.
+
+\textbf{11.4} \protect\hypertarget{teil5}{}{}\textbf{Static Scheduling}
+
+In static or off-line scheduling, a feasible schedule of a set of tasks
+is calculated off-line. The precedence relations between tasks executing
+in the different nodes can be expressed in the form of a precedence
+graph:
+
+\includegraphics[width=5.76042in,height=4.06250in]{media/image18.png}
+
+\textbf{Static Scheduling Viewed as Search}
+
+Static scheduling is based on regularity assumptions about the points in
+time future service request will be honoured.
+
+The occurrence of external events is not under the control of the
+computer system; however, the points in time when these events be
+serviced can be established a priori. To this purpose, a suitable
+sampling rate is established for each class of events.
+
+During system design it must be ascertained that the sum of the maximum
+delay times until a request is recognized by the system plus the maximum
+transaction response time is smaller than the specified service
+deadline.
+
+\textbf{The role of time:} A static schedule is a periodic
+time-triggered schedule. The timeline is partioned into a sequence of
+basic granules, the basic cycle time.
+
+There is only one interrupt in the system: a periodic clock interrupt
+denoting the start of a new basic granule. In a distributed system, this
+clock interrupt must be globally synchronized to a precision that is
+much better than the duration of a basic granule.
+
+Every transaction is periodic, its period being a multiple of the basic
+granule. The least common multiple of all transaction periods is the
+schedule period.
+
+At compile time, the scheduling decision for every point of the schedule
+period must be determined and stored in a dispatcher table for the
+operating system.
+
+At run time, the preplanned decision is executed by the dispatcher after
+every clock interrupt.
+
+\textbf{The search tree:} The solution to the scheduling problem can be
+seen as finding a path, a feasible schedule, in a search tree by
+applying a search strategy. Example for the precedence graph shown on
+the left:
+
+\includegraphics[width=3.72083in,height=2.62431in]{media/image19.png}
+\includegraphics[width=5.62500in,height=2.86458in]{media/image20.png}
+
+It can be seen that the right branch of the tree leads to a shorter
+overall execution time than the left branches.
+
+\textbf{Increasing the Flexibility in Static Schedules}
+
+One of the weaknesses of static scheduling is the assumption of strictly
+periodic tasks. Even though the majority of tasks in hard real-time
+applications is periodic, there are also sporadic requests for service
+that have hard deadline requirements.
+
+The following three methods increase the flexibility of static
+scheduling:
+
+\begin{itemize}
+\item
+  The transformation of sporadic requests into periodic requests
+\item
+  The execution of mode changes
+\end{itemize}
+
+\textbf{Transformation of a sporadic request to a periodic request:} For
+sporadic requests there is no knowledge about future request times, but
+the minimum interarrival time is known in advance. This makes it
+difficult to schedule sporadic requests before run time.
+
+A possible solution to this problem is the replacement of an independent
+sporadic task τ with laxity \emph{l} by a pseudo-periodic task τ':
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+Parameter & Sporadic task & New pseudo-periodic task\tabularnewline
+Computation time \emph{C} & \emph{C} & \emph{C'=C}\tabularnewline
+Deadline interval \emph{D} & \emph{D} & \emph{D'=C}\tabularnewline
+Period \emph{T} & \emph{T} & \emph{T'=min(l-1,T)}\tabularnewline
+\bottomrule
+\end{longtable}
+
+This transformation guarantees that the sporadic task will always meet
+its deadline if the pseudo-periodic task can be scheduled.
+
+\textbf{Mode changes:} Most real-time applications operate in a number
+of different modes. For example, the flight control system of an
+airplane requires a different set of services when the plane is taxiing
+on the ground than when the plane is in the air.
+
+Resources can be better utilized if different schedules are employed for
+each of these operating modes, and only tasks are considered that are
+active in each mode.
+
+\textbf{Timeline scheduling (cyclic scheduling):} Timeline scheduling is
+one of the most used approaches to handle periodic tasks in defence
+military systems and traffic control systems.
+
+The time axis is divided into slices of equal length, called a minor
+cycle. Within a minor cycle, one or more tasks can be allocated off-line
+for execution. The minor cycle is the greatest common divisor (GCD) of
+the task periods.
+
+A timer synchronizes the activation of the tasks at the beginning of
+each time slice.
+
+The minimum period after which the schedule repeats itself is called a
+major cycle. The major cycle is the least common multiple of the task
+periods.
+
+To guarantee a priori that a schedule is feasible on a particular
+processor, it is sufficient to know the task worst-case execution times
+and verify that the sum of the executions within each time slice is less
+than or equal to the minor cycle.
+
+The major advantage of timeline scheduling is its simplicity. There is
+no need for preemption, a simple interrupt routine suffices.
+
+On the other hand, timeline scheduling comes with a number of issues:
+
+\begin{itemize}
+\item
+  It is fragile during overload conditions, e.g. if a task does not
+  terminate at the minor cycle boundary.
+\item
+  It is sensitive to application changes. The entire schedule may have
+  to be revised. For example, if the period of task B above would have
+  to be changed to 50 time units, the minor cycle would have to be
+  changed to 10, and the major cycle would have to be changed to 100.
+\item
+  It is difficult to handle aperiodic activities efficiently without
+  changing the task sequence.
+\end{itemize}
+
+\protect\hypertarget{teil8}{}{}\textbf{Points to Remember}

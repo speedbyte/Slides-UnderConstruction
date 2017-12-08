@@ -1,0 +1,794 @@
+\begin{enumerate}
+\item ~
+  \section{Chapter 10}\label{chapter-10}
+
+  \begin{enumerate}
+  \item ~
+    \subsection{Real-Time Operating
+    Systems}\label{real-time-operating-systems}
+  \end{enumerate}
+\end{enumerate}
+
+Overview 1
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Task Management 3
+\item
+  Interprocess Communication 12
+\item
+  Time Management 16
+\item
+  Error Detection 21
+\item
+  Case Study: OSEK and AUTOSAR 29
+\end{enumerate}
+
+Points to Remember 32
+
+\begin{enumerate}
+\item ~
+  \subsection{}\label{section}
+
+  \subsection{Overview}\label{overview}
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Introduction to TTP/C
+\item
+  Protocol objectives
+\item
+  Protocol layers
+\item
+  Smallest replaceable units and fault tolerant units
+\item
+  Structure of the communication node interface (CNI)
+\item
+  Membership service and CRC computation
+\item
+  Introduction to TTP/A for field bus applications
+\end{itemize}
+
+\textbf{10.1} \protect\hypertarget{teil2}{}{}\textbf{Task Management}
+
+Time-Triggered Protocols (TTP) are designed for hard real-time systems.
+
+There are two versions:
+
+\begin{itemize}
+\item
+  TTP/C for fault-tolerant hard real-time systems
+\item
+  TTP/A for low cost applications (e.g. field bus applications)
+\end{itemize}
+
+Example application: Pinoth snow groomer
+
+\includegraphics[width=6.59653in,height=3.75625in]{media/image1.png}
+
+Example application: Boeing 787 Dreamliner
+
+\includegraphics[width=7.63611in,height=5.49583in]{media/image2.png}
+
+\textbf{Protocol Objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Message transport with low latency and minimal jitter
+\item
+  Support of Composability
+\item
+  Provision of a fault-tolerant membership service
+\item
+  Fault-tolerant clock synchronization
+\item
+  Distributed redundancy management
+\item
+  Minimal overhead, both in message length and in number of messages
+\item
+  Scalability to high data rates, efficient operation on twisted-pair
+  and optical fiber
+\end{enumerate}
+
+\textbf{Structure of a TTP System}
+
+A TTP system consists of a cluster of fault-tolerant units (FTU's), each
+comprised of one or more nodes, and interconnected by a communication
+network.
+
+\includegraphics[width=8.76319in,height=2.78819in]{media/image3.png}
+
+A node is the smallest replaceable unit (SRU).
+
+A node consists of two subsystems:
+
+\begin{itemize}
+\item
+  the host computer
+\item
+  the communication controller
+\end{itemize}
+
+\includegraphics[width=7.39236in,height=3.39167in]{media/image4.png}
+
+The communication network interface (CNI) is the node-internal interface
+between the communication controller and the host. The CNI is formed by
+a dual-ported RAM.
+
+Data integrity passed between host and communication controller is
+ensured by a non-blocking write protocol.
+
+The communication controller has a local memory to hold the message
+descriptor list (MEDL).
+
+The MEDL determines
+
+\begin{itemize}
+\item
+  at what point in time a node is allowed to send a message
+\item
+  when a node can expect to receive a message
+\end{itemize}
+
+The MEDL has the size of one cluster cycle.
+
+\includegraphics[width=9.90556in,height=2.23125in]{media/image5.png}
+
+The Bus Guardians (BGs) are independent hardware devices. They monitor
+temporal access pattern of the controller to the replicated busses, and
+terminate controller operation in case of timing violations.
+
+\textbf{Design Rationale}
+
+TTP is a TDMA protocol. Every node sends a message on a shared
+communication channel during a predetermined, statically assigned time
+slot.
+
+\textbf{Composability:}
+
+The TTP controller operates autonomously. It is controlled by the MEDL
+inside the controller, and the fault-tolerant global time.
+
+The CNI between the TTP controller and the host computer is fully
+specified in the value and temporal domain, which supports composability
+of an architecture.
+
+An error in any one of the hosts cannot interfere with proper operation
+of the communication system, since no control signals cross the CNI. The
+MEDLs are inaccessible to the hosts.
+
+\textbf{Best use of a priori knowledge:}
+
+In a time-triggered architecture it is known at design time which node
+must send which message at what time. Thus, a receiver can detect
+missing messages, or bus guardians can prevent the effect of babbling
+clients.
+
+\textbf{Naming:}
+
+In a time-triggered architecture, messages can be uniquely identified by
+their time of transmission. Thus there is no need to transport message
+names along with the message. This increases data efficiency,
+particularly with short messages. It also improves composability, since
+there is no need to agree on message names across different hosts.
+
+\textbf{Acknowledgement scheme:}
+
+Every operational member of an ensemble hears every message transmitted
+on the communication channel. As soon as one receive acknowledges the
+message, it can be concluded that the message has been sent correctly,
+and that all correct receivers will have received the mes­sage.
+
+\textbf{Fail silence in the temporal domain:}
+
+TTP assumes that nodes support the file-silent abstraction in the
+temporal domain. This means a node either delivers a message at the
+correct time, or not at all.
+
+This supports error confinement at the system level. The bus guardians
+implement the fail-silent mode for nodes by monitoring channel access
+and disconnection the channel from the controller in case of temporally
+erroneous access.
+
+A membership service can detect the failure of a node with small
+latency.
+
+\textbf{Fail silence in the value domain:}
+
+Fail silence in the value domain must be implemented by the host. For
+this, the host must ensure by space and/or time redundancy that all
+internal failures of a host are detected before a non-detectable
+erroneous output message is transmitted.
+
+Value failures at the communication level are detected by a CRC
+mechanism.
+
+\textbf{Design tradeoffs:}
+
+TTP has decided to limit bandwidth requirements on cost of processing
+requirement at the nodes. The rationale behind this decision is that
+bandwidth is more difficult to increase than processing power, which has
+steadily increased over the past years with advancements in VLSI
+technology.
+
+\textbf{Protocol Variants}
+
+TTP comes in two variants, a full version called TTP/C and a scaled-down
+version called TTP/A. At the CNI, the structure is compatible for both
+protocol versions.
+
+\textbf{TTP/C:}
+
+TTP/C provides all services needed for the implementation of a
+fault-tolerant distributed real-time system. TTP/C supports FTUs that
+comprise replicated communication channels and different replication
+strategies, e.g., replicated fail-silent nodes or TMR nodes.
+
+TTP/C requires a specially designed communication controller containing
+hardware mechanisms for the implementation of the protocol functions.
+
+\textbf{TTP/A:}
+
+TTP/A is intended for non fault-tolerant field bus applications. It
+requires just a standard UART hardware port and a local real-time clock,
+typically available on most low-cost microcontrollers. The protocol
+logic is implemented in the software of a microcontroller.
+
+The following table compares features for the two protocol variants.
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+Service & TTP/A & TTP/C\tabularnewline
+Clock synchronization & Central multimaster & Distributed,
+fault-tolerant\tabularnewline
+Mode switches & Yes & Yes\tabularnewline
+Communication error detection & Parity & 16/24 bit CRC\tabularnewline
+Membership service & simple & full\tabularnewline
+External clock synchronization & yes & yes\tabularnewline
+Time-redundant transmission & yes & yes\tabularnewline
+Duplex nodes & no & yes\tabularnewline
+Duplex channels & no & yes\tabularnewline
+Redundancy management & no & yes\tabularnewline
+Shadow node & no & yes\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textbf{10.2} \protect\hypertarget{teil3}{}{}\textbf{Interprocess
+Communication }
+
+The TTP/C is organized in a set of conceptual protocol layers, which do
+not correspond to the OSI protocol layers. The Basic Communication
+Network Interface (CNI) typically marks the interface between purely
+software implemented protocol functionality and software/hardware
+related functionality.
+
+\includegraphics[width=5.18264in,height=4.50278in]{media/image6.png}
+
+\textbf{Data Link/Physical Layer}
+
+This layer serves to exchange frames between nodes. It provides
+
+\begin{itemize}
+\item
+  media access control
+\item
+  bit synchronization
+\item
+  bit encoding and bit decoding
+\end{itemize}
+
+Access scheme is time-division-multiple access (TDMA). Access is
+controlled by data stored in the MEDL of the TTP controller.
+
+Bit synchronization and bit encoding/decoding uses Modified Frequency
+Modulation (MFM) code. In MFM, data bits are separated by clock bits;
+(x,y) encodes to (x, x NOR y, y).
+
+Requirements on physical layer on twisted pair are less demanding than
+those of a CAN system (no bit arbitration required). Thus, a CAN twisted
+pair network can be used.
+
+Today, data rates specified go up to 25 MBit/s.
+
+\textbf{SRU Layer}
+
+The single replaceable unit (SRU) layer provides the following services:
+
+\begin{itemize}
+\item
+  Stores data fields of received frames in the memory area of the CNI
+  DPRAM
+\item
+  Establishes node membership
+\item
+  Performs Byzantine-resilient clock synchronization by the
+  fault-tolerant average algorithm
+\item
+  Provides immediate and deferred mode change service to higher layers
+\end{itemize}
+
+\textbf{Redundancy Management Layer (RM Layer)}
+
+The redundancy management layer provides the following services:
+
+\begin{itemize}
+\item
+  Cold start of a TTP/C cluster. For this it uses the mode-change
+  service of the SRU layer.
+\item
+  Reintegration of a repaired node
+\item
+  Dynamic redundancy management, i.e. replacement of a failed node by a
+  shadow node
+\end{itemize}
+
+The CNI contains a node reconfiguration field. In case a host decides to
+assume a new role, the name of the requested role is written into the
+reconfiguration field. The TTP controller checks if that role is
+permitted. If that is the case, it performs a node role change, and
+reconfigures the bus guardians to protect bus access in the new role.
+
+\includegraphics[width=8.51736in,height=2.71528in]{media/image7.png}
+
+\textbf{FTU Layer}
+
+The FTU layer groups two or more nodes to form a fault-tolerant unit.
+
+The FTU layer ensures that data are only visible in the FTU CNI after
+they have become permanent.
+
+Examples for different FTU layer implementations:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Two fail-silent nodes can be grouped into an FTU that provides the
+  specified service as long as one of the two nodes is operational.
+  Fail-silence in the value domain is ensured by the host.
+\item
+  Three nodes can be grouped into a Triple Mode Redundancy (TMR) FTU. A
+  TMR FTU can tolerate a single value failure in any of its nodes.
+  Synchronization of the three nodes is implemented by the lower layers.
+\item
+  A FTU can comprise of software subsystems executing on different
+  nodes.
+\end{enumerate}
+
+The FTU membership service is provided by the FTU layer.
+
+The FTU layer can be implemented in the host computer or in the TTP/C
+controller.
+
+A basic TTP/C controller, implemented in hardware, does not include the
+FTU layer, but rather provides the Basic CNI interface to the software
+in the host computer.
+
+\textbf{10.3} \protect\hypertarget{teil4}{}{}\textbf{Time Management }
+
+The CNI is the only interface of the communication system that is
+visible to the software of the host computer. It is the programming
+interface of the TTP network.
+
+The CNIs for the TTP/C and TTP/A protocols are upward compatible.
+
+\includegraphics[width=6.81667in,height=2.21042in]{media/image8.png}
+
+\textbf{Structure of the CNI}
+
+The CNI is a data-sharing interface between the RM layer and the FTU
+layer. It consists of
+
+\begin{itemize}
+\item
+  a status/control area, containing system information. It serves to
+  facilitate communication between the host computer and the TTP
+  controller via dedicated data fields
+\item
+  a message area, containing the messages sent or received by the node,
+  including a control byte for each message
+\item
+  a control line from the TTP controller to the host computer,
+  signalling the tick of the global clock
+\end{itemize}
+
+Optionally, there may be another control line from the TTP controller to
+the host to signal that a certain time has been reached.
+
+\textbf{Status/Control Area}
+
+The status/control area of the CNI is a memory area of the DPRAM
+containing the control and status information shared between the TTP
+controller and the host computer.
+
+\textbf{Status registers updated by the TTP controller:}
+
+The following status registers are updated by the TTP controller:
+
+\begin{itemize}
+\item
+  Global time (two byte) of the cluster, established by the mutual
+  internal synchronization of the TTP controllers.
+\item
+  SRU-time, containing the current global time in SRU slot granularity.
+  This time stays constant during a complete SRU slot and increases at
+  the beginning of the next SRU slot.
+\item
+  MEDL position, denotes the current operating mode of the cluster and
+  the current position in the message descriptor list.
+\item
+  Node membership vector, comprises as many bits as there are nodes in
+  the cluster. Each node is assigned to a specified bit position of the
+  membership vector. When the bit is set to ``TRUE'', the node was
+  operational during its last sending slot. The membership is adjusted
+  at the end of each SRU slot after all messages from the sending node
+  must have arrived and the CRC fields have been analyzed.
+\item
+  Status information, diverse status and diagnosis information regarding
+  operation of the protocol
+\end{itemize}
+
+The SRU-time, MEDL position, and node membership vector form the h-state
+of the communication controller (called C-state). The protocol only
+operates correctly if all members of the ensemble have the same C-state.
+
+The protocol continually enforces synchronization of the C-state between
+sender and receiver.
+
+\textbf{Control registers written by the host:}
+
+The following control registers are written by the host CPU:
+
+\begin{itemize}
+\item
+  Watchdog field, must be periodically updated by the host CPU. The TTP
+  controller checks this field to determine if the host CPU is alive. If
+  the CPU does not update this field anymore, the controller assumes
+  that the CPU has a failure and stops sending messages on the network.
+\item
+  Time-out register, permits the host computer to request a temporal
+  control signal (an interrupt) at a specific future point of the global
+  time. This permits the host to synchronize activities with the global
+  time in the cluster.
+\item
+  Mode-change request, can be used to request a mode change (e.g.,
+  airplane on the ground or in the air) to a new schedule in all nodes
+  of a cluster. This mode change request is transmitted to all other
+  nodes at the next sending point of this node. TTP permits immediate
+  mode changes and deferred mode changes. A deferred mode change is
+  delayed until the start of the next cluster cycle. A mode change is
+  potentially dangerous. The MEDL of the communication controller
+  contains a static lock that can be turned on before system start so
+  that mode changes are disabled.
+\item
+  Reconfiguration request, permits the host CPU to request a role change
+  of the node. In case a host detects that an important node has failed
+  the host can execute a role change request to perform the function of
+  the failed node. To avoid erroneous role changes, the role-change
+  mechanism is protected by special permission fields in the MEDL.
+\item
+  External rate correction is provided for external clock
+  synchronization. This permits a time gateway to request a bounded
+  common-mode drift of all nodes in a cluster to syn­chronize with an
+  external time source, such as a GPS time receiver.
+\end{itemize}
+
+\textbf{Message Area}
+
+The message area is application specific and determined by the MEDL of
+the TTP controller. Beyond the actual message data, a message entry
+contains a status byte indicating potential error conditions.
+
+\includegraphics[width=6.45278in,height=0.46250in]{media/image9.png}
+
+\textbf{Consistent Data Transfer}
+
+Since access to the CNI can be concurrent, inconsistencies could result
+when at the same time data is being written and read.
+
+Consistency of a single-word data transfers across the CNI is guaranteed
+by the hardware arbitration of the DPRAM. Multi-word data-transfer is
+realized as follows:
+
+\textbf{Controller to host:}
+
+When a message arrives, it is copied from the receive buffer of the TTP
+controller into the message area of the CNI. The time when this happens
+is known a priori.
+
+Together with the message data field, a status byte is written by the
+TTP controller. All this occurs before the end of each SRU slot.
+
+Access conflicts can be avoided in two ways:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The host avoids reading data from the CNI during the times it knows
+  the TTP controller writes data to the CNI. This is possible if the
+  host can derive its read-access intervals from the global time base.
+\item
+  A non-blocking write protocol is being used. When the TTP controller
+  writes to the common data area, a flag is set indicating that a write
+  is in progress. When the host computer tries to read data from the
+  shared area, and detects during any single read operation that the
+  write flag has been set, it stops the read operation and retries with
+  a small delay. This protocol ensures that the TTP controller is never
+  delayed while accessing the CNI.
+\end{enumerate}
+
+\textbf{Host to controller:}
+
+The host needs to be aware of the current time and knows a priori when
+the TTP controller reads from the CNI. The host operating system must
+synchronize its output action such that it does not write into the CNI
+when the TTP controller performs a read operation.
+
+\textbf{10.4} \protect\hypertarget{teil5}{}{}\textbf{Error Detection}
+
+\textbf{The Message Descriptor List (MEDL)}
+
+The Message Descriptor List (MEDL) is a static data structure within
+each TTP controller that
+
+\begin{itemize}
+\item
+  controls when a message must be sent on or received from the
+  communication channel
+\item
+  contains the position of the data in the CNI
+\end{itemize}
+
+\includegraphics[width=4.76042in,height=1.49306in]{media/image10.png}
+
+The MEDL serves as a dispatching table for the TTP controller. The
+length of the MEDL is determined by the length of the cluster cycle,
+i.e., the sequence of TDMA rounds after which the operation of the
+cluster repeats itself.
+
+\textbf{MEDL entry:}
+
+An entry in the MEDL comprises three fields:
+
+\begin{itemize}
+\item
+  a time field (SRU-time), with the point in global time with SRU
+  granularity when the message specified in the address field must be
+  communicated
+\item
+  an address field, points to the CNI memory cells where the data items
+  must be stored to or retrieved from
+\item
+  an attribute field with four subfields:
+\item
+  \begin{quote}
+  a direction subfield (D), specifying if the message is an input or
+  output message
+  \end{quote}
+\item
+  \begin{quote}
+  a length subfield (L), denoting the length of the message that must be
+  communicated
+  \end{quote}
+\item
+  \begin{quote}
+  an initialization subfield (I) specifying whether the message is an
+  initialization message or a normal message
+  \end{quote}
+\item
+  \begin{quote}
+  a parameter subfield (A) containing additional protective information
+  concerning mode changes and node role changes
+  \end{quote}
+\end{itemize}
+
+The host can only execute mode-changes permitted by the attribute field
+of the MEDL. In safety-critical systems, all mode changes requested by a
+host can be blocked by the MEDL.
+
+Each node must have its personal MEDL. The set of all personal MEDLs of
+a cluster must be consistent.
+
+MEDLs are generated during design time by cluster compilers.
+
+\textbf{Name mapping:}
+
+Name mapping is performed under the control of the MEDL in each
+controller. Unambiguous identification of each message is given by its
+global transmission time. Thus, name mapping from the sending host to
+the receiving host is performed
+
+\begin{itemize}
+\item
+  from host to CNI memory cell at sender and unique global transmission
+  time
+\item
+  from CNI memory cell to host at receiver and unique global
+  transmission time
+\end{itemize}
+
+\includegraphics[width=7.26111in,height=2.88542in]{media/image11.png}
+
+\textbf{Frame Format}
+
+A TTP/C frame consists of three fields:
+
+\begin{itemize}
+\item
+  a four-bit header
+\item
+  a variable length data field of up to sixteen bytes (length is defined
+  in MEDL)
+\item
+  a two or three byte CRC field
+\end{itemize}
+
+\includegraphics[width=7.62917in,height=1.55000in]{media/image12.png}
+
+During normal operation, a node transmits one such frame during an SRU
+slot on each of the two replicated channels.
+
+\textbf{First bit of the header:}
+
+This bit determines if the message is a normal (N) message or an
+initialization (I) message. I-messages are used to initialize the
+system. They carry the C-state of the sender in the data field and make
+it possible for a new node to get the current C-state of the protocol
+when joining the ensemble.
+
+\textbf{Mode bits:}
+
+These bits can be used to request a mode change in all nodes of the
+cluster. The change is differential; one out of seven successor modes to
+any given mode can be selected. The mode change mechanism can be
+disabled by setting parameters in the MEDL.
+
+\textbf{Data field:}
+
+This field contains up to sixteen data bytes. The actual length is given
+by an entry in the MEDL.
+
+\textbf{CRC field:}
+
+This field contains the CRC check sum for communication error detection.
+
+\textbf{CRC Calculation}
+
+The CRC of an I-message is calculated of the concatenation of the header
+and the data bytes.
+
+For N-messages the procedure is slightly different.
+
+At the sender, the CRC is calculated over the message contents
+concatenated with the sender's C-state.
+
+At the receiver, the CRC is calculated over the received message
+contents concatenated with the receivers C-state.
+
+If the result of the CRC at the receiver is negative, then either the
+message has been corrupted during transmission, or there is a
+disagreement between the C-states of the sender and the receiver. In
+both cases, the message must be discarded.
+
+\includegraphics[width=6.50417in,height=2.99097in]{media/image13.png}
+
+\textbf{The Membership Service}
+
+The membership field of a node contains one bit for each cluster node.
+If one out of the redundant messages is received by a receiving node,
+the receiving node considers the sender node operational at this
+membership point.
+
+The node is considered operational until its next membership point in
+the following TDMA cycle. If a node fails within this interval, the
+failure is only recognized at the next membership point. Thus, the delay
+of the membership information is at most one TDMA cycle.
+
+If none of the expected messages arrives with a correct CRC, then a
+receiver considers the sending node as failed and clears the membership
+bit of the sender at the end of the current SRU slot.
+
+If a particular node did not receive any correct message from a sending
+node, e.g., because the incoming link of the receiver has failed, it
+assumes that this sending node has crashed, and it eliminates it from
+its membership vector at the end of the current SRU slot.
+
+If, however, all other nodes received at least one these messages they
+come to a different conclusion about the membership. This creates two
+cliques that cannot communicate with each other because they contain a
+different C-state (the membership vector is part of the C-state).
+
+TTP contains a mechanism which let the majority view in such a conflict
+situation, i.e., the node with the failed input port, which is in the
+majority, is removed from the membership. Before sending a message, a
+node counts its negative CRC results during the last TDMA round. If more
+than half of the messages received have been discarded because of a
+failed CRC, the node assumes that its C-state differs from the majority,
+terminates its operation and thus leaves membership.
+
+This mechanism avoids clique formation among the nodes of the ensemble.
+Agreement on membership is thus bound to indirect acknowledgement of
+message reception by the majority.
+
+\textbf{Clock Synchronization}
+
+Clock synchronization within TTP does not require any special
+synchronization messages or send time information as part of a message.
+
+Each node knows from its MEDL the expected time of arrival of each
+message. The deviation between the observed time of arrival to the
+expected time of arrival is thus a measure for the clock difference
+between the receiver's clock and the sender's clock.
+
+A fault-tolerant clock synchronization algorithm is applied periodically
+to synchronize the global time of each node in a cluster and keep it
+within a predefined precision.
+
+\textbf{10.5} \protect\hypertarget{teil6}{}{}\textbf{Case Study: OSEK
+and AUTOSAR}
+
+Deadlines can only be guaranteed if worst case execution (WCET) times of
+all application tasks are known a priori.
+
+In addition, the worst case delays caused by administrative functions
+(e.g. operating system services, context switches, scheduling) need to
+be known. These delays we call the worst case administrative overhead
+(WCAO).
+
+\textbf{Principles of Operation}
+
+WCET depends on
+
+\begin{itemize}
+\item
+  source code of task
+\item
+  properties of object code generated by compiler
+\item
+  characteristics of compiler
+\end{itemize}
+
+\textbf{Round:}
+
+Problem is to find the longest path through the code (critical path).
+Number of paths increases exponentially with size of program.
+Annotations provided by the programmer can assist a tool to extract the
+critical path, by providing additional semantic information.
+
+\includegraphics[width=8.01736in,height=1.91528in]{media/image14.png}
+
+\textbf{Modes:}
+
+The execution time of source code statements depends heavily on the
+object code generated by the compiler. The compiler generated object
+code timing analysis must be related to the source program by means of
+statement-level annotations.
+
+\textbf{Time-outs:}
+
+The execution time of source code statements depends heavily on the
+object code generated by the compiler. The compiler generated object
+code timing analysis must be related to the source program by means of
+statement-level annotations.
+
+\textbf{Error Detection and Error Handling}
+
+WCET depends on
+
+\textbf{Error detection in the time domain:}
+
+The execution time of source code statements depends heavily on the
+object code generated by the compiler. The compiler g
+
+\textbf{Error detection in the value domain:}
+
+The execution time of source code statements depends heavily on the
+object code generated by the compiler. The compiler g
+
+\textbf{Response Time of a TTP/A System}
+
+WCET depends on
+
+\protect\hypertarget{teil9}{}{}\textbf{Points to Remember}

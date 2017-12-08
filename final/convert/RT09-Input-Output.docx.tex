@@ -1,0 +1,585 @@
+\begin{enumerate}
+\item ~
+  \section{Chapter 9}\label{chapter-9}
+
+  \begin{enumerate}
+  \item ~
+    \subsection{Hardware Considerations}\label{hardware-considerations}
+  \end{enumerate}
+\end{enumerate}
+
+Overview 2
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Input/Output Architecture 3
+\item
+  Sampling and Polling 10
+\item
+  Interrupts 16
+\item
+  Sensors and Actuators 22
+\end{enumerate}
+
+Points to Remember 27
+
+\begin{enumerate}
+\item ~
+  \subsection{}\label{section}
+
+  \subsection{Overview}\label{overview}
+\end{enumerate}
+
+\begin{itemize}
+\item
+  The dual role of time: time as data and time as control
+\item
+  The different types of I/O
+\item
+  Sampling and polling
+\item
+  Interrupts
+\item
+  Sensors and actuators
+\end{itemize}
+
+\textbf{9.1} \protect\hypertarget{teil2}{}{}\textbf{Input/Output
+Architecture}
+
+The real-time computer system interfaces to the controlled object via
+the instrumentation interface.
+
+The real-time computer system interfaces to the operator via the
+man-machine interface.
+
+The computer system hardware interfaces to the other objects via
+input/output devices.
+
+Functional requirements for input/output devices are:
+
+\begin{itemize}
+\item
+  Buffering of input and output data
+\item
+  Conversion and transformation of data (e.g., serial/parallel,
+  analogue, digital)
+\item
+  Generation of control- and handshaking signals
+\item
+  Picking up and generating interrupt signals
+\end{itemize}
+
+Input/output devices are
+
+\begin{itemize}
+\item
+  Integrated in a microcontroller
+\item
+  Placed on separate circuits (interface controller)
+\end{itemize}
+
+Input/output devices are connected to the computer system core via
+
+\begin{itemize}
+\item
+  Memory mapped I/O
+\item
+  Isolated I/O
+\item
+  Direct Memory Access I/O\\
+  (DMA)
+\end{itemize}
+
+We classify interfaces as
+
+\begin{itemize}
+\item
+  Simple interfaces (a single\\
+  register for input or output)
+\item
+  Complex interfaces (input\\
+  register, output register,\\
+  status register, control register)
+\item
+  Intelligent interfaces (with own\\
+  microcomputer, programmable\\
+  locally)
+\end{itemize}
+
+\textbf{Interface Data Transfer Rates}
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+Interface & Data transfer rates\tabularnewline
+System bus & \textgreater{} 1 GBytes/sec\tabularnewline
+Byte move in memory & \textgreater{} 1 GByte/sec\tabularnewline
+Ethernet & \textgreater{} 10 MBytes/sec\tabularnewline
+ISDN phone line & 8 kBytes/sec\tabularnewline
+Serial line (RS232) & 1 kBytes/sec\tabularnewline
+Printer & 100 bytes/sec\tabularnewline
+Keyboard & 4 bytes/sec\tabularnewline
+\bottomrule
+\end{longtable}
+
+\textbf{Memory Mapped I/O and Bit Manipulations in the C Language}
+
+Example 1: setting bits on Port B of the Dragon 12 board (PB0 and PB2
+are called ``mask''):
+
+1 enum leds \{PB0 = 0x01, PB1 = 0x02, PB2 = 0x04, PB3 = 0x08,
+
+2 PB4 = 0x10, PB5 = 0x20, PB6 = 0x40, PB7 = 0x80\};
+
+3
+
+4 PORTB = PORTB \textbar{} PB0 \textbar{} PB2;
+
+\includegraphics[width=3.97847in,height=1.72361in]{media/image3.png}
+
+Example 2: resetting bits on Port B of the Dragon 12 board (PB2 is
+called a ``mask''):
+
+1 enum leds \{PB0 = 0x01, PB1 = 0x02, PB2 = 0x04, PB3 = 0x08,
+
+2 PB4 = 0x10, PB5 = 0x20, PB6 = 0x40, PB7 = 0x80\};
+
+3
+
+4 PORTB = PORTB \& \textasciitilde{}PB2;
+
+\includegraphics[width=3.74653in,height=1.75208in]{media/image4.png}
+
+Example 3: testing bits on Port H of the Dragon 12 board (0x20 is called
+a ``mask''):
+
+1 enum switches \{SW5 = 0x01, SW4 = 0x02, SW3 = 0x04, SW2 = 0x08\};
+
+2
+
+3 if (\textasciitilde{}PTIH \& SW5) \{ \ldots{} /* SW5 pressed */
+
+\includegraphics[width=4.87569in,height=1.73194in]{media/image5.png}
+
+\textbf{Isolated I/O on SICOMP Industrial PC}
+
+Separate I/O address space, in the following example ports 0x440 to
+0x443:
+
+\includegraphics[width=6.37361in,height=3.65903in]{media/image6.png}
+
+The following code fragment shows how to control these ports via a
+utility routine:
+
+4 ...
+
+5
+/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-*/
+
+6 /* Digital Input/Output 24V AMS-P218 */
+
+7
+/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-*/
+
+8 \#define P218\_BASE 0x0440 /* base address */
+
+9 \#define P218\_CHN0 0x0440 /* channel group 0 (output) */
+
+10 \#define P218\_CHN1 0x0441 /* channel group 1 (output) */
+
+11 unsigned char portWrite(unsigned int io\_address,
+
+12 unsigned char outputValue,
+
+13 unsigned char mask) \{
+
+14 ...
+
+15 unsigned char outv, x;
+
+16 outv = outputValue \& mask ;
+
+17 x = inbyte (io\_address); /* Requires special function, can only be
+
+written in assembly language */
+
+19 x = ( x \& \textasciitilde{}mask ) \textbar{} outv ;
+
+20 outbyte (io\_address , x ) /* Requires special function, can only be
+
+written in assembly language */
+
+22 ret = inbyte (io\_address) ;
+
+23 return (ret);
+
+24 \}
+
+25
+
+\textbf{9.2} \protect\hypertarget{teil3}{}{}\textbf{Sampling and
+Polling}
+
+In sampling, the state of an RT entity is periodically interrogated by
+the computer system at points in time called sampling points. The
+constant interval between sampling points is called the sampling
+interval. The sampled signals are then quantized with approximations of
+the sampled real numbers at predetermined discrete values.
+
+\textbf{Sampling of Analog Values}
+
+The most recent current value of an analog RT entity is observed at a
+moment determined by the computer system.
+
+\includegraphics[width=7.54861in,height=2.52431in]{media/image7.png}
+
+Discrete values signals are only an approximation of the continous
+valued discrete time signals, which is itself only an approximation of
+the continous valued continous time signal.
+
+In a time-triggered architecture, the sampling points can be coordinated
+with the transmission schedule to generate phased-aligned transaction.
+This ensures the shortest possible response time.
+
+\includegraphics[width=7.79375in,height=2.61597in]{media/image8.png}
+
+\textbf{Sampling of Digital Values}
+
+When sampling a digital value, the current state and the temporal
+position of the most recent state change are of interest.
+
+The current state is observed at the sampling point.
+
+The temporal position of the most recent state change can only be
+inferred by comparing the current observation with the most recent
+observation.
+
+This can lead to problems when the state of the RT entity can change
+more than once during the sampling interval.
+
+\includegraphics[width=7.74861in,height=3.59861in]{media/image9.png}
+
+If every event is significant, a memory element must be inserted
+directly at the RT entity. This memory element stores any state change
+until the next sampling point.
+
+\includegraphics[width=7.07222in,height=1.35833in]{media/image10.png}
+
+This does not solve all problems:
+
+\includegraphics[width=8.04931in,height=2.80764in]{media/image11.png}
+
+A sampling system acts as a low pass filter and cuts off all high
+frequency parts of the signal.
+
+A sampling system can protect a computer system from more events than
+are stated in the specification.
+
+\textbf{Polling}
+
+In a sampling system the memory element is placed at the sensor.
+
+In a polling system the memory element is placed at the computer.
+
+Functionally this makes no difference as long as there are no faults.
+
+We consider two faults:
+
+\begin{itemize}
+\item
+  A transient disturbance on the transmission line between the sensor
+  and the computer has no effect on the measurement with a sampling
+  system, unless it occurs directly at the sampling point (low
+  probability of occurrence). In a polling system every single fault
+  will be stored in the memory element.
+\item
+  In case of a node shutdown and restart, all data from volatile memory
+  is lost in a polling system. In a sampling system the stored event in
+  the sensor can survive a computer reset.
+\end{itemize}
+
+\includegraphics[width=8.13403in,height=1.53542in]{media/image12.png}
+
+\textbf{9.3} \protect\hypertarget{teil4}{}{}\textbf{Interrupts }
+
+The interrupt mechanism permits a device outside the sphere of control
+of the computer to make the computer execute a specific ``Jump
+Subroutine'' instruction any time that interrupt is enabled.
+
+The flow of control is thus determined by an external device.
+
+The target of the ``Jump Subroutine'' is called an Interrupt Service
+Routine (ISR).
+
+After the ISR has been executed, control is given back to the regular
+program flow.
+
+\includegraphics[width=7.55556in,height=1.46458in]{media/image13.png}
+
+\includegraphics[width=4.98750in,height=2.17847in]{media/image14.png}\includegraphics[width=4.92292in,height=2.21111in]{media/image15.png}
+
+\textbf{When Are Interrupts Needed?}
+
+Interrupts are needed when external events require short reaction times
+that cannot be efficiently met with a sampling implementation.
+
+An alternative to interrupts are trigger tasks. The trigger task itself
+requires some time to run. As a rule of thumb, if the WCET of the
+trigger task is larger than 10 times the required response time,
+interrupts should be avoided.
+
+Example 1:
+
+\includegraphics[width=6.30069in,height=2.71736in]{media/image16.png}
+
+An overflow valve is controlled by a computer and is to be opened when
+the water level reaches the high-level mark. When the sensor is
+connected to an interrupt line of the computer, small waves can produce
+high frequency interrupts.
+
+Attaching the sensor to a digital input line, and sampling and filtering
+the values, would lead to a more robust behaviour.
+
+Example 2: Bouncing switch
+
+On our lab boards we have switches connected to digital input lines.
+When these switches are closed or opened, they ``bounce'', i.e.
+oscillate for some time (typically a few ms up to 50 ms) rapidly between
+the ``open'' and ``closed'' state.
+
+It would not be wise to connect such switches directly to an interrupt
+line.
+
+\textbf{Example: Implementing a 10 ms timer tick}
+
+This is the interrupt service routine for the ticker:
+
+1 /*
+
+2 * Interrupt service routine for timer channel 4
+
+3 *
+
+4 */
+
+5 interrupt 12 void isr\_tc4(void) \{
+
+6
+
+7 /* increment timer count register (16 bits) */
+
+8 /* current count + increment = new count */
+
+9 TC4 = TC4 + TENMS;
+
+15 if ((void *) tickerFunctionPointer \textgreater{} NULL) \{
+
+16 tickerFunctionPointer();
+
+17 \}
+
+18 /* clear the interrupt: write a 1 to bit 4 */
+
+19 TFLG1 = TIMER\_CH4;
+
+20 \}
+
+This is the routine to initialize the hardware for the ticker:
+
+1 /*
+
+2 * Initialize the timer 4 hardware and interrupt
+
+3 *
+
+4 */
+
+5 void initTicker(void) \{
+
+6
+
+7 tickerFunctionPointer = 0;
+
+8 ticks = 0;
+
+9 /* Timer master ON switch */
+
+10 TSCR1 = TIMER\_ON;
+
+11
+
+12 /* Set channel 4 in "output compare" mode */
+
+13 TIOS = TIOS \textbar{} TIMER\_CH4; /* bit 4 corresponds to channel 4
+*/
+
+14
+
+15 /* Enable channel 4 interrupt; bit 4 corresponds to channel 4 */
+
+16 TIE = TIE \textbar{} TIMER\_CH4;
+
+17
+
+18 /* Set timer prescaler (bus clock : prescale factor) */
+
+19 /* In our case: divide by 2\^{}7 = 128. This gives a timer */
+
+20 /* driver frequency of 187500 Hz or 5.3333 us time interval */
+
+21 TSCR2 = (TSCR2 \& 0xf8) \textbar{} 0x07;
+
+22
+
+23 /* switch timer on */
+
+24 TCTL1 = (TCTL1 \& \textasciitilde{}TCTL1\_CH4) \textbar{}
+TCTL1\_CH4\_DISCONNECT;
+
+25 \}
+
+This is the main program:
+
+\#include \textless{}hidef.h\textgreater{} /* some macros and defines */
+
+\#include \textless{}mc9s12dp256.h\textgreater{} /* processor specific
+definitions */
+
+\#include "ticker.h"
+
+void tickRoutine(void);
+
+\#pragma LINK\_INFO DERIVATIVE "mc9s12dp256b"
+
+static unsigned long cc = 0;
+
+void main(void) \{
+
+EnableInterrupts; /* We need this for the debugger */
+
+DDRB = 0xff; /* Set PORTB to output */
+
+PORTB = 0x00; /* Turn off all LEDs initially */
+
+initTicker();
+
+registerTickRoutine(\&tickRoutine); /* Register callback routine */
+
+for(;;) \{
+
+/* Just go crazy */
+
+\}
+
+\}
+
+This is the callback routine:
+
+void tickRoutine(void) \{
+
+++cc;
+
+if (cc \textgreater{} 100) \{
+
+cc = 0;
+
+PORTB = \textasciitilde{}PORTB \& 0x01;
+
+\}
+
+\}
+
+\textbf{9.4} \protect\hypertarget{teil5}{}{}\textbf{Sensors and
+Actuators}
+
+Controlled objects contain transducers (sensors and actors) that measure
+RT entities, or accept RT images from the controlling computer.
+
+\textbf{Analog input/output}
+
+Many RT entities are observed by sensors that produce analog values. A
+typical industry standard for analog value encoding is the 4-20 mA range
+current encoding, 4 mA meaning 0\% and 20 mA meaning 100\% of the value.
+This scheme permits to detect broken wires (i.e. a current of 0 mA).
+
+The accuracy of any analog control signal is limited by the electrical
+noise level, to about 0.1\%, corresponding to an A/D converter
+resolution of about 11 bit (2\textsuperscript{-11}). Many
+microcontrollers have 10 bit A/D converters, and a 16-bit word is more
+than sufficient to encode analog values.
+
+The time interval required for the transducer to present the value of an
+RT entity at the sensor/computer interface influences the temporal
+accuracy interval for that RT entity and its corresponding image. The
+smaller the time interval for the sensor, the more time remains for the
+computer to create a corresponding output action.
+
+\includegraphics[width=8.22153in,height=1.32639in]{media/image17.png}
+
+A commonly used strategy for fast A/D conversion is the sucessive
+approximation method.
+
+\includegraphics[width=5.38403in,height=2.09444in]{media/image18.png}\includegraphics[width=4.30069in,height=4.95000in]{media/image19.png}
+
+This type of A/D converter can be found on the 68HCS12 microcontroller
+in the lab.
+
+\textbf{Digital Input/Output}
+
+A digital I/O signal transits between the two states ``0'' and ``1'' or
+``TRUE'' and ``FALSE''. Typical representations of ``0'' are 0 Volts, or
+open contact. Typical representations for ``1'' are 3.3, 5.0, or 24
+Volts, or a closed contact.
+
+In some applications not just the state itself is important, but also
+the duration of that state or the moment when a state transition occurs.
+
+Mechanical contacts do not reach their new state immediately but only
+after a number of random oscillations (contact bounce) caused by the
+mechanical vibrations of the switch contact.
+
+\includegraphics[width=5.77847in,height=1.46597in]{media/image20.png}
+
+This contact bounce must be eliminated by either an electric low pass
+filter, or more commonly due to cost reasons, by appropriate debouncing
+routines in software.
+
+Some sensors generate a sequence of pulses as outputs, where each pulse
+carries information about an event. Example: distance measurement using
+a wheel that generates pulses. The pulse frequency indicates the speed.
+
+\textbf{Time encoded signals:} Many output devices are controlled by
+pulse sequences of well-specified shape (pulse width modulation-PWM).
+For example, a control signal for a stepping motor must adhere precisely
+to the temporal shape prescribed by the motor hardware supplier.
+
+Another example is the encoding for remote controls, here the RC5
+protocol from Philips for TV remote controls. A ``1'' is encoded as a
+low-high transition, a ``0'' as a high-low transition.
+
+\includegraphics[width=4.54167in,height=2.35417in]{media/image21.png}
+\includegraphics[width=4.27917in,height=3.00000in]{media/image22.png}
+
+\textbf{Intelligent Instrumentation}
+
+With decreasing silicon cost, there is a tendency towards encapsulating
+sensors/actuators and the associated microcontroller into a single
+physical housing to provide a standard abstract message interface. Such
+a unit is called an intelligent instrument.
+
+\includegraphics[width=7.91458in,height=2.51528in]{media/image23.png}
+
+The intelligent instrument hides the concrete sensor interface. Its
+microcontroller performs signal conditioning, signal smoothing, and
+local error detection.
+
+Intelligent instruments simplify the connection of the plant equipment
+to the computer.
+
+To make a measured value fault-tolerant, a number of independent sensors
+can be packaged into a single intelligent instrument.
+
+Examples: acceleration sensor, airbag actuator, have a look at
+http://www.rn-wissen.de/index.php/Sensorarten
+
+\protect\hypertarget{teil8}{}{}\textbf{Points to Remember}

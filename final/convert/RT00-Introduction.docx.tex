@@ -1,0 +1,273 @@
+
+
+\textbf{Distributed Real-Time Systems}
+
+Chapter 1 The Real-Time Environment
+
+Chapter 2 Distributed Real-Time Systems
+
+Chapter 3 Global Time
+
+Chapter 4 Modeling Real-Time Systems
+
+Chapter 5 Real-Time Entities and Images
+
+Chapter 6 Fault Tolerance
+
+Chapter 7 Real-Time Communication
+
+Chapter 8 Time-Triggered Protocols
+
+Chapter 9 Input and Output
+
+Chapter 10 Real-Time Operating Systems: OSEK and AUTOSAR
+
+Chapter 11 Real-Time Scheduling
+
+Chapter 12 Validation
+
+Lecturer: Prof. Dr. Jörg Friedrich, joerg.friedrich@hs-esslingen.de,
+Room F 01.316
+
+\section{Literature for this lecture}\label{literature-for-this-lecture}
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+\textbf{Text books for this lecture}\tabularnewline
+{[}1.1{]}\tabularnewline
+{[}1.2{]}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+\textbf{Complementing texts}
+
+\emph{Some books complementing the material treated in this
+lecture}\tabularnewline
+{[}2.1{]}\tabularnewline
+{[}2.2{]}\tabularnewline
+{[}2.3{]}\tabularnewline
+{[}2.4{]}\tabularnewline
+{[}2.5{]}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[c]{@{}l@{}}
+\toprule
+\textbf{Journal Articles and Web Documents}
+
+\emph{Original journal articles and documents from the web pertaining to
+this lecture}\tabularnewline
+{[}3.0{]}\tabularnewline
+{[}3.1{]}\tabularnewline
+\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+\textbf{Chapter 1: The Real-Time Environment}
+\begin{frame}
+\begin{itemize}
+\item  
+  Definition of a real-time system.
+\item  
+  Simple model with operator, computer system, and controlled object.
+\item  
+  Introduction of distributed real-time systems.
+\item  
+  Hard real-time systems and soft real-time systems.
+\item  
+  Functional, temporal, and dependability requirements.
+\item  
+  Sphere of control
+\item  
+  Event-triggered versus time-triggered systems.
+\end{itemize}
+\end{frame}
+\textbf{Chapter 2: Distributed Real-Time Systems}
+
+\begin{itemize}
+\item
+  Distributed system architecture overview, clusters, nodes,
+  communication network
+\item
+  Structure of node with host computer, communication network interface,
+  communication controller
+\item
+  Event and state messages, gateways.
+\item
+  Concept of composability.
+\item
+  Event- and time-triggered communication systems.
+\item
+  Scalability, dependability, issues of physical installation.
+\end{itemize}
+
+
+\textbf{Chapter 3: Global Time}
+
+\begin{itemize}
+\item
+  Notions of causal order, temporal order, and delivery order
+\item
+  External observers, reference clocks, and global time base
+\item
+  Sparse time base to view event order in a distributed real-time system
+\item
+  Internal clock synchronization to compensate for drift offset.
+  Influence of the communication system jitter on the precision of the
+  global time base.
+\item
+  External time synchronization, time gateways, and the Internet network
+  time protocol (NTP)
+\end{itemize}
+
+\textbf{Chapter 4: Modeling Real-Time Systems}
+
+\begin{itemize}
+\item
+  Introduction of a conceptual model for real-time systems
+\item
+  Tasks, nodes, fault-tolerant units, clusters
+\item
+  Simple and complex tasks
+\item
+  Interface placement and interface layout
+\item
+  Temporal control and logical control
+\item
+  The history state
+\end{itemize}
+
+\textbf{Chapter 5: Real-Time Entities and Images}
+
+\begin{itemize}
+\item
+  Real-time entities
+\item
+  Observations, state and event observations
+\item
+  Real-time images as current picture of real-time entity, and real-time
+  objects
+\item
+  Temporal accuracy and state estimation to improve real-time image
+  accuracy
+\item
+  Permanence in case of race conditions and idempotency with replicated
+  messages
+\item
+  Replica determinism to implement fault-tolerance by active redundancy
+\end{itemize}
+
+\textbf{Chapter 6: Fault Tolerance}
+
+\begin{itemize}
+\item
+  Failures, Errors, and Faults
+\item
+  Error Detection
+\item
+  A Node as a Unit of Failure
+\item
+  Fault Tolerant Units
+\item
+  Reintegration of a Repaired Node
+\item
+  Design Diversity
+\end{itemize}
+
+\textbf{Chapter 7: Real-Time Communication}
+
+\begin{itemize}
+\item
+  Real-Time Communication Requirements
+\item
+  Flow Control
+\item
+  OSI Protocols for Real-Time
+\item
+  Fundamental Conflicts in Protocol Design
+\item
+  Media-Access Protocols
+\item
+  Performance Comparison: ET versus TT
+\item
+  The Physical Layer
+\end{itemize}
+
+\textbf{Chapter 8: Time-Triggered Protocols}
+
+\begin{itemize}
+\item
+  Introduction to Time-Triggered Protocols
+\item
+  Overview of the TTP/C Protocol Layers
+\item
+  The Basic CNI
+\item
+  Internal Operation of TTP/C
+\item
+  TTP/A for Field Bus Applications
+\end{itemize}
+
+\textbf{Chapter 9: Input and Output}
+
+\begin{itemize}
+\item
+  The dual role of time
+\item
+  Agreement protocol
+\item
+  Sampling and polling
+\item
+  Interrupts
+\item
+  Sensors and actuators
+\item
+  Physical installation
+\end{itemize}
+
+\textbf{Chapter 10: Real-Time Operating Systems: OSEK and AUTOSAR}
+
+\begin{itemize}
+\item
+  Task management
+\item
+  Interprocess communication
+\item
+  Time management
+\item
+  Error detection
+\item
+  OSEK and AUTOSAR
+\end{itemize}
+
+\textbf{Chapter 11: Real-Time Scheduling}
+
+\begin{itemize}
+\item
+  The scheduling problem
+\item
+  The adversary problem
+\item
+  Dynamic scheduling, dynamic priority servers
+\item
+  Static scheduling, fixed priority servers
+\end{itemize}
+
+\textbf{Chapter 12: Validation}
+
+\begin{itemize}
+\item
+  Building a Convincing Safety Case
+\item
+  Formal Methods
+\item
+  Testing
+\item
+  Fault Injection
+\item
+  Dependability Analysis
+\end{itemize}
+

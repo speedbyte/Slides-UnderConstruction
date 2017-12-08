@@ -1,0 +1,451 @@
+\begin{enumerate}
+\item ~
+  \section{Chapter 2}\label{chapter-2}
+
+  \begin{enumerate}
+  \item ~
+    \subsection{Distributed Real-Time
+    Systems}\label{distributed-real-time-systems}
+  \end{enumerate}
+\end{enumerate}
+
+Overview 2
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  System Architecture 3
+\item
+  Composability 9
+\item
+  Scalability 12
+\item
+  Dependability 16
+\item
+  Physical Installation 19
+\end{enumerate}
+
+Points to Remember 21
+
+\begin{enumerate}
+\item ~
+  \subsection{}\label{section}
+
+  \subsection{Overview}\label{overview}
+\end{enumerate}
+
+\begin{itemize}
+\item
+  From functional point of view there is no difference between
+  centralized architecture and distributed architecture
+\item
+  Overview of distributed real-time system architecture with a set of
+  nodes and communication network interconnecting these nodes
+\item
+  Introduction to concept of event messages and state messages
+\item
+  Composable architecture as preferred alternative for hard real-time
+  systems
+\item
+  The communication network interface between host computer in node and
+  communication network
+\item
+  Implications on scalability
+\item
+  Implications on dependability
+\end{itemize}
+
+\textbf{2.1} \protect\hypertarget{teil2}{}{}\textbf{System Architecture}
+
+In a distributed system, it is feasible to encapsulate the logical
+function and associated computer hardware into s single unit, a node.
+
+All essential functional and temporal properties are hidden behind a
+simple and stable node interface.
+
+The nodes in a distributed architecture are less complex than they would
+be in a centralized architecture. Functional failure can be better
+pinpointed to failure of a single node.
+
+A distributed application can be decomposed into an operator cluster, a
+computational cluster, and a controlled object cluster. In case the
+computational cluster is implemented as a distributed system, the system
+looks like shown below.
+
+\includegraphics[width=6.26736in,height=3.00069in]{media/image1.png}
+
+\protect\hypertarget{ux5fux5fFieldmarkux5fux5f8ux5f1847268712}{}{}\includegraphics[width=10.01875in,height=5.89375in]{media/image2.png}
+
+\textbf{Hardware structure}
+
+A node can be portioned into two subsystems:
+
+\begin{itemize}
+\item
+  host computer
+\item
+  local communication controller
+\end{itemize}
+
+\includegraphics[width=4.50694in,height=2.65556in]{media/image3.png}
+
+The communication-network interface (CNI) is located at the transport
+level of the OSI reference model.
+
+The set of all communication controllers, along with the physical
+interconnections, form the real-time communication system of the
+cluster.
+
+\textbf{Communication-network interface}
+
+Purpose of the real-time communication system: Transport messages from
+the CNI of the sender node to the CNI of the receiver node
+
+\begin{itemize}
+\item
+  within predictable time
+\item
+  with a small latency jitter
+\item
+  with high reliability
+\end{itemize}
+
+\textbf{Data semantics}
+
+Two types of messages at the CNI: event messages and state messages.
+
+Every event is significant; event messages must not be lost (loss of
+synchronization).
+
+Event messages must be queued at receiver and be removed upon reading.
+
+Order in queue must correspond to temporal order of event occurrence.
+
+State messages (e.g. current temperature) may overwrite old state
+messages. State values may be read more than once.
+
+In real-time systems, state semantics is needed more frequently than
+event semantics.
+
+\textbf{Control strategy}
+
+When must a message be sent? Decision either within sphere of control of
+host computer (external control) or within sphere of control of
+communication system (autonomous control).
+
+Most common used strategy is external control.
+
+With external control, a ``send'' command issued by the host computer to
+the CNI initiates transmission of message. When a message arrives at
+receiver, a control signal (interrupt) from the communication system
+crosses the CNI and unblocks a ``receive'' command.
+
+With autonomous control, the communication system decides autonomously
+when to send the next message, and when to deliver the message at the
+CNI of the receiver. Autonomous control is normally time-triggered. The
+communication system contains a transmission schedule.
+
+\textbf{Event message}
+
+Event message combines event semantics with external control. Event
+messages require one-to-one synchronization between sender and receiver.
+
+\textbf{State message}
+
+State message combines state-value semantics with autonomous control.
+State messages can be considered similar to global variables, except for
+
+\begin{itemize}
+\item
+  The communication system guarantees atomicity of a message write
+  operation
+\item
+  There is only a single sender (writer) process
+\end{itemize}
+
+There is no need for one-to-one synchronization; loose coupling between
+nodes.
+
+\textbf{Communication system}
+
+A number of design alternatives are available:
+
+\begin{itemize}
+\item
+  single channel system, such as bus or ring
+\item
+  multiple channel system, such as a mesh network
+\end{itemize}
+
+Increase communication reliability by message retransmission in case of
+failure, or by always replicating messages, or replicating message
+channels.
+
+Communication system is a critical resource of a distributed system.
+Reliability should be an order of magnitude higher than the reliability
+of individual nodes.
+
+\textbf{Gateways}
+
+A gateway exchange relative views between two interacting clusters. A
+gateway node has either
+
+\begin{itemize}
+\item
+  an instrumentation interface and a communication interface (interface
+  node)
+\end{itemize}
+
+or
+
+\begin{itemize}
+\item
+  two communication interfaces, each interfacing to one of the
+  interacting clusters
+\end{itemize}
+
+The gateway host transforms data formats of one cluster to those
+expected by the other cluster. Gateways are often used to hide internal
+features of legacy systems.
+
+\textbf{2.2} \protect\hypertarget{teil3}{}{}\textbf{Composability }
+
+In an architecture supporting composability it is ensured that
+properties of a subsystem are maintained during system integration.
+Thus, large systems can be built by composition of a number of smaller,
+well tested subsystems.
+
+\includegraphics[width=6.77222in,height=2.78264in]{media/image4.png}
+
+An architecture is said to be composable with respect to a specified
+property if the system integration will not invalidate this property
+once the property has been established at the subsystem level (e.g.
+timeliness or testability).
+
+In a composable architecture, system properties follow from subsystem
+properties.
+
+\textbf{Event triggered communication systems}
+
+In an event-triggered (ET) communication system temporal control is
+external to the communication system.
+
+Access conflicts can occur when several host computers decide to send a
+message simultaneously. The probability of access conflicts increases
+with the number of nodes and messages on the network.
+
+Temporal control in an ET system is a global issue, depending on the
+behaviour of all nodes in the distributed system. From the point of view
+of temporal control ET systems are thus not composable. Example: CAN
+bus.
+
+\textbf{Time-triggered communication systems}
+
+In a time-triggered communication system, temporal control resides
+within the communications system, and is independent from the
+application software of the host computers.
+
+State messages are transported at predetermined points in time from the
+sender CNI to the receiver CNI.
+
+The CNI acts thus as a temporal firewall, isolating the temporal
+behaviour of the host computer from the temporal behaviour of the
+network.
+
+System integration will not change the temporal properties of the CNI. A
+TT architecture is thus composable with respect to communication
+timeliness.
+
+\textbf{2.3} \protect\hypertarget{teil4}{}{}\textbf{Scalability}
+
+Most automotive systems evolve over an extended period of time (years or
+decades). Evolving requirements are thus the rule. Functions are being
+modified, and new functions are being added. A scalable architecture is
+open to such changes, and does not impose an upper limit on the
+capabilities of the system.
+
+\includegraphics[width=5.64167in,height=1.76528in]{media/image5.png}
+
+\textbf{Extensability}
+
+Means:
+
+\begin{itemize}
+\item
+  nodes can be added within the given capacity of the communication
+  channel, to add processing power to the system
+\item
+  new clusters can be added using gateway nodes when a cluster has
+  reached it communication capacity limit, or the processing power limit
+\end{itemize}
+
+without changing the original nodes and networks.
+
+\textbf{Complexity}
+
+Complexity of a system relates to the number of parts, and the number of
+types of interactions among the parts.
+
+In a scalable architecture, the effort to understand a single function
+remains constant and does not grow with the size of the system.
+
+Complexity can be reduced by encapsulating functionality behind simple
+and stable interfaces.
+
+The partitioning of a system into subsystems, the encapsulation of the
+subsystems, the preservation of the abstractions in case of faults, and
+strict control over the interaction patterns among the subsystems are
+the key mechanism for controlling complexity.
+
+Thus, time-triggered architectures can handle complexity better than
+event-triggered architectures.
+
+\textbf{Silicon cost}
+
+The die size of an integrated circuit determines its cost. The cost of a
+die is approximately:
+
+Cost = K · (die area)\textsuperscript{3}
+
+The die area required for the communication controller is increasingly
+unimportant with regard to total cost. The cost of a distributed
+architecture starts out higher, but increases slower with system size
+than that of a centralized architecture.
+
+However, there are many tradeoffs determining the system cost, and
+silicon cost is becoming an increasingly less important factor here.
+
+\includegraphics[width=4.77500in,height=2.45278in]{media/image6.png}
+\includegraphics[width=4.14306in,height=2.40764in]{media/image7.png}
+
+Example: requirements for body computer microcontrollers:
+
+\protect\hypertarget{ux5fux5fFieldmarkux5fux5f9ux5f1847268712}{}{}\includegraphics[width=9.52986in,height=5.38611in]{media/image8.png}
+
+\textbf{2.4} \protect\hypertarget{teil5}{}{}\textbf{Dependability}
+
+Implementing a dependable system requires effective fault containment,
+error containment, and fault tolerance.
+
+\textbf{Error-containment region}
+
+Fault-tolerant system must be structured into partitions that act as
+error-containment regions.
+
+This way, errors in one partition can be detected and corrected or
+masked before consequences corrupt the rest of system.
+
+Error containment region must be specified as a service, delivered
+across a small interface to the outside world. Error of the service must
+be detectable at the interface.
+
+Error-containment coverage: probability that an error in the containment
+region is detected at the interface.
+
+Error-containment regions can be introduced at level of functional
+hardware block, level of task. In a distributed system, a node can
+constitute an error-containment region.
+
+\textbf{Replication}
+
+Node failures can be masked by providing actively replicated nodes. The
+replicas must show deterministic behaviour. It requires careful
+hardware/software design to obtain replica determinism, i.e. replicated
+nodes ``visit'' the same states at about the same time. This precludes
+asynchronous preemptive scheduling.
+
+\textbf{Certification support}
+
+Often design of safety-critical systems must be approved by independent
+certification agency.
+
+Certification agency bases its assessment of the system on the analysis
+of the safety case presented by the designer.
+
+A safety case is the accumulation of credible analytic and experimental
+evidence that convinces the certification agency that the system is safe
+to deploy (see ISO 26262).
+
+Faults are categorized (here from the aircraft industry):
+
+\begin{itemize}
+\item
+  Catastrophic: fault can be cause of an accident
+\item
+  Hazardous: fault reduces safety margin of the redundant system,
+  operation is critical
+\item
+  Major: fault reduces safety margin such that immediate maintenance is
+  required
+\item
+  Minor: fault has only a small effect on the safety margin. Repair at
+  next scheduled maintenance
+\item
+  No Effect: fault has no effect on the safety margin
+\end{itemize}
+
+Key concern is remainder of safety margin after occurrence of a primary
+fault.
+
+\includegraphics[width=2.54306in,height=2.07500in]{media/image9.png}
+
+The consequence of a fault is an error.
+
+Errors in non-safety critical subsystems must be detected before they
+can propagate into a safety critical subsystem.
+
+Architecture must rule out by design unintended interactions among
+subsystems of different criticality.
+
+In a centralized architecture, it is very difficult to demonstrate
+error-containment.
+
+\textbf{2.5} \protect\hypertarget{teil6}{}{}\textbf{Physical
+Installation}
+
+There are a number of reasons for physical integration of a small
+microcontroller into a mechanical subsystem for compact mechatronical
+components:
+
+\begin{itemize}
+\item
+  Less cabling: Electromechanical parts can interface directly with
+  microcontroller, without error-prone and expensive cabling and
+  connections
+\item
+  Components become self-contained and achieve higher degree of
+  autonomy. Functions can be performed and tested without the need to
+  interconnect the component to a distant control system.
+\item
+  The communication to and from this component can be serialized and
+  accomplished by a single wire or twisted-pair field bus, simplifying
+  installation of the component.
+\end{itemize}
+
+Example: gear control box from Bosch/ZF
+
+\protect\hypertarget{ux5fux5fFieldmarkux5fux5f10ux5f1847268712}{}{}\includegraphics[width=9.19375in,height=4.92431in]{media/image10.png}
+
+\protect\hypertarget{teil8}{}{}\textbf{Points to Remember}
+
+How can you make the various functionality composable?
+
+What is the CNI?
+
+If you want to make the system fault tolerant?
+
+Fault hypothesis required?
+
+Error containment -- how?
+
+Temporal Requirement -- MSC ( message sequence chart )
+
+Functional Requirements?
+
+State messages or Event messages?
+
+Include a new node in the system -- myEcu
+
+All button press should be routed through my ecu
+
+And the temporal requirement should not be affected.

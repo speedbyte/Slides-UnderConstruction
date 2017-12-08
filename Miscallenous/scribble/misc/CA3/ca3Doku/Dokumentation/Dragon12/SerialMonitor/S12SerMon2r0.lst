@@ -1,0 +1,1384 @@
+Decoder V-5.0.12 Build 3249, Sep  7 2003
+Options: -Proc=HC12 -T -X
+Decoding File: 'D:\CA\Others\Friedrich\Studi-CD\Dokumentation\Dragon12\SerialMonitor\S12SerMon2r0.s19'
+File format: S-Record
+
+S123F800180B000011180B3900104F1C3005180B09001287F6F7FE5127264C8D011C024D11
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF800
+Data:     0xF800   18 0B 00 00 11 18 0B 39 
+          0xF808   00 10 4F 1C 30 05 18 0B 
+          0xF810   09 00 12 87 F6 F7 FE 51 
+          0xF818   27 26 4C 8D 01 1C 02 4D 
+CheckSum: 0x11
+
+S123F820011C024C01C70431FDD68FC50127111F0248010C1D024D011D024C0105FBFFBEF0
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF820
+Data:     0xF820   01 1C 02 4C 01 C7 04 31 
+          0xF828   FD D6 8F C5 01 27 11 1F 
+          0xF830   02 48 01 0C 1D 02 4D 01 
+          0xF838   1D 02 4C 01 05 FB FF BE 
+CheckSum: 0xF0
+
+S123F8404D8D014D39804C4080180B050034180B000035A7A74F3708FC4C3980180B1301EF
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF840
+Data:     0xF840   4D 8D 01 4D 39 80 4C 40 
+          0xF848   80 18 0B 05 00 34 18 0B 
+          0xF850   00 00 35 A7 A7 4F 37 08 
+          0xF858   FC 4C 39 80 18 0B 13 01 
+CheckSum: 0xEF
+
+S123F86000180B130110CF4000FEF7FE34CE0000343434C6D037180B0D00C9180B0C00CBDD
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF860
+Data:     0xF860   00 18 0B 13 01 10 CF 40 
+          0xF868   00 FE F7 FE 34 CE 00 00 
+          0xF870   34 34 34 C6 D0 37 18 0B 
+          0xF878   0D 00 C9 18 0B 0C 00 CB 
+CheckSum: 0xDD
+
+S123F88097270986E316FC85860C202F4FCC80FC4CCB01CE05DC8E00000435FA4DCB01166E
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF880
+Data:     0xF880   97 27 09 86 E3 16 FC 85 
+          0xF888   86 0C 20 2F 4F CC 80 FC 
+          0xF890   4C CB 01 CE 05 DC 8E 00 
+          0xF898   00 04 35 FA 4D CB 01 16 
+CheckSum: 0x6E
+
+S123F8A0FC7C810D26F986E016FC858608200C86E016FC8596CA840844444416FC85863E58
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF8A0
+Data:     0xF8A0   FC 7C 81 0D 26 F9 86 E0 
+          0xF8A8   16 FC 85 86 08 20 0C 86 
+          0xF8B0   E0 16 FC 85 96 CA 84 08 
+          0xF8B8   44 44 44 16 FC 85 86 3E 
+CheckSum: 0x58
+
+S123F8C016FC854FCA080A4FCA20034C204006FC6116FC7CCEF8EAA100270B1A038EF92F33
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF8C0
+Data:     0xF8C0   16 FC 85 4F CA 08 0A 4F 
+          0xF8C8   CA 20 03 4C 20 40 06 FC 
+          0xF8D0   61 16 FC 7C CE F8 EA A1 
+          0xF8D8   00 27 0B 1A 03 8E F9 2F 
+CheckSum: 0x33
+
+S123F8E026F586E120CBEE010500A1FAF4A2FB7FA3FAFFA4FB99A5FB6AA6FBA1A7FB0FA87F
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF8E0
+Data:     0xF8E0   26 F5 86 E1 20 CB EE 01 
+          0xF8E8   05 00 A1 FA F4 A2 FB 7F 
+          0xF8F0   A3 FA FF A4 FB 99 A5 FB 
+          0xF8F8   6A A6 FB A1 A7 FB 0F A8 
+CheckSum: 0x7F
+
+S123F900FB26A9FBBFAAFC16ABFC0EACFC06ADFBFEAEFBF0AFFBE8B1FC61B2FC39B3F9438B
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF900
+Data:     0xF900   FB 26 A9 FB BF AA FC 16 
+          0xF908   AB FC 0E AC FC 06 AD FB 
+          0xF910   FE AE FB F0 AF FB E8 B1 
+          0xF918   FC 61 B2 FC 39 B3 F9 43 
+CheckSum: 0x8B
+
+S123F920B4F97CB6F9EDB7F92FB8FAA5B9F9BB86DC16FC85961A16FC85961B16FC8586E06D
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF920
+Data:     0xF920   B4 F9 7C B6 F9 ED B7 F9 
+          0xF928   2F B8 FA A5 B9 F9 BB 86 
+          0xF930   DC 16 FC 85 96 1A 16 FC 
+          0xF938   85 96 1B 16 FC 85 86 E0 
+CheckSum: 0x6D
+
+S123F94006F8B14DCA0886E016FC85860206F8BB4F2040064CCA204D20404C8D014CCA0807
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF940
+Data:     0xF940   06 F8 B1 4D CA 08 86 E0 
+          0xF948   16 FC 85 86 02 06 F8 BB 
+          0xF950   4F 20 40 06 4C CA 20 4D 
+          0xF958   20 40 4C 8D 01 4C CA 08 
+CheckSum: 0x7
+
+S123F960C601C1012610D68FC501270AFDF7D68DFFFF270205404D8D0106F8D186415A3C9E
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF960
+Data:     0xF960   C6 01 C1 01 26 10 D6 8F 
+          0xF968   C5 01 27 0A FD F7 D6 8D 
+          0xF970   FF FF 27 02 05 40 4D 8D 
+          0xF978   01 06 F8 D1 86 41 5A 3C 
+CheckSum: 0x9E
+
+S123F980913C270306F800141020FE7900287900204DCA08C6048F101B25188F3FF8221317
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF980
+Data:     0xF980   91 3C 27 03 06 F8 00 14 
+          0xF988   10 20 FE 79 00 28 79 00 
+          0xF990   20 4D CA 08 C6 04 8F 10 
+          0xF998   1B 25 18 8F 3F F8 22 13 
+CheckSum: 0x17
+
+S123F9A086E016FC85180F4FCA04054DCA04860406F8BB86E306F8664DCA2016FD2D4F1CF0
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF9A0
+Data:     0xF9A0   86 E0 16 FC 85 18 0F 4F 
+          0xF9A8   CA 04 05 4D CA 04 86 04 
+          0xF9B0   06 F8 BB 86 E3 06 F8 66 
+          0xF9B8   4D CA 20 16 FD 2D 4F 1C 
+CheckSum: 0xF0
+
+S123F9C03026CD04006C40180B410116180B800115A7A7A7B601152AFB482AF8B60105848C
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF9C0
+Data:     0xF9C0   30 26 CD 04 00 6C 40 18 
+          0xF9C8   0B 41 01 16 18 0B 80 01 
+          0xF9D0   15 A7 A7 A7 B6 01 15 2A 
+          0xF9D8   FB 48 2A F8 B6 01 05 84 
+CheckSum: 0x8C
+
+S123F9E030260586E006F8B186E906F8B116FD2D4F1C301ACD04006C40180B410116180B65
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xF9E0
+Data:     0xF9E0   30 26 05 86 E0 06 F8 B1 
+          0xF9E8   86 E9 06 F8 B1 16 FD 2D 
+          0xF9F0   4F 1C 30 1A CD 04 00 6C 
+          0xF9F8   40 18 0B 41 01 16 18 0B 
+CheckSum: 0x65
+
+S123FA00800115A7A7A7B601152AFB482AF8C604536BAF863F18165A30790103CE0200CC2F
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFA00
+Data:     0xFA00   80 01 15 A7 A7 A7 B6 01 
+          0xFA08   15 2A FB 48 2A F8 C6 04 
+          0xFA10   53 6B AF 86 3F 18 16 5A 
+          0xFA18   30 79 01 03 CE 02 00 CC 
+CheckSum: 0x2F
+
+S123FA2040001810B754CE80000760720030638026EACE0200CC38001810B754CE800007A9
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFA20
+Data:     0xFA20   40 00 18 10 B7 54 CE 80 
+          0xFA28   00 07 60 72 00 30 63 80 
+          0xFA30   26 EA CE 02 00 CC 38 00 
+          0xFA38   18 10 B7 54 CE 80 00 07 
+CheckSum: 0xA9
+
+S123FA404A33C60453271FC6305B305454CD02008D020027015451C4037B01030710D6300B
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFA40
+Data:     0xFA40   4A 33 C6 04 53 27 1F C6 
+          0xFA48   30 5B 30 54 54 CD 02 00 
+          0xFA50   8D 02 00 27 01 54 51 C4 
+          0xFA58   03 7B 01 03 07 10 D6 30 
+CheckSum: 0xB
+
+S123FA60CB04C13B2BE3180B3D003006F8AF34CE80006A00180B410106180B800105A7A71E
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFA60
+Data:     0xFA60   CB 04 C1 3B 2B E3 18 0B 
+          0xFA68   3D 00 30 06 F8 AF 34 CE 
+          0xFA70   80 00 6A 00 18 0B 41 01 
+          0xFA78   06 18 0B 80 01 05 A7 A7 
+CheckSum: 0x1E
+
+S123FA80A7B601052AFB482AF8303DB7966C00180B40010616FD7F9726081AE20200043651
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFA80
+Data:     0xFA80   A7 B6 01 05 2A FB 48 2A 
+          0xFA88   F8 30 3D B7 96 6C 00 18 
+          0xFA90   0B 40 01 06 16 FD 7F 97 
+          0xFA98   26 08 1A E2 02 00 04 36 
+CheckSum: 0x51
+
+S123FAA0EC3D3A204A16FD2DD6305454CD02008D020027015451C4037B0103D630C13F26EA
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFAA0
+Data:     0xFAA0   EC 3D 3A 20 4A 16 FD 2D 
+          0xFAA8   D6 30 54 54 CD 02 00 8D 
+          0xFAB0   02 00 27 01 54 51 C4 03 
+          0xFAB8   7B 01 03 D6 30 C1 3F 26 
+CheckSum: 0xEA
+
+S123FAC011CE0200CC38001810B754CE800007BB2011CE0200CC40001810B754CE80000765
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFAC0
+Data:     0xFAC0   11 CE 02 00 CC 38 00 18 
+          0xFAC8   10 B7 54 CE 80 00 07 BB 
+          0xFAD0   20 11 CE 02 00 CC 40 00 
+          0xFAD8   18 10 B7 54 CE 80 00 07 
+CheckSum: 0x65
+
+S123FAE0AA2000B601058430260586E006F8B186E606F8B116FC71A60016FC8506F8AF16EA
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFAE0
+Data:     0xFAE0   AA 20 00 B6 01 05 84 30 
+          0xFAE8   26 05 86 E0 06 F8 B1 86 
+          0xFAF0   E6 06 F8 B1 16 FC 71 A6 
+          0xFAF8   00 16 FC 85 06 F8 AF 16 
+CheckSum: 0xEA
+
+S123FB00FC71EC0016FC85180F16FC8506F8AF16FC7116FC7C180E52A60016FC850853263F
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFB00
+Data:     0xFB00   FC 71 EC 00 16 FC 85 18 
+          0xFB08   0F 16 FC 85 06 F8 AF 16 
+          0xFB10   FC 71 16 FC 7C 18 0E 52 
+          0xFB18   A6 00 16 FC 85 08 53 26 
+CheckSum: 0x3F
+
+S123FB20F786E006F8B116FC7116FC7C180E52C10137271BB7508501261516FC7C180E6312
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFB20
+Data:     0xFB20   F7 86 E0 06 F8 B1 16 FC 
+          0xFB28   71 16 FC 7C 18 0E 52 C1 
+          0xFB30   01 37 27 1B B7 50 85 01 
+          0xFB38   26 15 16 FC 7C 18 0E 63 
+CheckSum: 0x12
+
+S123FB408016FC7CB78116FCBB33261708200916FC7C16FCDD33260B085326D386E020C36F
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFB40
+Data:     0xFB40   80 16 FC 7C B7 81 16 FC 
+          0xFB48   BB 33 26 17 08 20 09 16 
+          0xFB50   FC 7C 16 FC DD 33 26 0B 
+          0xFB58   08 53 26 D3 86 E0 20 C3 
+CheckSum: 0x6F
+
+S123FB6016FC7C5326FA86E620B94FCA080C8716FC8516FC8586E206F8B1073806FB0216EA
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFB60
+Data:     0xFB60   16 FC 7C 53 26 FA 86 E6 
+          0xFB68   20 B9 4F CA 08 0C 87 16 
+          0xFB70   FC 85 16 FC 85 86 E2 06 
+          0xFB78   F8 B1 07 38 06 FB 02 16 
+CheckSum: 0xEA
+
+S123FB80FC7116FC7C16FC8C270220086A008786E006F8B186E506F8B116FC71C6023720B5
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFB80
+Data:     0xFB80   FC 71 16 FC 7C 16 FC 8C 
+          0xFB88   27 02 20 08 6A 00 87 86 
+          0xFB90   E0 06 F8 B1 86 E5 06 F8 
+          0xFB98   B1 16 FC 71 C6 02 37 20 
+CheckSum: 0xB5
+
+S123FBA0994FCA080816FC7186E206F8B10705C6023720861B82EE8308086E831B9E3DB778
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFBA0
+Data:     0xFBA0   99 4F CA 08 08 16 FC 71 
+          0xFBA8   86 E2 06 F8 B1 07 05 C6 
+          0xFBB0   02 37 20 86 1B 82 EE 83 
+          0xFBB8   08 08 6E 83 1B 9E 3D B7 
+CheckSum: 0x78
+
+S123FBC0751A0916FC68EE8716FC68EE8516FC68EE8316FC68EE81B7C5B781B7C516FC682F
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFBC0
+Data:     0xFBC0   75 1A 09 16 FC 68 EE 87 
+          0xFBC8   16 FC 68 EE 85 16 FC 68 
+          0xFBD0   EE 83 16 FC 68 EE 81 B7 
+          0xFBD8   C5 B7 81 B7 C5 16 FC 68 
+CheckSum: 0x2F
+
+S123FBE0A68016FC8506F8AF16FC7C6A8006F8AF16FC71B7C5B781B7C56E8106F8AF16FC11
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFBE0
+Data:     0xFBE0   A6 80 16 FC 85 06 F8 AF 
+          0xFBE8   16 FC 7C 6A 80 06 F8 AF 
+          0xFBF0   16 FC 71 B7 C5 B7 81 B7 
+          0xFBF8   C5 6E 81 06 F8 AF 16 FC 
+CheckSum: 0x11
+
+S123FC00716E8306F8AF16FC716E8506F8AF16FC716E8706F8AF07591A178E101A250A8E83
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFC00
+Data:     0xFC00   71 6E 83 06 F8 AF 16 FC 
+          0xFC08   71 6E 85 06 F8 AF 16 FC 
+          0xFC10   71 6E 87 06 F8 AF 07 59 
+          0xFC18   1A 17 8E 10 1A 25 0A 8E 
+CheckSum: 0x83
+
+S123FC203FF72205B75706F8AF86E406F8B13D3E3FFC2EFC2F0030FC304CCA04EE87080885
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFC20
+Data:     0xFC20   3F F7 22 05 B7 57 06 F8 
+          0xFC28   AF 86 E4 06 F8 B1 3D 3E 
+          0xFC30   3F FC 2E FC 2F 00 30 FC 
+          0xFC38   30 4C CA 04 EE 87 08 08 
+CheckSum: 0x85
+
+S123FC40B7C5C4FE5C2B5C2E45554555C4038759B7C5EEE2FC31A6005A2A5A2D86805A28C4
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFC40
+Data:     0xFC40   B7 C5 C4 FE 5C 2B 5C 2E 
+          0xFC48   45 55 45 55 C4 03 87 59 
+          0xFC50   B7 C5 EE E2 FC 31 A6 00 
+          0xFC58   5A 2A 5A 2D 86 80 5A 28 
+CheckSum: 0xC4
+
+S123FC600B4CCB204DCA040BB7C50719180F07153D0709180E0705B781B7C53D4ECC20028D
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFC60
+Data:     0xFC60   0B 4C CB 20 4D CA 04 0B 
+          0xFC68   B7 C5 07 19 18 0F 07 15 
+          0xFC70   3D 07 09 18 0E 07 05 B7 
+          0xFC78   81 B7 C5 3D 4E CC 20 02 
+CheckSum: 0x8D
+
+S123FC8020FA96CF3D4FCC80FC5ACF3D3B8E400025148EFF8024098EF7802518C6FF3A3DAD
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFC80
+Data:     0xFC80   20 FA 96 CF 3D 4F CC 80 
+          0xFC88   FC 5A CF 3D 3B 8E 40 00 
+          0xFC90   25 14 8E FF 80 24 09 8E 
+          0xFC98   F7 80 25 18 C6 FF 3A 3D 
+CheckSum: 0xAD
+
+S123FCA01AE2F800200E4F1C300E8E040025098E0FFF2204C6013A3DC73A3D343B07CD2B09
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFCA0
+Data:     0xFCA0   1A E2 F8 00 20 0E 4F 1C 
+          0xFCA8   30 0E 8E 04 00 25 09 8E 
+          0xFCB0   0F FF 22 04 C6 01 3A 3D 
+          0xFCB8   C7 3A 3D 34 3B 07 CD 2B 
+CheckSum: 0x9
+
+S123FCC0502715AC00274A3BB751C5012605EC008CFFFF3A263B202C6C00872034343B0729
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFCC0
+Data:     0xFCC0   50 27 15 AC 00 27 4A 3B 
+          0xFCC8   B7 51 C5 01 26 05 EC 00 
+          0xFCD0   8C FF FF 3A 26 3B 20 2C 
+          0xFCD8   6C 00 87 20 34 34 3B 07 
+CheckSum: 0x29
+
+S123FCE0AB2B2E271AA1002728E600522623B751C5012604E601200C180E09A60020056ADB
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFCE0
+Data:     0xFCE0   AB 2B 2E 27 1A A1 00 27 
+          0xFCE8   28 E6 00 52 26 23 B7 51 
+          0xFCF0   C5 01 26 04 E6 01 20 0C 
+          0xFCF8   18 0E 09 A6 00 20 05 6A 
+CheckSum: 0xDB
+
+S123FD000087200D07278E40002504072B200207033A303D6C0086207A011686807A0115C8
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFD00
+Data:     0xFD00   00 87 20 0D 07 27 8E 40 
+          0xFD08   00 25 04 07 2B 20 02 07 
+          0xFD10   03 3A 30 3D 6C 00 86 20 
+          0xFD18   7A 01 16 86 80 7A 01 15 
+CheckSum: 0xC8
+
+S123FD20A7A7A7B6011584C0482AF8483D3686307A01157A0105323D3B8E8000250C8EC098
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFD20
+Data:     0xFD20   A7 A7 A7 B6 01 15 84 C0 
+          0xFD28   48 2A F8 48 3D 36 86 30 
+          0xFD30   7A 01 15 7A 01 05 32 3D 
+          0xFD38   3B 8E 80 00 25 0C 8E C0 
+CheckSum: 0x98
+
+S123FD4000250C180B3F00302005180B3E0030D6305454CD02008D020027015451C4037B0B
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFD40
+Data:     0xFD40   00 25 0C 18 0B 3F 00 30 
+          0xFD48   20 05 18 0B 3E 00 30 D6 
+          0xFD50   30 54 54 CD 02 00 8D 02 
+          0xFD58   00 27 01 54 51 C4 03 7B 
+CheckSum: 0xB
+
+S123FD600103C1003A27116C0086207A01068680072AB6010584303D6C0086207A0106340A
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFD60
+Data:     0xFD60   01 03 C1 00 3A 27 11 6C 
+          0xFD68   00 86 20 7A 01 06 86 80 
+          0xFD70   07 2A B6 01 05 84 30 3D 
+          0xFD78   6C 00 86 20 7A 01 06 34 
+CheckSum: 0xA
+
+S123FD80CEFDACEC3E3B8EFD9A26F8B775868015001BF20012B601058430303DB721141001
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFD80
+Data:     0xFD80   CE FD AC EC 3E 3B 8E FD 
+          0xFD88   9A 26 F8 B7 75 86 80 15 
+          0xFD90   00 1B F2 00 12 B6 01 05 
+          0xFD98   84 30 30 3D B7 21 14 10 
+CheckSum: 0x1
+
+S123FDA07A0105A7A7A71F010540FBB7123D077E077C077A07780776077407720770076EFF
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFDA0
+Data:     0xFDA0   7A 01 05 A7 A7 A7 1F 01 
+          0xFDA8   05 40 FB B7 12 3D 07 7E 
+          0xFDB0   07 7C 07 7A 07 78 07 76 
+          0xFDB8   07 74 07 72 07 70 07 6E 
+CheckSum: 0xFF
+
+S123FDC0076C076A07680766076407620760075E075C075A07580756075407520750074EDF
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFDC0
+Data:     0xFDC0   07 6C 07 6A 07 68 07 66 
+          0xFDC8   07 64 07 62 07 60 07 5E 
+          0xFDD0   07 5C 07 5A 07 58 07 56 
+          0xFDD8   07 54 07 52 07 50 07 4E 
+CheckSum: 0xDF
+
+S123FDE0074C074A07480746074407420740073E073C073A07380736073407320730072EBF
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFDE0
+Data:     0xFDE0   07 4C 07 4A 07 48 07 46 
+          0xFDE8   07 44 07 42 07 40 07 3E 
+          0xFDF0   07 3C 07 3A 07 38 07 36 
+          0xFDF8   07 34 07 32 07 30 07 2E 
+CheckSum: 0xBF
+
+S123FE00072C072A07280726072407220720071E071C071A07180716071407120710070E9E
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFE00
+Data:     0xFE00   07 2C 07 2A 07 28 07 26 
+          0xFE08   07 24 07 22 07 20 07 1E 
+          0xFE10   07 1C 07 1A 07 18 07 16 
+          0xFE18   07 14 07 12 07 10 07 0E 
+CheckSum: 0x9E
+
+S123FE20070C070A0708070607040702070030EDE2F9D08DFFFF270205401AE2F9D0B7C561
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFE20
+Data:     0xFE20   07 0C 07 0A 07 08 07 06 
+          0xFE28   07 04 07 02 07 00 30 ED 
+          0xFE30   E2 F9 D0 8D FF FF 27 02 
+          0xFE38   05 40 1A E2 F9 D0 B7 C5 
+CheckSum: 0x61
+
+S123FE4006F996FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF26
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFE40
+Data:     0xFE40   06 F9 96 FF FF FF FF FF 
+          0xFE48   FF FF FF FF FF FF FF FF 
+          0xFE50   FF FF FF FF FF FF FF FF 
+          0xFE58   FF FF FF FF FF FF FF FF 
+CheckSum: 0x26
+
+S123FEE0FFFFFFFFFFFF16FC8516FC7C16F9ED16FD7F16FCBBFFFFFF001103092003020045
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFEE0
+Data:     0xFEE0   FF FF FF FF FF FF 16 FC 
+          0xFEE8   85 16 FC 7C 16 F9 ED 16 
+          0xFEF0   FD 7F 16 FC BB FF FF FF 
+          0xFEF8   00 11 03 09 20 03 02 00 
+CheckSum: 0x45
+
+S123FF00FFFFFFFFFFFFFFFFFFFFFFFFFFC7FFBEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF76
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFF00
+Data:     0xFF00   FF FF FF FF FF FF FF FF 
+          0xFF08   FF FF FF FF FF C7 FF BE 
+          0xFF10   FF FF FF FF FF FF FF FF 
+          0xFF18   FF FF FF FF FF FF FF FF 
+CheckSum: 0x76
+
+S123FF80FDAEFDB0FDB2FDB4FDB6FDB8FDBAFDBCFDBEFDC0FDC2FDC4FDC6FDC8FDCAFDCCBD
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFF80
+Data:     0xFF80   FD AE FD B0 FD B2 FD B4 
+          0xFF88   FD B6 FD B8 FD BA FD BC 
+          0xFF90   FD BE FD C0 FD C2 FD C4 
+          0xFF98   FD C6 FD C8 FD CA FD CC 
+CheckSum: 0xBD
+
+S123FFA0FDCEFDD0FDD2FDD4FDD6FDD8FDDAFDDCFDDEFDE0FDE2FDE4FDE6FDE8FDEAFDEC9D
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFFA0
+Data:     0xFFA0   FD CE FD D0 FD D2 FD D4 
+          0xFFA8   FD D6 FD D8 FD DA FD DC 
+          0xFFB0   FD DE FD E0 FD E2 FD E4 
+          0xFFB8   FD E6 FD E8 FD EA FD EC 
+CheckSum: 0x9D
+
+S123FFC0FDEEFDF0FDF2FDF4FDF6FDF8FDFAFDFCFDFEFE00FE02F950FE06FE08FE0AFE0C2F
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFFC0
+Data:     0xFFC0   FD EE FD F0 FD F2 FD F4 
+          0xFFC8   FD F6 FD F8 FD FA FD FC 
+          0xFFD0   FD FE FE 00 FE 02 F9 50 
+          0xFFD8   FE 06 FE 08 FE 0A FE 0C 
+CheckSum: 0x2F
+
+S123FFE0FE0EFE10FE12FE14FE16FE18FE1AFE1CFE1EFE20FE22F98BFE26F800FE2AF8004B
+Type:     S1 (A record containing the 2-bytes address at which the code/data is to reside)
+Length:   0x23
+Address:  0xFFE0
+Data:     0xFFE0   FE 0E FE 10 FE 12 FE 14 
+          0xFFE8   FE 16 FE 18 FE 1A FE 1C 
+          0xFFF0   FE 1E FE 20 FE 22 F9 8B 
+          0xFFF8   FE 26 F8 00 FE 2A F8 00 
+CheckSum: 0x4B
+
+S9030000FC
+Type:     S9 (Termination record for a block of S1 records)
+Length:   0x3
+Address:  0x0000
+CheckSum: 0xFC
+
+Disassembly: 
+
+0000F800 180B000011   [4]    MOVB  #0,$0011
+0000F805 180B390010   [4]    MOVB  #57,$0010
+0000F80A 4F1C3005     [4]    BRCLR $1C,#48,*+9   ;abs = F813
+0000F80E 180B090012   [4]    MOVB  #9,$0012
+0000F813 87           [1]    CLRA  
+0000F814 F6F7FE       [3]    LDAB  $F7FE
+0000F817 51           [1]    COMB  
+0000F818 2726         [3/1]  BEQ   *+40   ;abs = F840
+0000F81A 4C8D01       [4]    BSET  $8D,#1
+0000F81D 1C024D01     [4]    BSET  $024D,#1
+0000F821 1C024C01     [4]    BSET  $024C,#1
+0000F825 C7           [1]    CLRB  
+0000F826 0431FD       [3]    DBNE  B,*+0   ;abs = F826
+0000F829 D68F         [3]    LDAB  $8F
+0000F82B C501         [1]    BITB  #1
+0000F82D 2711         [3/1]  BEQ   *+19   ;abs = F840
+0000F82F 1F0248010C   [5]    BRCLR $0248,#1,*+17   ;abs = F840
+0000F834 1D024D01     [4]    BCLR  $024D,#1
+0000F838 1D024C01     [4]    BCLR  $024C,#1
+0000F83C 05FBFFBE     [6]    JMP   [$FFBE,PC]
+0000F840 4D8D01       [4]    BCLR  $8D,#1
+0000F843 4D3980       [4]    BCLR  $39,#128
+0000F846 4C4080       [4]    BSET  $40,#128
+0000F849 180B050034   [4]    MOVB  #5,$0034
+0000F84E 180B000035   [4]    MOVB  #0,$0035
+0000F853 A7           [1]    NOP   
+0000F854 A7           [1]    NOP   
+0000F855 4F3708FC     [4]    BRCLR $37,#8,*+0   ;abs = F855
+0000F859 4C3980       [4]    BSET  $39,#128
+0000F85C 180B130100   [4]    MOVB  #19,$0100
+0000F861 180B130110   [4]    MOVB  #19,$0110
+0000F866 CF4000       [2]    LDS   #16384
+0000F869 FEF7FE       [3]    LDX   $F7FE
+0000F86C 34           [2]    PSHX  
+0000F86D CE0000       [2]    LDX   #0
+0000F870 34           [2]    PSHX  
+0000F871 34           [2]    PSHX  
+0000F872 34           [2]    PSHX  
+0000F873 C6D0         [1]    LDAB  #208
+0000F875 37           [2]    PSHB  
+0000F876 180B0D00C9   [4]    MOVB  #13,$00C9
+0000F87B 180B0C00CB   [4]    MOVB  #12,$00CB
+0000F880 97           [1]    TSTA  
+0000F881 2709         [3/1]  BEQ   *+11   ;abs = F88C
+0000F883 86E3         [1]    LDAA  #227
+0000F885 16FC85       [4]    JSR   $FC85
+0000F888 860C         [1]    LDAA  #12
+0000F88A 202F         [3]    BRA   *+49   ;abs = F8BB
+0000F88C 4FCC80FC     [4]    BRCLR $CC,#128,*+0   ;abs = F88C
+0000F890 4CCB01       [4]    BSET  $CB,#1
+0000F893 CE05DC       [2]    LDX   #1500
+0000F896 8E0000       [2]    CPX   #0
+0000F899 0435FA       [3]    DBNE  X,*-3   ;abs = F896
+0000F89C 4DCB01       [4]    BCLR  $CB,#1
+0000F89F 16FC7C       [4]    JSR   $FC7C
+0000F8A2 810D         [1]    CMPA  #13
+0000F8A4 26F9         [3/1]  BNE   *-5   ;abs = F89F
+0000F8A6 86E0         [1]    LDAA  #224
+0000F8A8 16FC85       [4]    JSR   $FC85
+0000F8AB 8608         [1]    LDAA  #8
+0000F8AD 200C         [3]    BRA   *+14   ;abs = F8BB
+0000F8AF 86E0         [1]    LDAA  #224
+0000F8B1 16FC85       [4]    JSR   $FC85
+0000F8B4 96CA         [3]    LDAA  $CA
+0000F8B6 8408         [1]    ANDA  #8
+0000F8B8 44           [1]    LSRA  
+0000F8B9 44           [1]    LSRA  
+0000F8BA 44           [1]    LSRA  
+0000F8BB 16FC85       [4]    JSR   $FC85
+0000F8BE 863E         [1]    LDAA  #62
+0000F8C0 16FC85       [4]    JSR   $FC85
+0000F8C3 4FCA080A     [4]    BRCLR $CA,#8,*+14   ;abs = F8D1
+0000F8C7 4FCA2003     [4]    BRCLR $CA,#32,*+7   ;abs = F8CE
+0000F8CB 4C2040       [4]    BSET  $20,#64
+0000F8CE 06FC61       [3]    JMP   $FC61
+0000F8D1 16FC7C       [4]    JSR   $FC7C
+0000F8D4 CEF8EA       [2]    LDX   #63722
+0000F8D7 A100         [3]    CMPA  0,X
+0000F8D9 270B         [3/1]  BEQ   *+13   ;abs = F8E6
+0000F8DB 1A03         [2]    LEAX  3,X
+0000F8DD 8EF92F       [2]    CPX   #63791
+0000F8E0 26F5         [3/1]  BNE   *-9   ;abs = F8D7
+0000F8E2 86E1         [1]    LDAA  #225
+0000F8E4 20CB         [3]    BRA   *-51   ;abs = F8B1
+0000F8E6 EE01         [3]    LDX   1,X
+0000F8E8 0500         [3]    JMP   0,X
+0000F8EA A1FAF4A2     [4]    CMPA  62626,PC
+0000F8EE FB7FA3       [3]    ADDB  $7FA3
+0000F8F1 FAFFA4       [3]    ORAB  $FFA4
+0000F8F4 FB99A5       [3]    ADDB  $99A5
+0000F8F7 FB6AA6       [3]    ADDB  $6AA6
+0000F8FA FBA1A7       [3]    ADDB  $A1A7
+0000F8FD FB0FA8       [3]    ADDB  $0FA8
+0000F900 FB26A9       [3]    ADDB  $26A9
+0000F903 FBBFAA       [3]    ADDB  $BFAA
+0000F906 FC16AB       [3]    LDD   $16AB
+0000F909 FC0EAC       [3]    LDD   $0EAC
+0000F90C FC06AD       [3]    LDD   $06AD
+0000F90F FBFEAE       [3]    ADDB  $FEAE
+0000F912 FBF0AF       [3]    ADDB  $F0AF
+0000F915 FBE8B1       [3]    ADDB  $E8B1
+0000F918 FC61B2       [3]    LDD   $61B2
+0000F91B FC39B3       [3]    LDD   $39B3
+0000F91E F943B4       [3]    ADCB  $43B4
+0000F921 F97CB6       [3]    ADCB  $7CB6
+0000F924 F9EDB7       [3]    ADCB  $EDB7
+0000F927 F92FB8       [3]    ADCB  $2FB8
+0000F92A FAA5B9       [3]    ORAB  $A5B9
+0000F92D F9BB86       [3]    ADCB  $BB86
+0000F930 DC16         [3]    LDD   $16
+0000F932 FC8596       [3]    LDD   $8596
+0000F935 1A16         [2]    LEAX  -10,X
+0000F937 FC8596       [3]    LDD   $8596
+0000F93A 1B16         [2]    LEAS  -10,X
+0000F93C FC8586       [3]    LDD   $8586
+0000F93F E006         [3]    SUBB  6,X
+0000F941 F8B14D       [3]    EORB  $B14D
+0000F944 CA08         [1]    ORAB  #8
+0000F946 86E0         [1]    LDAA  #224
+0000F948 16FC85       [4]    JSR   $FC85
+0000F94B 8602         [1]    LDAA  #2
+0000F94D 06F8BB       [3]    JMP   $F8BB
+0000F950 4F204006     [4]    BRCLR $20,#64,*+10   ;abs = F95A
+0000F954 4CCA20       [4]    BSET  $CA,#32
+0000F957 4D2040       [4]    BCLR  $20,#64
+0000F95A 4C8D01       [4]    BSET  $8D,#1
+0000F95D 4CCA08       [4]    BSET  $CA,#8
+0000F960 C601         [1]    LDAB  #1
+0000F962 C101         [1]    CMPB  #1
+0000F964 2610         [3/1]  BNE   *+18   ;abs = F976
+0000F966 D68F         [3]    LDAB  $8F
+0000F968 C501         [1]    BITB  #1
+0000F96A 270A         [3/1]  BEQ   *+12   ;abs = F976
+0000F96C FDF7D6       [3]    LDY   $F7D6
+0000F96F 8DFFFF       [2]    CPY   #65535
+0000F972 2702         [3/1]  BEQ   *+4   ;abs = F976
+0000F974 0540         [3]    JMP   0,Y
+0000F976 4D8D01       [4]    BCLR  $8D,#1
+0000F979 06F8D1       [3]    JMP   $F8D1
+0000F97C 8641         [1]    LDAA  #65
+0000F97E 5A3C         [2]    STAA  $3C
+0000F980 913C         [3]    CMPA  $3C
+0000F982 2703         [3/1]  BEQ   *+5   ;abs = F987
+0000F984 06F800       [3]    JMP   $F800
+0000F987 1410         [1]    ORCC  #16
+0000F989 20FE         [3]    BRA   *+0   ;abs = F989
+0000F98B 790028       [3]    CLR   $0028
+0000F98E 790020       [3]    CLR   $0020
+0000F991 4DCA08       [4]    BCLR  $CA,#8
+0000F994 C604         [1]    LDAB  #4
+0000F996 8F101B       [2]    CPS   #4123
+0000F999 2518         [3/1]  BCS   *+26   ;abs = F9B3
+0000F99B 8F3FF8       [2]    CPS   #16376
+0000F99E 2213         [3/1]  BHI   *+21   ;abs = F9B3
+0000F9A0 86E0         [1]    LDAA  #224
+0000F9A2 16FC85       [4]    JSR   $FC85
+0000F9A5 180F         [2]    TBA   
+0000F9A7 4FCA0405     [4]    BRCLR $CA,#4,*+9   ;abs = F9B0
+0000F9AB 4DCA04       [4]    BCLR  $CA,#4
+0000F9AE 8604         [1]    LDAA  #4
+0000F9B0 06F8BB       [3]    JMP   $F8BB
+0000F9B3 86E3         [1]    LDAA  #227
+0000F9B5 06F866       [3]    JMP   $F866
+0000F9B8 4DCA20       [4]    BCLR  $CA,#32
+0000F9BB 16FD2D       [4]    JSR   $FD2D
+0000F9BE 4F1C3026     [4]    BRCLR $1C,#48,*+42   ;abs = F9E8
+0000F9C2 CD0400       [2]    LDY   #1024
+0000F9C5 6C40         [2]    STD   0,Y
+0000F9C7 180B410116   [4]    MOVB  #65,$0116
+0000F9CC 180B800115   [4]    MOVB  #128,$0115
+0000F9D1 A7           [1]    NOP   
+0000F9D2 A7           [1]    NOP   
+0000F9D3 A7           [1]    NOP   
+0000F9D4 B60115       [3]    LDAA  $0115
+0000F9D7 2AFB         [3/1]  BPL   *-3   ;abs = F9D4
+0000F9D9 48           [1]    ASLA  
+0000F9DA 2AF8         [3/1]  BPL   *-6   ;abs = F9D4
+0000F9DC B60105       [3]    LDAA  $0105
+0000F9DF 8430         [1]    ANDA  #48
+0000F9E1 2605         [3/1]  BNE   *+7   ;abs = F9E8
+0000F9E3 86E0         [1]    LDAA  #224
+0000F9E5 06F8B1       [3]    JMP   $F8B1
+0000F9E8 86E9         [1]    LDAA  #233
+0000F9EA 06F8B1       [3]    JMP   $F8B1
+0000F9ED 16FD2D       [4]    JSR   $FD2D
+0000F9F0 4F1C301A     [4]    BRCLR $1C,#48,*+30   ;abs = FA0E
+0000F9F4 CD0400       [2]    LDY   #1024
+0000F9F7 6C40         [2]    STD   0,Y
+0000F9F9 180B410116   [4]    MOVB  #65,$0116
+0000F9FE 180B800115   [4]    MOVB  #128,$0115
+0000FA03 A7           [1]    NOP   
+0000FA04 A7           [1]    NOP   
+0000FA05 A7           [1]    NOP   
+0000FA06 B60115       [3]    LDAA  $0115
+0000FA09 2AFB         [3/1]  BPL   *-3   ;abs = FA06
+0000FA0B 48           [1]    ASLA  
+0000FA0C 2AF8         [3/1]  BPL   *-6   ;abs = FA06
+0000FA0E C604         [1]    LDAB  #4
+0000FA10 53           [1]    DECB  
+0000FA11 6BAF         [2]    STAB  1,-SP
+0000FA13 863F         [1]    LDAA  #63
+0000FA15 1816         [2]    SBA   
+0000FA17 5A30         [2]    STAA  $30
+0000FA19 790103       [3]    CLR   $0103
+0000FA1C CE0200       [2]    LDX   #512
+0000FA1F CC4000       [2]    LDD   #16384
+0000FA22 1810         [12]   IDIV  
+0000FA24 B754         [1]    TFR   X,D
+0000FA26 CE8000       [2]    LDX   #32768
+0000FA29 0760         [4]    BSR   *+98   ;abs = FA8B
+0000FA2B 720030       [4]    INC   $0030
+0000FA2E 6380         [3]    DEC   0,SP
+0000FA30 26EA         [3/1]  BNE   *-20   ;abs = FA1C
+0000FA32 CE0200       [2]    LDX   #512
+0000FA35 CC3800       [2]    LDD   #14336
+0000FA38 1810         [12]   IDIV  
+0000FA3A B754         [1]    TFR   X,D
+0000FA3C CE8000       [2]    LDX   #32768
+0000FA3F 074A         [4]    BSR   *+76   ;abs = FA8B
+0000FA41 33           [3]    PULB  
+0000FA42 C604         [1]    LDAB  #4
+0000FA44 53           [1]    DECB  
+0000FA45 271F         [3/1]  BEQ   *+33   ;abs = FA66
+0000FA47 C630         [1]    LDAB  #48
+0000FA49 5B30         [2]    STAB  $30
+0000FA4B 54           [1]    LSRB  
+0000FA4C 54           [1]    LSRB  
+0000FA4D CD0200       [2]    LDY   #512
+0000FA50 8D0200       [2]    CPY   #512
+0000FA53 2701         [3/1]  BEQ   *+3   ;abs = FA56
+0000FA55 54           [1]    LSRB  
+0000FA56 51           [1]    COMB  
+0000FA57 C403         [1]    ANDB  #3
+0000FA59 7B0103       [3]    STAB  $0103
+0000FA5C 0710         [4]    BSR   *+18   ;abs = FA6E
+0000FA5E D630         [3]    LDAB  $30
+0000FA60 CB04         [1]    ADDB  #4
+0000FA62 C13B         [1]    CMPB  #59
+0000FA64 2BE3         [3/1]  BMI   *-27   ;abs = FA49
+0000FA66 180B3D0030   [4]    MOVB  #61,$0030
+0000FA6B 06F8AF       [3]    JMP   $F8AF
+0000FA6E 34           [2]    PSHX  
+0000FA6F CE8000       [2]    LDX   #32768
+0000FA72 6A00         [2]    STAA  0,X
+0000FA74 180B410106   [4]    MOVB  #65,$0106
+0000FA79 180B800105   [4]    MOVB  #128,$0105
+0000FA7E A7           [1]    NOP   
+0000FA7F A7           [1]    NOP   
+0000FA80 A7           [1]    NOP   
+0000FA81 B60105       [3]    LDAA  $0105
+0000FA84 2AFB         [3/1]  BPL   *-3   ;abs = FA81
+0000FA86 48           [1]    ASLA  
+0000FA87 2AF8         [3/1]  BPL   *-6   ;abs = FA81
+0000FA89 30           [3]    PULX  
+0000FA8A 3D           [5]    RTS   
+0000FA8B B796         [1]    EXG   B,Y
+0000FA8D 6C00         [2]    STD   0,X
+0000FA8F 180B400106   [4]    MOVB  #64,$0106
+0000FA94 16FD7F       [4]    JSR   $FD7F
+0000FA97 97           [1]    TSTA  
+0000FA98 2608         [3/1]  BNE   *+10   ;abs = FAA2
+0000FA9A 1AE20200     [2]    LEAX  512,X
+0000FA9E 0436EC       [3]    DBNE  Y,*-17   ;abs = FA8D
+0000FAA1 3D           [5]    RTS   
+0000FAA2 3A           [3]    PULD  
+0000FAA3 204A         [3]    BRA   *+76   ;abs = FAEF
+0000FAA5 16FD2D       [4]    JSR   $FD2D
+0000FAA8 D630         [3]    LDAB  $30
+0000FAAA 54           [1]    LSRB  
+0000FAAB 54           [1]    LSRB  
+0000FAAC CD0200       [2]    LDY   #512
+0000FAAF 8D0200       [2]    CPY   #512
+0000FAB2 2701         [3/1]  BEQ   *+3   ;abs = FAB5
+0000FAB4 54           [1]    LSRB  
+0000FAB5 51           [1]    COMB  
+0000FAB6 C403         [1]    ANDB  #3
+0000FAB8 7B0103       [3]    STAB  $0103
+0000FABB D630         [3]    LDAB  $30
+0000FABD C13F         [1]    CMPB  #63
+0000FABF 2611         [3/1]  BNE   *+19   ;abs = FAD2
+0000FAC1 CE0200       [2]    LDX   #512
+0000FAC4 CC3800       [2]    LDD   #14336
+0000FAC7 1810         [12]   IDIV  
+0000FAC9 B754         [1]    TFR   X,D
+0000FACB CE8000       [2]    LDX   #32768
+0000FACE 07BB         [4]    BSR   *-67   ;abs = FA8B
+0000FAD0 2011         [3]    BRA   *+19   ;abs = FAE3
+0000FAD2 CE0200       [2]    LDX   #512
+0000FAD5 CC4000       [2]    LDD   #16384
+0000FAD8 1810         [12]   IDIV  
+0000FADA B754         [1]    TFR   X,D
+0000FADC CE8000       [2]    LDX   #32768
+0000FADF 07AA         [4]    BSR   *-84   ;abs = FA8B
+0000FAE1 2000         [3]    BRA   *+2   ;abs = FAE3
+0000FAE3 B60105       [3]    LDAA  $0105
+0000FAE6 8430         [1]    ANDA  #48
+0000FAE8 2605         [3/1]  BNE   *+7   ;abs = FAEF
+0000FAEA 86E0         [1]    LDAA  #224
+0000FAEC 06F8B1       [3]    JMP   $F8B1
+0000FAEF 86E6         [1]    LDAA  #230
+0000FAF1 06F8B1       [3]    JMP   $F8B1
+0000FAF4 16FC71       [4]    JSR   $FC71
+0000FAF7 A600         [3]    LDAA  0,X
+0000FAF9 16FC85       [4]    JSR   $FC85
+0000FAFC 06F8AF       [3]    JMP   $F8AF
+0000FAFF 16FC71       [4]    JSR   $FC71
+0000FB02 EC00         [3]    LDD   0,X
+0000FB04 16FC85       [4]    JSR   $FC85
+0000FB07 180F         [2]    TBA   
+0000FB09 16FC85       [4]    JSR   $FC85
+0000FB0C 06F8AF       [3]    JMP   $F8AF
+0000FB0F 16FC71       [4]    JSR   $FC71
+0000FB12 16FC7C       [4]    JSR   $FC7C
+0000FB15 180E         [2]    TAB   
+0000FB17 52           [1]    INCB  
+0000FB18 A600         [3]    LDAA  0,X
+0000FB1A 16FC85       [4]    JSR   $FC85
+0000FB1D 08           [1]    INX   
+0000FB1E 53           [1]    DECB  
+0000FB1F 26F7         [3/1]  BNE   *-7   ;abs = FB18
+0000FB21 86E0         [1]    LDAA  #224
+0000FB23 06F8B1       [3]    JMP   $F8B1
+0000FB26 16FC71       [4]    JSR   $FC71
+0000FB29 16FC7C       [4]    JSR   $FC7C
+0000FB2C 180E         [2]    TAB   
+0000FB2E 52           [1]    INCB  
+0000FB2F C101         [1]    CMPB  #1
+0000FB31 37           [2]    PSHB  
+0000FB32 271B         [3/1]  BEQ   *+29   ;abs = FB4F
+0000FB34 B750         [1]    TFR   X,A
+0000FB36 8501         [1]    BITA  #1
+0000FB38 2615         [3/1]  BNE   *+23   ;abs = FB4F
+0000FB3A 16FC7C       [4]    JSR   $FC7C
+0000FB3D 180E         [2]    TAB   
+0000FB3F 6380         [3]    DEC   0,SP
+0000FB41 16FC7C       [4]    JSR   $FC7C
+0000FB44 B781         [1]    EXG   A,B
+0000FB46 16FCBB       [4]    JSR   $FCBB
+0000FB49 33           [3]    PULB  
+0000FB4A 2617         [3/1]  BNE   *+25   ;abs = FB63
+0000FB4C 08           [1]    INX   
+0000FB4D 2009         [3]    BRA   *+11   ;abs = FB58
+0000FB4F 16FC7C       [4]    JSR   $FC7C
+0000FB52 16FCDD       [4]    JSR   $FCDD
+0000FB55 33           [3]    PULB  
+0000FB56 260B         [3/1]  BNE   *+13   ;abs = FB63
+0000FB58 08           [1]    INX   
+0000FB59 53           [1]    DECB  
+0000FB5A 26D3         [3/1]  BNE   *-43   ;abs = FB2F
+0000FB5C 86E0         [1]    LDAA  #224
+0000FB5E 20C3         [3]    BRA   *-59   ;abs = FB23
+0000FB60 16FC7C       [4]    JSR   $FC7C
+0000FB63 53           [1]    DECB  
+0000FB64 26FA         [3/1]  BNE   *-4   ;abs = FB60
+0000FB66 86E6         [1]    LDAA  #230
+0000FB68 20B9         [3]    BRA   *-69   ;abs = FB23
+0000FB6A 4FCA080C     [4]    BRCLR $CA,#8,*+16   ;abs = FB7A
+0000FB6E 87           [1]    CLRA  
+0000FB6F 16FC85       [4]    JSR   $FC85
+0000FB72 16FC85       [4]    JSR   $FC85
+0000FB75 86E2         [1]    LDAA  #226
+0000FB77 06F8B1       [3]    JMP   $F8B1
+0000FB7A 0738         [4]    BSR   *+58   ;abs = FBB4
+0000FB7C 06FB02       [3]    JMP   $FB02
+0000FB7F 16FC71       [4]    JSR   $FC71
+0000FB82 16FC7C       [4]    JSR   $FC7C
+0000FB85 16FC8C       [4]    JSR   $FC8C
+0000FB88 2702         [3/1]  BEQ   *+4   ;abs = FB8C
+0000FB8A 2008         [3]    BRA   *+10   ;abs = FB94
+0000FB8C 6A00         [2]    STAA  0,X
+0000FB8E 87           [1]    CLRA  
+0000FB8F 86E0         [1]    LDAA  #224
+0000FB91 06F8B1       [3]    JMP   $F8B1
+0000FB94 86E5         [1]    LDAA  #229
+0000FB96 06F8B1       [3]    JMP   $F8B1
+0000FB99 16FC71       [4]    JSR   $FC71
+0000FB9C C602         [1]    LDAB  #2
+0000FB9E 37           [2]    PSHB  
+0000FB9F 2099         [3]    BRA   *-101   ;abs = FB3A
+0000FBA1 4FCA0808     [4]    BRCLR $CA,#8,*+12   ;abs = FBAD
+0000FBA5 16FC71       [4]    JSR   $FC71
+0000FBA8 86E2         [1]    LDAA  #226
+0000FBAA 06F8B1       [3]    JMP   $F8B1
+0000FBAD 0705         [4]    BSR   *+7   ;abs = FBB4
+0000FBAF C602         [1]    LDAB  #2
+0000FBB1 37           [2]    PSHB  
+0000FBB2 2086         [3]    BRA   *-120   ;abs = FB3A
+0000FBB4 1B82         [2]    LEAS  2,SP
+0000FBB6 EE83         [3]    LDX   3,SP
+0000FBB8 08           [1]    INX   
+0000FBB9 08           [1]    INX   
+0000FBBA 6E83         [2]    STX   3,SP
+0000FBBC 1B9E         [2]    LEAS  -2,SP
+0000FBBE 3D           [5]    RTS   
+0000FBBF B775         [1]    TFR   SP,X
+0000FBC1 1A09         [2]    LEAX  9,X
+0000FBC3 16FC68       [4]    JSR   $FC68
+0000FBC6 EE87         [3]    LDX   7,SP
+0000FBC8 16FC68       [4]    JSR   $FC68
+0000FBCB EE85         [3]    LDX   5,SP
+0000FBCD 16FC68       [4]    JSR   $FC68
+0000FBD0 EE83         [3]    LDX   3,SP
+0000FBD2 16FC68       [4]    JSR   $FC68
+0000FBD5 EE81         [3]    LDX   1,SP
+0000FBD7 B7C5         [1]    EXG   D,X
+0000FBD9 B781         [1]    EXG   A,B
+0000FBDB B7C5         [1]    EXG   D,X
+0000FBDD 16FC68       [4]    JSR   $FC68
+0000FBE0 A680         [3]    LDAA  0,SP
+0000FBE2 16FC85       [4]    JSR   $FC85
+0000FBE5 06F8AF       [3]    JMP   $F8AF
+0000FBE8 16FC7C       [4]    JSR   $FC7C
+0000FBEB 6A80         [2]    STAA  0,SP
+0000FBED 06F8AF       [3]    JMP   $F8AF
+0000FBF0 16FC71       [4]    JSR   $FC71
+0000FBF3 B7C5         [1]    EXG   D,X
+0000FBF5 B781         [1]    EXG   A,B
+0000FBF7 B7C5         [1]    EXG   D,X
+0000FBF9 6E81         [2]    STX   1,SP
+0000FBFB 06F8AF       [3]    JMP   $F8AF
+0000FBFE 16FC71       [4]    JSR   $FC71
+0000FC01 6E83         [2]    STX   3,SP
+0000FC03 06F8AF       [3]    JMP   $F8AF
+0000FC06 16FC71       [4]    JSR   $FC71
+0000FC09 6E85         [2]    STX   5,SP
+0000FC0B 06F8AF       [3]    JMP   $F8AF
+0000FC0E 16FC71       [4]    JSR   $FC71
+0000FC11 6E87         [2]    STX   7,SP
+0000FC13 06F8AF       [3]    JMP   $F8AF
+0000FC16 0759         [4]    BSR   *+91   ;abs = FC71
+0000FC18 1A17         [2]    LEAX  -9,X
+0000FC1A 8E101A       [2]    CPX   #4122
+0000FC1D 250A         [3/1]  BCS   *+12   ;abs = FC29
+0000FC1F 8E3FF7       [2]    CPX   #16375
+0000FC22 2205         [3/1]  BHI   *+7   ;abs = FC29
+0000FC24 B757         [1]    TFR   X,SP
+0000FC26 06F8AF       [3]    JMP   $F8AF
+0000FC29 86E4         [1]    LDAA  #228
+0000FC2B 06F8B1       [3]    JMP   $F8B1
+0000FC2E 3D           [5]    RTS   
+0000FC2F 3E           [8]    WAI   
+0000FC30 3F           [9]    SWI   
+0000FC31 FC2EFC       [3]    LDD   $2EFC
+0000FC34 2F00         [3/1]  BLE   *+2   ;abs = FC36
+0000FC36 30           [3]    PULX  
+0000FC37 FC304C       [3]    LDD   $304C
+0000FC3A CA04         [1]    ORAB  #4
+0000FC3C EE87         [3]    LDX   7,SP
+0000FC3E 08           [1]    INX   
+0000FC3F 08           [1]    INX   
+0000FC40 B7C5         [1]    EXG   D,X
+0000FC42 C4FE         [1]    ANDB  #254
+0000FC44 5C2B         [2]    STD   $2B
+0000FC46 5C2E         [2]    STD   $2E
+0000FC48 45           [1]    ROLA  
+0000FC49 55           [1]    ROLB  
+0000FC4A 45           [1]    ROLA  
+0000FC4B 55           [1]    ROLB  
+0000FC4C C403         [1]    ANDB  #3
+0000FC4E 87           [1]    CLRA  
+0000FC4F 59           [1]    ASLD  
+0000FC50 B7C5         [1]    EXG   D,X
+0000FC52 EEE2FC31     [4]    LDX   64561,X
+0000FC56 A600         [3]    LDAA  0,X
+0000FC58 5A2A         [2]    STAA  $2A
+0000FC5A 5A2D         [2]    STAA  $2D
+0000FC5C 8680         [1]    LDAA  #128
+0000FC5E 5A28         [2]    STAA  $28
+0000FC60 0B           [8]    RTI   
+0000FC61 4CCB20       [4]    BSET  $CB,#32
+0000FC64 4DCA04       [4]    BCLR  $CA,#4
+0000FC67 0B           [8]    RTI   
+0000FC68 B7C5         [1]    EXG   D,X
+0000FC6A 0719         [4]    BSR   *+27   ;abs = FC85
+0000FC6C 180F         [2]    TBA   
+0000FC6E 0715         [4]    BSR   *+23   ;abs = FC85
+0000FC70 3D           [5]    RTS   
+0000FC71 0709         [4]    BSR   *+11   ;abs = FC7C
+0000FC73 180E         [2]    TAB   
+0000FC75 0705         [4]    BSR   *+7   ;abs = FC7C
+0000FC77 B781         [1]    EXG   A,B
+0000FC79 B7C5         [1]    EXG   D,X
+0000FC7B 3D           [5]    RTS   
+0000FC7C 4ECC2002     [4]    BRSET $CC,#32,*+6   ;abs = FC82
+0000FC80 20FA         [3]    BRA   *-4   ;abs = FC7C
+0000FC82 96CF         [3]    LDAA  $CF
+0000FC84 3D           [5]    RTS   
+0000FC85 4FCC80FC     [4]    BRCLR $CC,#128,*+0   ;abs = FC85
+0000FC89 5ACF         [2]    STAA  $CF
+0000FC8B 3D           [5]    RTS   
+0000FC8C 3B           [2]    PSHD  
+0000FC8D 8E4000       [2]    CPX   #16384
+0000FC90 2514         [3/1]  BCS   *+22   ;abs = FCA6
+0000FC92 8EFF80       [2]    CPX   #65408
+0000FC95 2409         [3/1]  BCC   *+11   ;abs = FCA0
+0000FC97 8EF780       [2]    CPX   #63360
+0000FC9A 2518         [3/1]  BCS   *+26   ;abs = FCB4
+0000FC9C C6FF         [1]    LDAB  #255
+0000FC9E 3A           [3]    PULD  
+0000FC9F 3D           [5]    RTS   
+0000FCA0 1AE2F800     [2]    LEAX  63488,X
+0000FCA4 200E         [3]    BRA   *+16   ;abs = FCB4
+0000FCA6 4F1C300E     [4]    BRCLR $1C,#48,*+18   ;abs = FCB8
+0000FCAA 8E0400       [2]    CPX   #1024
+0000FCAD 2509         [3/1]  BCS   *+11   ;abs = FCB8
+0000FCAF 8E0FFF       [2]    CPX   #4095
+0000FCB2 2204         [3/1]  BHI   *+6   ;abs = FCB8
+0000FCB4 C601         [1]    LDAB  #1
+0000FCB6 3A           [3]    PULD  
+0000FCB7 3D           [5]    RTS   
+0000FCB8 C7           [1]    CLRB  
+0000FCB9 3A           [3]    PULD  
+0000FCBA 3D           [5]    RTS   
+0000FCBB 34           [2]    PSHX  
+0000FCBC 3B           [2]    PSHD  
+0000FCBD 07CD         [4]    BSR   *-49   ;abs = FC8C
+0000FCBF 2B50         [3/1]  BMI   *+82   ;abs = FD11
+0000FCC1 2715         [3/1]  BEQ   *+23   ;abs = FCD8
+0000FCC3 AC00         [3]    CPD   0,X
+0000FCC5 274A         [3/1]  BEQ   *+76   ;abs = FD11
+0000FCC7 3B           [2]    PSHD  
+0000FCC8 B751         [1]    TFR   X,B
+0000FCCA C501         [1]    BITB  #1
+0000FCCC 2605         [3/1]  BNE   *+7   ;abs = FCD3
+0000FCCE EC00         [3]    LDD   0,X
+0000FCD0 8CFFFF       [2]    CPD   #65535
+0000FCD3 3A           [3]    PULD  
+0000FCD4 263B         [3/1]  BNE   *+61   ;abs = FD11
+0000FCD6 202C         [3]    BRA   *+46   ;abs = FD04
+0000FCD8 6C00         [2]    STD   0,X
+0000FCDA 87           [1]    CLRA  
+0000FCDB 2034         [3]    BRA   *+54   ;abs = FD11
+0000FCDD 34           [2]    PSHX  
+0000FCDE 3B           [2]    PSHD  
+0000FCDF 07AB         [4]    BSR   *-83   ;abs = FC8C
+0000FCE1 2B2E         [3/1]  BMI   *+48   ;abs = FD11
+0000FCE3 271A         [3/1]  BEQ   *+28   ;abs = FCFF
+0000FCE5 A100         [3]    CMPA  0,X
+0000FCE7 2728         [3/1]  BEQ   *+42   ;abs = FD11
+0000FCE9 E600         [3]    LDAB  0,X
+0000FCEB 52           [1]    INCB  
+0000FCEC 2623         [3/1]  BNE   *+37   ;abs = FD11
+0000FCEE B751         [1]    TFR   X,B
+0000FCF0 C501         [1]    BITB  #1
+0000FCF2 2604         [3/1]  BNE   *+6   ;abs = FCF8
+0000FCF4 E601         [3]    LDAB  1,X
+0000FCF6 200C         [3]    BRA   *+14   ;abs = FD04
+0000FCF8 180E         [2]    TAB   
+0000FCFA 09           [1]    DEX   
+0000FCFB A600         [3]    LDAA  0,X
+0000FCFD 2005         [3]    BRA   *+7   ;abs = FD04
+0000FCFF 6A00         [2]    STAA  0,X
+0000FD01 87           [1]    CLRA  
+0000FD02 200D         [3]    BRA   *+15   ;abs = FD11
+0000FD04 0727         [4]    BSR   *+41   ;abs = FD2D
+0000FD06 8E4000       [2]    CPX   #16384
+0000FD09 2504         [3/1]  BCS   *+6   ;abs = FD0F
+0000FD0B 072B         [4]    BSR   *+45   ;abs = FD38
+0000FD0D 2002         [3]    BRA   *+4   ;abs = FD11
+0000FD0F 0703         [4]    BSR   *+5   ;abs = FD14
+0000FD11 3A           [3]    PULD  
+0000FD12 30           [3]    PULX  
+0000FD13 3D           [5]    RTS   
+0000FD14 6C00         [2]    STD   0,X
+0000FD16 8620         [1]    LDAA  #32
+0000FD18 7A0116       [3]    STAA  $0116
+0000FD1B 8680         [1]    LDAA  #128
+0000FD1D 7A0115       [3]    STAA  $0115
+0000FD20 A7           [1]    NOP   
+0000FD21 A7           [1]    NOP   
+0000FD22 A7           [1]    NOP   
+0000FD23 B60115       [3]    LDAA  $0115
+0000FD26 84C0         [1]    ANDA  #192
+0000FD28 48           [1]    ASLA  
+0000FD29 2AF8         [3/1]  BPL   *-6   ;abs = FD23
+0000FD2B 48           [1]    ASLA  
+0000FD2C 3D           [5]    RTS   
+0000FD2D 36           [2]    PSHA  
+0000FD2E 8630         [1]    LDAA  #48
+0000FD30 7A0115       [3]    STAA  $0115
+0000FD33 7A0105       [3]    STAA  $0105
+0000FD36 32           [3]    PULA  
+0000FD37 3D           [5]    RTS   
+0000FD38 3B           [2]    PSHD  
+0000FD39 8E8000       [2]    CPX   #32768
+0000FD3C 250C         [3/1]  BCS   *+14   ;abs = FD4A
+0000FD3E 8EC000       [2]    CPX   #49152
+0000FD41 250C         [3/1]  BCS   *+14   ;abs = FD4F
+0000FD43 180B3F0030   [4]    MOVB  #63,$0030
+0000FD48 2005         [3]    BRA   *+7   ;abs = FD4F
+0000FD4A 180B3E0030   [4]    MOVB  #62,$0030
+0000FD4F D630         [3]    LDAB  $30
+0000FD51 54           [1]    LSRB  
+0000FD52 54           [1]    LSRB  
+0000FD53 CD0200       [2]    LDY   #512
+0000FD56 8D0200       [2]    CPY   #512
+0000FD59 2701         [3/1]  BEQ   *+3   ;abs = FD5C
+0000FD5B 54           [1]    LSRB  
+0000FD5C 51           [1]    COMB  
+0000FD5D C403         [1]    ANDB  #3
+0000FD5F 7B0103       [3]    STAB  $0103
+0000FD62 C100         [1]    CMPB  #0
+0000FD64 3A           [3]    PULD  
+0000FD65 2711         [3/1]  BEQ   *+19   ;abs = FD78
+0000FD67 6C00         [2]    STD   0,X
+0000FD69 8620         [1]    LDAA  #32
+0000FD6B 7A0106       [3]    STAA  $0106
+0000FD6E 8680         [1]    LDAA  #128
+0000FD70 072A         [4]    BSR   *+44   ;abs = FD9C
+0000FD72 B60105       [3]    LDAA  $0105
+0000FD75 8430         [1]    ANDA  #48
+0000FD77 3D           [5]    RTS   
+0000FD78 6C00         [2]    STD   0,X
+0000FD7A 8620         [1]    LDAA  #32
+0000FD7C 7A0106       [3]    STAA  $0106
+0000FD7F 34           [2]    PSHX  
+0000FD80 CEFDAC       [2]    LDX   #64940
+0000FD83 EC3E         [3]    LDD   2,X-
+0000FD85 3B           [2]    PSHD  
+0000FD86 8EFD9A       [2]    CPX   #64922
+0000FD89 26F8         [3/1]  BNE   *-6   ;abs = FD83
+0000FD8B B775         [1]    TFR   SP,X
+0000FD8D 8680         [1]    LDAA  #128
+0000FD8F 1500         [4]    JSR   0,X
+0000FD91 1BF20012     [2]    LEAS  18,SP
+0000FD95 B60105       [3]    LDAA  $0105
+0000FD98 8430         [1]    ANDA  #48
+0000FD9A 30           [3]    PULX  
+0000FD9B 3D           [5]    RTS   
+0000FD9C B721         [1]    TFR   CCR,B
+0000FD9E 1410         [1]    ORCC  #16
+0000FDA0 7A0105       [3]    STAA  $0105
+0000FDA3 A7           [1]    NOP   
+0000FDA4 A7           [1]    NOP   
+0000FDA5 A7           [1]    NOP   
+0000FDA6 1F010540FB   [5]    BRCLR $0105,#64,*+0   ;abs = FDA6
+0000FDAB B712         [1]    TFR   B,CCR
+0000FDAD 3D           [5]    RTS   
+0000FDAE 077E         [4]    BSR   *+128   ;abs = FE2E
+0000FDB0 077C         [4]    BSR   *+126   ;abs = FE2E
+0000FDB2 077A         [4]    BSR   *+124   ;abs = FE2E
+0000FDB4 0778         [4]    BSR   *+122   ;abs = FE2E
+0000FDB6 0776         [4]    BSR   *+120   ;abs = FE2E
+0000FDB8 0774         [4]    BSR   *+118   ;abs = FE2E
+0000FDBA 0772         [4]    BSR   *+116   ;abs = FE2E
+0000FDBC 0770         [4]    BSR   *+114   ;abs = FE2E
+0000FDBE 076E         [4]    BSR   *+112   ;abs = FE2E
+0000FDC0 076C         [4]    BSR   *+110   ;abs = FE2E
+0000FDC2 076A         [4]    BSR   *+108   ;abs = FE2E
+0000FDC4 0768         [4]    BSR   *+106   ;abs = FE2E
+0000FDC6 0766         [4]    BSR   *+104   ;abs = FE2E
+0000FDC8 0764         [4]    BSR   *+102   ;abs = FE2E
+0000FDCA 0762         [4]    BSR   *+100   ;abs = FE2E
+0000FDCC 0760         [4]    BSR   *+98   ;abs = FE2E
+0000FDCE 075E         [4]    BSR   *+96   ;abs = FE2E
+0000FDD0 075C         [4]    BSR   *+94   ;abs = FE2E
+0000FDD2 075A         [4]    BSR   *+92   ;abs = FE2E
+0000FDD4 0758         [4]    BSR   *+90   ;abs = FE2E
+0000FDD6 0756         [4]    BSR   *+88   ;abs = FE2E
+0000FDD8 0754         [4]    BSR   *+86   ;abs = FE2E
+0000FDDA 0752         [4]    BSR   *+84   ;abs = FE2E
+0000FDDC 0750         [4]    BSR   *+82   ;abs = FE2E
+0000FDDE 074E         [4]    BSR   *+80   ;abs = FE2E
+0000FDE0 074C         [4]    BSR   *+78   ;abs = FE2E
+0000FDE2 074A         [4]    BSR   *+76   ;abs = FE2E
+0000FDE4 0748         [4]    BSR   *+74   ;abs = FE2E
+0000FDE6 0746         [4]    BSR   *+72   ;abs = FE2E
+0000FDE8 0744         [4]    BSR   *+70   ;abs = FE2E
+0000FDEA 0742         [4]    BSR   *+68   ;abs = FE2E
+0000FDEC 0740         [4]    BSR   *+66   ;abs = FE2E
+0000FDEE 073E         [4]    BSR   *+64   ;abs = FE2E
+0000FDF0 073C         [4]    BSR   *+62   ;abs = FE2E
+0000FDF2 073A         [4]    BSR   *+60   ;abs = FE2E
+0000FDF4 0738         [4]    BSR   *+58   ;abs = FE2E
+0000FDF6 0736         [4]    BSR   *+56   ;abs = FE2E
+0000FDF8 0734         [4]    BSR   *+54   ;abs = FE2E
+0000FDFA 0732         [4]    BSR   *+52   ;abs = FE2E
+0000FDFC 0730         [4]    BSR   *+50   ;abs = FE2E
+0000FDFE 072E         [4]    BSR   *+48   ;abs = FE2E
+0000FE00 072C         [4]    BSR   *+46   ;abs = FE2E
+0000FE02 072A         [4]    BSR   *+44   ;abs = FE2E
+0000FE04 0728         [4]    BSR   *+42   ;abs = FE2E
+0000FE06 0726         [4]    BSR   *+40   ;abs = FE2E
+0000FE08 0724         [4]    BSR   *+38   ;abs = FE2E
+0000FE0A 0722         [4]    BSR   *+36   ;abs = FE2E
+0000FE0C 0720         [4]    BSR   *+34   ;abs = FE2E
+0000FE0E 071E         [4]    BSR   *+32   ;abs = FE2E
+0000FE10 071C         [4]    BSR   *+30   ;abs = FE2E
+0000FE12 071A         [4]    BSR   *+28   ;abs = FE2E
+0000FE14 0718         [4]    BSR   *+26   ;abs = FE2E
+0000FE16 0716         [4]    BSR   *+24   ;abs = FE2E
+0000FE18 0714         [4]    BSR   *+22   ;abs = FE2E
+0000FE1A 0712         [4]    BSR   *+20   ;abs = FE2E
+0000FE1C 0710         [4]    BSR   *+18   ;abs = FE2E
+0000FE1E 070E         [4]    BSR   *+16   ;abs = FE2E
+0000FE20 070C         [4]    BSR   *+14   ;abs = FE2E
+0000FE22 070A         [4]    BSR   *+12   ;abs = FE2E
+0000FE24 0708         [4]    BSR   *+10   ;abs = FE2E
+0000FE26 0706         [4]    BSR   *+8   ;abs = FE2E
+0000FE28 0704         [4]    BSR   *+6   ;abs = FE2E
+0000FE2A 0702         [4]    BSR   *+4   ;abs = FE2E
+0000FE2C 0700         [4]    BSR   *+2   ;abs = FE2E
+0000FE2E 30           [3]    PULX  
+0000FE2F EDE2F9D0     [4]    LDY   63952,X
+0000FE33 8DFFFF       [2]    CPY   #65535
+0000FE36 2702         [3/1]  BEQ   *+4   ;abs = FE3A
+0000FE38 0540         [3]    JMP   0,Y
+0000FE3A 1AE2F9D0     [2]    LEAX  63952,X
+0000FE3E B7C5         [1]    EXG   D,X
+0000FE40 06F996       [3]    JMP   $F996
+0000FE43 FFFFFF       [3]    LDS   $FFFF
+0000FE46 FFFFFF       [3]    LDS   $FFFF
+0000FE49 FFFFFF       [3]    LDS   $FFFF
+0000FE4C FFFFFF       [3]    LDS   $FFFF
+0000FE4F FFFFFF       [3]    LDS   $FFFF
+0000FE52 FFFFFF       [3]    LDS   $FFFF
+0000FE55 FFFFFF       [3]    LDS   $FFFF
+0000FE58 FFFFFF       [3]    LDS   $FFFF
+0000FE5B FFFFFF       [3]    LDS   $FFFF
+0000FE5E FFFF00       [3]    LDS   $FF00
+
+0000FEE0 FFFFFF       [3]    LDS   $FFFF
+0000FEE3 FFFFFF       [3]    LDS   $FFFF
+0000FEE6 16FC85       [4]    JSR   $FC85
+0000FEE9 16FC7C       [4]    JSR   $FC7C
+0000FEEC 16F9ED       [4]    JSR   $F9ED
+0000FEEF 16FD7F       [4]    JSR   $FD7F
+0000FEF2 16FCBB       [4]    JSR   $FCBB
+0000FEF5 FFFFFF       [3]    LDS   $FFFF
+0000FEF8 00           [5]    BGND  
+0000FEF9 11           [11]   EDIV  
+0000FEFA 03           [1]    DEY   
+0000FEFB 09           [1]    DEX   
+0000FEFC 2003         [3]    BRA   *+5   ;abs = FF01
+0000FEFE 02           [1]    INY   
+0000FEFF 00           [5]    BGND  
+0000FF00 FFFFFF       [3]    LDS   $FFFF
+0000FF03 FFFFFF       [3]    LDS   $FFFF
+0000FF06 FFFFFF       [3]    LDS   $FFFF
+0000FF09 FFFFFF       [3]    LDS   $FFFF
+0000FF0C FFC7FF       [3]    LDS   $C7FF
+0000FF0F BEFFFF       [3]    CPX   $FFFF
+0000FF12 FFFFFF       [3]    LDS   $FFFF
+0000FF15 FFFFFF       [3]    LDS   $FFFF
+0000FF18 FFFFFF       [3]    LDS   $FFFF
+0000FF1B FFFFFF       [3]    LDS   $FFFF
+0000FF1E FFFF00       [3]    LDS   $FF00
+
+0000FF80 FDAEFD       [3]    LDY   $AEFD
+0000FF83 B0FDB2       [3]    SUBA  $FDB2
+0000FF86 FDB4FD       [3]    LDY   $B4FD
+0000FF89 B6FDB8       [3]    LDAA  $FDB8
+0000FF8C FDBAFD       [3]    LDY   $BAFD
+0000FF8F BCFDBE       [3]    CPD   $FDBE
+0000FF92 FDC0FD       [3]    LDY   $C0FD
+0000FF95 C2FD         [1]    SBCB  #253
+0000FF97 C4FD         [1]    ANDB  #253
+0000FF99 C6FD         [1]    LDAB  #253
+0000FF9B C8FD         [1]    EORB  #253
+0000FF9D CAFD         [1]    ORAB  #253
+0000FF9F CCFDCE       [2]    LDD   #64974
+0000FFA2 FDD0FD       [3]    LDY   $D0FD
+0000FFA5 D2FD         [3]    SBCB  $FD
+0000FFA7 D4FD         [3]    ANDB  $FD
+0000FFA9 D6FD         [3]    LDAB  $FD
+0000FFAB D8FD         [3]    EORB  $FD
+0000FFAD DAFD         [3]    ORAB  $FD
+0000FFAF DCFD         [3]    LDD   $FD
+0000FFB1 DEFD         [3]    LDX   $FD
+0000FFB3 E0FD         [3]    SUBB  B,PC
+0000FFB5 E2FD         [3]    SBCB  B,PC
+0000FFB7 E4FD         [3]    ANDB  B,PC
+0000FFB9 E6FD         [3]    LDAB  B,PC
+0000FFBB E8FD         [3]    EORB  B,PC
+0000FFBD EAFD         [3]    ORAB  B,PC
+0000FFBF ECFD         [3]    LDD   B,PC
+0000FFC1 EEFD         [3]    LDX   B,PC
+0000FFC3 F0FDF2       [3]    SUBB  $FDF2
+0000FFC6 FDF4FD       [3]    LDY   $F4FD
+0000FFC9 F6FDF8       [3]    LDAB  $FDF8
+0000FFCC FDFAFD       [3]    LDY   $FAFD
+0000FFCF FCFDFE       [3]    LDD   $FDFE
+0000FFD2 FE00FE       [3]    LDX   $00FE
+0000FFD5 02           [1]    INY   
+0000FFD6 F950FE       [3]    ADCB  $50FE
+0000FFD9 06FE08       [3]    JMP   $FE08
+0000FFDC FE0AFE       [3]    LDX   $0AFE
+0000FFDF 0CFE0E       [4]    BSET  D,PC,#14
+0000FFE2 FE10FE       [3]    LDX   $10FE
+0000FFE5 12           [3]    MUL   
+0000FFE6 FE14FE       [3]    LDX   $14FE
+0000FFE9 16FE18       [4]    JSR   $FE18
+0000FFEC FE1AFE       [3]    LDX   $1AFE
+0000FFEF 1CFE1EFE     [4]    BSET  $FE1E,#254
+0000FFF3 20FE         [3]    BRA   *+0   ;abs = FFF3
+0000FFF5 22F9         [3/1]  BHI   *-5   ;abs = FFF0
+0000FFF7 8BFE         [1]    ADDA  #254
+0000FFF9 26F8         [3/1]  BNE   *-6   ;abs = FFF3
+0000FFFB 00           [5]    BGND  
+0000FFFC FE2AF8       [3]    LDX   $2AF8
+0000FFFF 00           [5]    BGND  

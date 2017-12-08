@@ -1,4 +1,0 @@
-Ex3.ASM, line no. 9: Unrecognized Mnemonic: reg9s12.h
-#include        reg9s12.h	; include register equates
-Program + Init Data = 0 bytes
-Error count = 1
