@@ -11,8 +11,9 @@
 %% and version 1.3 or later is part of all distributions of LaTeX
 %% version 2005/12/01 or later.
 
-% \documentclass[table,ngerman,ignorenonframetext]{beamer}
-\documentclass[table,ngerman,compress,t]{beamer}
+%\documentclass[table,ngerman,ignorenonframetext]{beamer}
+%\documentclass[table,ngerman,compress,t]{beamer}
+\documentclass{beamer}
 
 \newif\ifoverview
 \newif\ifpartI
@@ -24,8 +25,8 @@
 \newif\ifpartVII
 \newif\ifpartVIII
 
-\overviewtrue
-\partIfalse
+\overviewfalse
+\partItrue
 \partIIfalse
 \partIIIfalse
 \partIVfalse
@@ -41,7 +42,7 @@
 
 \ifpartI
 \newcommand{\partNo}{1}
-\newcommand{\partTitle}{Modeling and Design Principles}
+\newcommand{\partTitle}{Real Time Environment}
 \newcommand{\partVersion}{1.0}
 \fi
 
